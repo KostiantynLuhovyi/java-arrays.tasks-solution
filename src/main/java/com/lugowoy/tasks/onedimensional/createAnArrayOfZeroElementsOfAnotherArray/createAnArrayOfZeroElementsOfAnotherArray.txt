@@ -1,0 +1,1 @@
+There are zero elements in an integer array. Create an array of the index of these elements.

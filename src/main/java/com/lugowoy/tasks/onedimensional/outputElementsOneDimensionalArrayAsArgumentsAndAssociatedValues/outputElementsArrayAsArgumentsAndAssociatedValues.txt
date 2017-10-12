@@ -1,0 +1,3 @@
+In the one-dimensional array are placed: in the first elements of the value of the argument,
+in the following - the corresponding values of the function.
+Print the elements of array n parallel columns (argument and function value).

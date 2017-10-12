@@ -1,0 +1,2 @@
+Given positive integers a1, a2, a3, ..., an.
+Find among them those whose square is equal to a certain number n.

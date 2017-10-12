@@ -1,0 +1,2 @@
+Given an array with the number of n elements.
+"Squeeze" the array, throwing out every second element from it.

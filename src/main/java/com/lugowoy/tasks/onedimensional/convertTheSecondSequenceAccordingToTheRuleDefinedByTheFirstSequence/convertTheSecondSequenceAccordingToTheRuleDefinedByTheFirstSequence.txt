@@ -1,0 +1,3 @@
+Given integers a1, a2, ..., an and b1, b2, ..., bn.
+Convert the sequence bl, b2, ..., bn by the rule: if ai ≤ 0, then bi is increased by a factor of 10,
+otherwise bi is replaced by zero.

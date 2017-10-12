@@ -1,0 +1,2 @@
+Given a sequence of integer numbers a1, a2, ..., an.
+Replace all of its members, of the Z larger, this number. Count the number of substitutions.

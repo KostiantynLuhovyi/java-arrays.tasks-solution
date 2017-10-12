@@ -1,0 +1,2 @@
+Two sequences of integers a1, a2, ..., an and b1, b2, ..., bm are given. All the members of the sequences are distinct numbers.
+Find how many elements of the first sequence coincide with the elements of the second sequence.

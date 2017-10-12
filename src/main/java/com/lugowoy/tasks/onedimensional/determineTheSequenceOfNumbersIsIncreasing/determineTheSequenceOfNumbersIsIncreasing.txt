@@ -1,0 +1,1 @@
+Given a sequence of integer numbers a1, a2, ..., an. Determine whether it is increasing.

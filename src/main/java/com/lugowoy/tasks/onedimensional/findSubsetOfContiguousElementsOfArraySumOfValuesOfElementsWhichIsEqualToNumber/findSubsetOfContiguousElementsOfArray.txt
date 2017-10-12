@@ -1,0 +1,1 @@
+Find subset of contiguous elements of array sum of values of elements which is equal to number.

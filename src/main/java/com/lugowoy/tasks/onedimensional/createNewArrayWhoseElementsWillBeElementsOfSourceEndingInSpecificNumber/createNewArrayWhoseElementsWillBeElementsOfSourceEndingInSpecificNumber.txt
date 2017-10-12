@@ -1,0 +1,2 @@
+An array of n natural numbers is given.
+Create a new array, the elements of which will be elements of the source, ending in a specific number.

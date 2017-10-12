@@ -1,0 +1,2 @@
+An array of n four-digit natural numbers is given.
+Output to display only numbers those on which the sum of the first two digits is equal to the sum of the last two digits.

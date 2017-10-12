@@ -1,0 +1,2 @@
+In the array of integers with the number of elements n, find the most repeated number.
+If there are several such numbers, then determine the smallest of them.

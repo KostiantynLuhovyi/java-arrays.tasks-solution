@@ -1,0 +1,3 @@
+Given integers a1, a2, ..., an.
+The smallest member of this sequence is replaced by the integer part of the arithmetic mean of all terms, leaving the remaining terms unchanged.
+If there are several smaller terms in the sequence, then replace the last one in order.

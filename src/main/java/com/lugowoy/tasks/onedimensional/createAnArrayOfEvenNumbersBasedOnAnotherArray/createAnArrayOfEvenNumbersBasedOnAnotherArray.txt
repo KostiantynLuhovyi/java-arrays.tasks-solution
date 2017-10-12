@@ -1,0 +1,1 @@
+Given a array of positive numbers a1, a2, ..., an. Create an array of even numbers of this array.

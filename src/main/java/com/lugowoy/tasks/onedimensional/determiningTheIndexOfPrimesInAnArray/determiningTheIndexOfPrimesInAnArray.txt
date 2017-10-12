@@ -1,0 +1,3 @@
+The integer array of dimension of N is set.
+Whether there are among array elements prime numbers?
+If yes, that to output index numbers of these elements.

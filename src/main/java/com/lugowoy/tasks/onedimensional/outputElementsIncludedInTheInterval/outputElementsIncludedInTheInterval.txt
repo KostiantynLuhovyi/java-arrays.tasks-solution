@@ -1,0 +1,1 @@
+Given a sequence of integer numbers a1, a2, ..., an. Output elements of it that belong to the interval [c, d].

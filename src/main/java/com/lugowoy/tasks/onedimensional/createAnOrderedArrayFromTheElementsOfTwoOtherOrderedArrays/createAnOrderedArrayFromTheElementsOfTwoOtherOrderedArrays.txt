@@ -1,0 +1,2 @@
+Given two ordered arrays A and B.
+Form from the elements of these arrays an ordered array C.

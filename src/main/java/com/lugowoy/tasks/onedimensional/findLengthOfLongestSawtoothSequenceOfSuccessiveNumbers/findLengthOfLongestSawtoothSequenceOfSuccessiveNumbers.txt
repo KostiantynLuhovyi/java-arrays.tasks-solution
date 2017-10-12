@@ -1,0 +1,1 @@
+Find the length of the longest "sawtooth" sequence of successive numbers Xk <Xk + 1> Xk + 2> ...> Xk + m <Xk + m + 1 <... <Xn.

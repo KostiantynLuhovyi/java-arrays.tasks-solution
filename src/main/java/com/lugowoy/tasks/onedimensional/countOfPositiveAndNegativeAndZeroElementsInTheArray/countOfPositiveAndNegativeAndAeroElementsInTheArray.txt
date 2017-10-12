@@ -1,0 +1,1 @@
+Given an array of integer numbers, whose dimension is N. Calculate how much it negative, positive and zero elements.

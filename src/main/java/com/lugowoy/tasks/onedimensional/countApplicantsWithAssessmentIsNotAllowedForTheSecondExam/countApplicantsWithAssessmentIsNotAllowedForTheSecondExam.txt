@@ -1,0 +1,3 @@
+On admission to university entrants who have received "two" in the first exam, the second is not allowed.
+The array A[n] written assessment exams obtained in the first test.
+Calculate how much a person is not admitted to the second exam.

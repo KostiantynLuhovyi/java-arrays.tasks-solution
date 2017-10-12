@@ -1,0 +1,2 @@
+An array containing integers is specified.
+Compress it, throwing out the zero elements.

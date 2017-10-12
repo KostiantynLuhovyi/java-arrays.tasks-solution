@@ -1,0 +1,1 @@
+Given a sequence of integers a1, a2, ..., an. Indicate pairs of numbers ai, aj such that ai + aj = m.

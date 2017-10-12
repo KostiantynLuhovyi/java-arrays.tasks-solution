@@ -1,0 +1,2 @@
+Given an array with the number of n elements.
+Print those elements whose indices are degree of two (1, 2, 4, 8, 16, ...).

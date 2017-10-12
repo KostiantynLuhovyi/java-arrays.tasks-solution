@@ -1,0 +1,2 @@
+Given a real number x and an array A [n].
+In the array, find two members whose arithmetic mean is closest to x.

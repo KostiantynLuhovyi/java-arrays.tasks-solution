@@ -1,0 +1,1 @@
+Given an array of numbers. Find the sum of the elements that are multiples of to this K.

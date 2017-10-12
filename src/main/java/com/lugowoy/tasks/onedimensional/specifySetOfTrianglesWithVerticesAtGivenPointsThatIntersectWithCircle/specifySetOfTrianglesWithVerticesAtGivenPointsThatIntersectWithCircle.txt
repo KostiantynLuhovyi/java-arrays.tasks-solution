@@ -1,0 +1,3 @@
+On the n-plane the points are given by their coordinates and a circle of radius R with center at the origin is also given.
+Specify the set of all triangles with vertices at given points intersecting a circle;
+The set of all triangles contained inside the circle.

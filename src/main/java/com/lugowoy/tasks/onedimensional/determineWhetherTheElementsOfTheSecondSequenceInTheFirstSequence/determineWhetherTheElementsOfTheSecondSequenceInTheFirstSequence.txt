@@ -1,0 +1,3 @@
+Two sequences a1, a2, ..., an and b1, b2, ..., bm (m <n) are given.
+In each of them, the members are different.
+Is it true that all members of the second sequence are in the first sequence?

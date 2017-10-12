@@ -1,0 +1,1 @@
+Determine the number of the array in which the number is equal to dividing a certain number.

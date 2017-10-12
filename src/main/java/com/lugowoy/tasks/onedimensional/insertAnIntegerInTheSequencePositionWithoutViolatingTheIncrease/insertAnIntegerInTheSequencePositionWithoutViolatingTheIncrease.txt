@@ -1,0 +1,2 @@
+Given a sequence of integers a1 ≤ a2 ≤ ... ≤ an.
+Insert an integer b into it so that the sequence remains non-decreasing.

@@ -1,0 +1,4 @@
+Every sunny day, a snail sitting on a tree climbs up 2 cm, and each cloudy day drops down by 1 cm.
+At the beginning of observation, the snail is A cm from the ground on a B-meter tree.
+There is a 30-element array containing information about whether the corresponding observation day was cloudy or sunny.
+Write a program that determines the location of the cochlea at the end of the 30th day of observation.

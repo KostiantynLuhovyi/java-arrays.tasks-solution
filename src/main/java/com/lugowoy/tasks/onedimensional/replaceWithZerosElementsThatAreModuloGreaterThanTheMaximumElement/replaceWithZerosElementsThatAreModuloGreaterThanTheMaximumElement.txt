@@ -1,0 +1,2 @@
+Given integers a1, a2, ..., an. Among them there are positive and negative.
+Replace the zeros with those numbers that they are more modular than a certain number (| ai |> max {a1, a2, ..., an}).

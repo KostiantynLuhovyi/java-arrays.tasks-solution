@@ -1,0 +1,2 @@
+The specified one-dimensional array interchange the adjacent elements standing on even places,
+with standing on the odd elements.

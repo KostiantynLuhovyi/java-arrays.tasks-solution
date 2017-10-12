@@ -1,0 +1,1 @@
+Given a sequence of numbers. Print out all the numbers up to and including zero.

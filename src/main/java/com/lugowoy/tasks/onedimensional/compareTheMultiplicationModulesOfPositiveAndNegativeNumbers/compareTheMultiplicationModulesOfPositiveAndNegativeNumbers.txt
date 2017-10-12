@@ -1,0 +1,3 @@
+In the sequence of integers a1, a2, ..., an, there are positive and negative elements.
+Calculate the multiplication of negative elements P1 and the multiplication of positive elements P2.
+Compare the module P2 with the module P1 and indicate which of the products is larger modulo.

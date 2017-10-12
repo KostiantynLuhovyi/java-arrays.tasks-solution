@@ -1,0 +1,2 @@
+Given an array of numbers.
+Calculate the sum of array elements located between the minimum and maximum elements inclusive.

@@ -1,0 +1,2 @@
+Given dimensional array A[n].
+Find: max(a2, a4, ..., a2k) + min(a1, a3, ..., a2k-1).

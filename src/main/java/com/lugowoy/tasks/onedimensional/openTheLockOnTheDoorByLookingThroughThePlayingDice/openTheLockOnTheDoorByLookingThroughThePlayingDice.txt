@@ -1,0 +1,4 @@
+The secret lock for the safe consists of 10 cells arranged in a row, into which it is necessary to insert the playing dice.
+But the door is opened only if in any three neighboring cells the sum of the points on the front faces of the cubes is 10.
+(The dice has 1 to 6 dots on each face.)
+Write a program that unravels the lock code, provided that two dice already inserted in the cells.

@@ -1,0 +1,2 @@
+Given an array A. Find the segment of the maximum length array in which the first number equals the last, the second the penultimate, and so on.
+Output this segment and its length.

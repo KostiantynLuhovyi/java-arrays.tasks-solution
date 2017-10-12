@@ -1,0 +1,1 @@
+Given an array A. Find the length of the longest sequence of consecutive array elements equal to zero.

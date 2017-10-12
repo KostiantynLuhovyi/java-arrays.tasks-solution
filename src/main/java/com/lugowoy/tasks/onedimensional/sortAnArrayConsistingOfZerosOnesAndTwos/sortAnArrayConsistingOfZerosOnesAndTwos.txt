@@ -1,0 +1,2 @@
+In the array, each element is 0, 1, 2.
+Rearrange the elements of the array so that all zeros are first, then all the ones, and finally all the deuces.

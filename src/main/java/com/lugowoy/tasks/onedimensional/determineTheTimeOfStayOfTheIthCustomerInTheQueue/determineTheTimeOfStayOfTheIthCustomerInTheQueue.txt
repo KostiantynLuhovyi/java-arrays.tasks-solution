@@ -1,0 +1,3 @@
+At the counter of the store, a line of n customers lined up.
+The service time of the i-th customer is tj (i = 1, ..., n).
+Determine the time Ci of the stay of the i-th customer in the queue.

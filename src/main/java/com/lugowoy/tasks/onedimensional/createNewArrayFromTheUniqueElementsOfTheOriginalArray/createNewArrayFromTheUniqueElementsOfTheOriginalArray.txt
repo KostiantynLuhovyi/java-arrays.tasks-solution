@@ -1,0 +1,2 @@
+Given a one-dimensional array of numbers, among the elements of which are the same.
+Create a new array from the various elements of the original array.
