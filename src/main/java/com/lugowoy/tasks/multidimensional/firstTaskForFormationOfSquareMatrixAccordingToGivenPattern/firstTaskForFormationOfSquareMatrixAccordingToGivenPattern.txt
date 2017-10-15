@@ -1,0 +1,10 @@
+Form a square matrix of order n according to a given pattern:
+
+1	2	3	…	n
+n	n-1	n-2	…	1
+1	2	3	…	n
+n	n-1	n-2	…	1
+…	…	…	…	…
+n	n-1	n-2	…	1
+
+(n – even number).
