@@ -1,6 +1,7 @@
 package com.lugowoy.tasks.multidimensional.firstTaskForFormationOfSquareMatrixAccordingToGivenPattern;
 
-import com.lugowoy.helper.other.DeterminatorSizeOfArray;
+import com.lugowoy.helper.io.reading.ReadingConsole;
+import com.lugowoy.helper.other.ArrayLength;
 
 import java.util.Objects;
 
@@ -14,7 +15,8 @@ public class Main {
 
         int [][] array = null;
 
-        int n = DeterminatorSizeOfArray.determineSizeOfArray(BOUND_SIZE_OF_ARRAY);
+        System.out.println("Enter the length of the matrix elements : ");
+        int n = ArrayLength.getLengthArray(new ReadingConsole(), BOUND_SIZE_OF_ARRAY);
 
         if (n % 2 == 0) {
             array = new int[n][n];
@@ -37,7 +39,7 @@ public class Main {
             }
         }
 
-        System.out.println("Result array : ");
+        System.out.println("Result matrix : ");
         if (Objects.nonNull(array)) {
             for(int i = 0; i < array.length; i++) {
                 for(int  j = 0; j < array.length; j++) {
