@@ -1,35 +1,34 @@
 package com.lugowoy.tasks.onedimensional.createNewArrayWhoseElementsWillBeElementsOfSourceEndingInSpecificNumber;
 
-import com.lugowoy.helper.factory.creator.CreatorOfArrayModels;
-import com.lugowoy.helper.factory.models.array.FactoryOfIntegerArrayModels;
-import com.lugowoy.helper.filling.FillingArrayIntegerRandomNumbers;
+import com.lugowoy.helper.factory.FactoryArray;
+import com.lugowoy.helper.factory.creator.CreatorArrayNumbers;
+import com.lugowoy.helper.filling.array.numbers.FillingArrayRandomIntegerNumbers;
+import com.lugowoy.helper.io.reading.Reader;
+import com.lugowoy.helper.io.reading.ReadingConsole;
 import com.lugowoy.helper.models.arrays.Array;
-import com.lugowoy.helper.reading.Reader;
-import com.lugowoy.helper.reading.ReadingDataUserInputInConsole;
-import com.lugowoy.helper.other.DeterminatorSizeOfArray;
+import com.lugowoy.helper.other.ArrayLength;
 
-import java.util.ArrayList;
-import java.util.List;
+import static com.lugowoy.helper.other.ArrayChecker.checkArrayNonNull;
+import static com.lugowoy.helper.other.ArrayChecker.checkLengthOfArrayIsGreaterZero;
 
 /** Created by Konstantin Lugowoy on 27.03.2017. */
 
 public class Main {
 
-    private static Reader reader = new Reader(new ReadingDataUserInputInConsole());
-
     public static void main(String[] args) {
 
-        int sizeArray = DeterminatorSizeOfArray.determineSizeOfArray();
+        System.out.println("Enter length of the array : ");
+        int lengthArray = ArrayLength.getLengthArray(new ReadingConsole());
 
-        Array<Integer> array = new CreatorOfArrayModels<>(
-                                    new FactoryOfIntegerArrayModels()).create(
-                                            new FillingArrayIntegerRandomNumbers().fill(sizeArray, Integer.MAX_VALUE));
+        Array<Integer> array = FactoryArray.getFactoryArray(new CreatorArrayNumbers<Integer>()).create(
+                                                                new FillingArrayRandomIntegerNumbers().fill(lengthArray,
+                                                                                                            Integer.MAX_VALUE));
 
         System.out.println("Original : \n" + array);
         System.out.println();
 
         System.out.println("Enter specific ending number : ");
-        int specificEndingNumber = reader.readInt();
+        int specificEndingNumber = Reader.getReader(new ReadingConsole()).readInt();
 
         Array newArray = createNewArrayWhoseElementsWillBeElementsOfSourceEndingInSpecificNumber(array, specificEndingNumber);
 
@@ -38,23 +37,23 @@ public class Main {
 
     }
 
-    private static Array<Integer> createNewArrayWhoseElementsWillBeElementsOfSourceEndingInSpecificNumber(Array<Integer> array, int specificEndingNumber) {
-        List<Integer> resultNewIntegerList = new ArrayList<>(0);
-
-        if (array != null) {
-            if ((array.getArray() != null) && (array.getArray().length > 0)) {
-                for (int i : array.getArray()) {
-                    if (Math.abs(i) % 10 == specificEndingNumber) {
-                        resultNewIntegerList.add(i);
+    private static Array<Integer> createNewArrayWhoseElementsWillBeElementsOfSourceEndingInSpecificNumber(Array<Integer> array,
+                                                                                                          int specificEndingNumber) {
+        Array<Integer> resultArray = FactoryArray.getFactoryArray(new CreatorArrayNumbers<Integer>()).create(0);
+        try {
+            if (checkArrayNonNull(array)) {
+                if (checkArrayNonNull(array.getArray()) && checkLengthOfArrayIsGreaterZero(array.getLength())) {
+                    for (int i = 0; i < array.getLength(); i++) {
+                        if (Math.abs(array.get(i)) % 10 == specificEndingNumber) {
+                            resultArray.add(i);
+                        }
                     }
                 }
-            } else {
-                System.out.println("Incorrect argument passed.");
             }
-        } else {
-            System.out.println("Incorrect argument passed.");
+        } catch (IllegalArgumentException ex) {
+            System.err.println(ex.getMessage());
         }
-        return new CreatorOfArrayModels<>(new FactoryOfIntegerArrayModels()).create(resultNewIntegerList.stream().toArray(Integer[]::new));
+        return resultArray;
     }
 
 }
