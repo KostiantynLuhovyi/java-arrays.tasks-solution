@@ -1,4 +1,4 @@
-package com.lugowoy.tasks.onedimensional.determineWhetherItIsPossibleToSelectContiguousElementsInOneOfArraysByCondition;
+package com.lugowoy.tasks.onedimensional.determineNumberOfElementsThatAreIdenticalInTwoSequences;
 
 import com.lugowoy.helper.factory.FactoryArray;
 import com.lugowoy.helper.factory.creator.CreatorArrayNumbers;
@@ -7,36 +7,34 @@ import com.lugowoy.helper.io.reading.ReadingConsole;
 import com.lugowoy.helper.models.arrays.Array;
 import com.lugowoy.helper.other.ArrayLength;
 
-import java.util.Arrays;
-import java.util.List;
-
-/** Created by Konstantin Lugowoy on 22.06.2017. */
+/** Created by Konstantin Lugowoy on 30.05.2017. */
 
 public class Main {
 
     private static final FactoryArray<Integer> FACTORY = FactoryArray.getFactoryArray(new CreatorArrayNumbers<>());
-    private static final int BOUND = 100;
+    private static final int BOUND = 50;
 
     public static void main(String[] args) {
 
         System.out.println("Enter length of the first array : ");
         int lengthFirstArray = ArrayLength.getLengthArray(new ReadingConsole());
 
-        System.out.println("Enter lrngth of the second array : ");
+        System.out.println("Enter length of the second array : ");
         int lengthSecondArray = ArrayLength.getLengthArray(new ReadingConsole());
 
         Array<Integer> firstArray = FACTORY.create(new FillingArrayRandomIntegerNumbers().fill(lengthFirstArray, BOUND));
         Array<Integer> secondArray = FACTORY.create(new FillingArrayRandomIntegerNumbers().fill(lengthSecondArray, BOUND));
 
-        Determinant<Array<Integer>> determine = Determinant::determineWhetherItIsPossibleToSelectContiguousElements;
-        List<Array<Integer>> arrayList = determine.determine(firstArray, secondArray);
+        System.out.println("Elements of the first array : " + firstArray);
+        System.out.println();
 
-        if (!arrayList.isEmpty()) {
-            System.out.println("Result : ");
-            arrayList.forEach(array -> System.out.println(Arrays.toString(array.getArray()) + " "));
-        } else {
-            System.out.println("Result array is empty.");
-        }
+        System.out.println("Elements of the second array : " + secondArray);
+        System.out.println();
+
+        Determinant<Array<Integer>> determinant = Determinant::determineTheNumberOfElementsThatAreIdenticalInTwoSequences;
+        int numberOfIdenticalElementsInTheTwoSequence = determinant.determine(firstArray, secondArray);
+
+        System.out.println("Number of identical elements in the two array : " + numberOfIdenticalElementsInTheTwoSequence);
 
     }
 

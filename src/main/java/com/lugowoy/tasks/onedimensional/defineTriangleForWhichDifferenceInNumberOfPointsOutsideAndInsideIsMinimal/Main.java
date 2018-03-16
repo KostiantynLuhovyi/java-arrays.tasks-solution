@@ -1,34 +1,35 @@
 package com.lugowoy.tasks.onedimensional.defineTriangleForWhichDifferenceInNumberOfPointsOutsideAndInsideIsMinimal;
 
-import com.lugowoy.helper.factory.creator.CreatorOfArrayModels;
-import com.lugowoy.helper.factory.creator.CreatorOfPointModels;
-import com.lugowoy.helper.factory.models.array.FactoryOfDoubleArrayModels;
-import com.lugowoy.helper.factory.models.array.FactoryOfDoubleCoordinatesPointsOfArrayModels;
-import com.lugowoy.helper.factory.models.points.FactoryOfPointsWithDoubleCoordinates;
-import com.lugowoy.helper.filling.FillingArrayDoubleRandomNumbers;
+import com.lugowoy.helper.factory.FactoryArray;
+import com.lugowoy.helper.factory.FactoryPoint;
+import com.lugowoy.helper.factory.creator.CreatorArrayNumbers;
+import com.lugowoy.helper.factory.creator.CreatorArrayPoints;
+import com.lugowoy.helper.factory.creator.CreatorPoint;
+import com.lugowoy.helper.filling.array.numbers.FillingArrayRandomDoubleNumbers;
+import com.lugowoy.helper.io.reading.Reader;
+import com.lugowoy.helper.io.reading.ReadingConsole;
 import com.lugowoy.helper.models.arrays.Array;
 import com.lugowoy.helper.models.points.Point;
-import com.lugowoy.helper.models.points.PointOfDoubleCoordinates;
-import com.lugowoy.helper.reading.Reader;
-import com.lugowoy.helper.reading.ReadingDataUserInputInConsole;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 /** Created by Konstantin Lugowoy on 03.07.2017. */
 
 public class Main {
 
-    private static Reader reader = new Reader(new ReadingDataUserInputInConsole());
+    private static final Reader READER = Reader.getReader(new ReadingConsole());
+
+    private static final double START_BOUND = -50d;
+    private static final double END_BOUND = 50d;
 
     public static void main(String[] args) {
 
-        int sizeArray = getSizeArray();
+        int lengthArray = enterLengthOfArray();
 
-        Array<Double> array = new CreatorOfArrayModels<>(
-                                    new FactoryOfDoubleArrayModels()).create(
-                                            new FillingArrayDoubleRandomNumbers().fill(sizeArray, -50.0, 50.0));
+        Array<Double> array = FactoryArray.getFactoryArray(new CreatorArrayNumbers<Double>()).create(
+                                                                new FillingArrayRandomDoubleNumbers().fill(lengthArray,
+                                                                                                           START_BOUND,
+                                                                                                           END_BOUND));
 
         System.out.println("Coordinates : ");
         System.out.println(array);
@@ -40,19 +41,19 @@ public class Main {
         System.out.println(pointArray);
         System.out.println();
 
-        Definable<Array<Point<Double>>> arrayDefinable = Definable::defineTriangle;
-        Array<Point<Double>> resultPointArray = arrayDefinable.define(pointArray);
+        Determinant<Array<Point<Double>>> arrayDeterminant = Determinant::defineTriangle;
+        Array<Point<Double>> resultPointArray = arrayDeterminant.define(pointArray);
 
         System.out.println("Result points of triangle : ");
         Arrays.stream(resultPointArray.getArray()).forEachOrdered(System.out::println);
 
     }
 
-     private static int getSizeArray() {
+     private static int enterLengthOfArray() {
         System.out.println("Enter the size of the array : ");
         int sizeArray;
         while (true) {
-            sizeArray = reader.readInt();
+            sizeArray = READER.readInt();
             if (sizeArray % 2 == 0) {
                 break;
             } else {
@@ -63,23 +64,23 @@ public class Main {
         return sizeArray;
     }
 
-     private static Point<Double> fillPointCoordinates(double xCoor, double yCoor) {
-        return new CreatorOfPointModels<>(new FactoryOfPointsWithDoubleCoordinates()).create(xCoor, yCoor);
+     private static Point<Double> fillPointCoordinates(double coordinateX, double coordinateY) {
+        return FactoryPoint.getFactoryPoint(new CreatorPoint<Double>()).create(coordinateX, coordinateY);
      }
 
 
     private static Array<Point<Double>> createAndFillArrayOfPoints(Array<Double> arrayOfCoordinates) {
-        List<Point<Double>> pointsList = new ArrayList<>();
+        Array<Point<Double>> pointArray = FactoryArray.getFactoryArray(new CreatorArrayPoints<Double>()).create(0);
         int countForCreate = 0;
-        for (int i = 0; i < arrayOfCoordinates.getArray().length; i++) {
+        for (int i = 0; i < arrayOfCoordinates.getLength(); i++) {
             if (countForCreate == 1) {
-                pointsList.add(fillPointCoordinates(arrayOfCoordinates.getArray()[i - 1], arrayOfCoordinates.getArray()[i]));
+                pointArray.add(fillPointCoordinates(arrayOfCoordinates.get(i - 1), arrayOfCoordinates.get(i)));
                 countForCreate--;
             } else {
                 countForCreate++;
             }
         }
-        return new CreatorOfArrayModels<>(new FactoryOfDoubleCoordinatesPointsOfArrayModels()).create(pointsList.stream().toArray(PointOfDoubleCoordinates[]::new));
+        return pointArray;
     }
 
 }

@@ -30,9 +30,9 @@ public class Main {
         Arrays.stream(array.getArray()).forEachOrdered(integer -> System.out.print(integer + " "));
         System.out.println();
 
-        DeterminableUniqueness determinableUniqueness = DeterminableUniqueness::determineTheUniqueElementsOfTheOriginalArray;
+        DeterminantUniqueness determinantUniqueness = DeterminantUniqueness::determineTheUniqueElementsOfTheOriginalArray;
 
-        Array<Integer> newArrayFromTheUniqueElements = determinableUniqueness.determineUniqueness(array);
+        Array<Integer> newArrayFromTheUniqueElements = determinantUniqueness.determineUniqueness(array);
 
         System.out.println("New array from the unique elements : ");
         Arrays.stream(newArrayFromTheUniqueElements.getArray()).forEachOrdered(integer -> System.out.print(integer + " "));

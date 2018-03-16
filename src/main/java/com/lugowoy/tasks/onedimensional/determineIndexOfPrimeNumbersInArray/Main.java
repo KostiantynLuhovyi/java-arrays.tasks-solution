@@ -1,4 +1,4 @@
-package com.lugowoy.tasks.onedimensional.determineElementsThatAreEqualToHalfSumOfNeighboringElements;
+package com.lugowoy.tasks.onedimensional.determineIndexOfPrimeNumbersInArray;
 
 import com.lugowoy.helper.factory.FactoryArray;
 import com.lugowoy.helper.factory.creator.CreatorArrayNumbers;
@@ -7,11 +7,11 @@ import com.lugowoy.helper.io.reading.ReadingConsole;
 import com.lugowoy.helper.models.arrays.Array;
 import com.lugowoy.helper.other.ArrayLength;
 
-/** Created by Konstantin Lugowoy on 03.09.2017. */
+/** Created by Konstantin Lugowoy on 22.05.2017. */
 
 public class Main {
 
-    private static final int BOUND = 20;
+    private static final int BOUND = 100;
 
     public static void main(String[] args) {
 
@@ -22,12 +22,16 @@ public class Main {
                                                                 new FillingArrayRandomIntegerNumbers().fill(lengthArray,
                                                                                                             BOUND));
 
-        System.out.println("Original array : ");
-        System.out.println(array.toString());
+        System.out.println("Original array : " + array);
+        System.out.println();
 
-        System.out.println("Result : ");
-        Determinant determinant = Determinant::determineElementsThatAreEqualToHalfSumOfNeighboringElements;
-        determinant.determine(array);
+        System.out.println("The indexes of elements which are prime numbers : ");
+        Determinant<Integer> determinant = Determinant::determineTheIndexOfPrimesInAnArray;
+        for (int i = 0; i < array.getArray().length; i++) {
+            if (determinant.determine(array.getArray()[i])) {
+                System.out.print(i + " ");
+            }
+        }
 
     }
 

@@ -1,17 +1,20 @@
-package com.lugowoy.tasks.onedimensional.determineElementsThatAreEqualToHalfSumOfNeighboringElements;
+package com.lugowoy.tasks.onedimensional.determinePairsOfNumbersFromSequenceWhoseSumIsEqualToEnteredNumber;
 
 import com.lugowoy.helper.factory.FactoryArray;
 import com.lugowoy.helper.factory.creator.CreatorArrayNumbers;
 import com.lugowoy.helper.filling.array.numbers.FillingArrayRandomIntegerNumbers;
+import com.lugowoy.helper.io.reading.Reader;
 import com.lugowoy.helper.io.reading.ReadingConsole;
 import com.lugowoy.helper.models.arrays.Array;
 import com.lugowoy.helper.other.ArrayLength;
 
-/** Created by Konstantin Lugowoy on 03.09.2017. */
+/** Created by Konstantin Lugowoy on 19.03.2017. */
 
 public class Main {
 
-    private static final int BOUND = 20;
+    private static final Determinant<Integer> DETERMINANT = Determinant::determinePairsOfNumbersFromTheSequenceWhoseSumIsEqualToEnteredNumber;
+
+    private static final int BOUND = 100;
 
     public static void main(String[] args) {
 
@@ -22,13 +25,18 @@ public class Main {
                                                                 new FillingArrayRandomIntegerNumbers().fill(lengthArray,
                                                                                                             BOUND));
 
-        System.out.println("Original array : ");
-        System.out.println(array.toString());
+        System.out.println(array);
+        System.out.println();
 
-        System.out.println("Result : ");
-        Determinant determinant = Determinant::determineElementsThatAreEqualToHalfSumOfNeighboringElements;
-        determinant.determine(array);
+        int sumNumber = enterNumber();
 
+        DETERMINANT.determine(array, sumNumber);
+
+    }
+
+    private static int enterNumber() {
+        System.out.println("Enter number : ");
+        return Reader.getReader(new ReadingConsole()).readInt();
     }
 
 }
