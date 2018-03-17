@@ -1,2 +1,3 @@
 Two integer arrays are given.
-Determine whether in the first of them one can choose k consecutive elements Xj, Xj + 1, ..., Xk-1, so that Xj = Y1, Xj + 1 = Y2, ..., Xk-1 = Yk.
+Determine whether in the first of them one can choose k consecutive elements Xj, Xj + 1, ..., Xk-1,
+ so that Xj = Y1, Xj + 1 = Y2, ..., Xk-1 = Yk.
