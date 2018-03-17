@@ -1,10 +1,11 @@
 package com.lugowoy.tasks.onedimensional.findSegmentOfArrayIsPolindrome;
 
-import com.lugowoy.helper.factory.creator.CreatorOfArrayModels;
-import com.lugowoy.helper.factory.models.array.FactoryOfIntegerArrayModels;
-import com.lugowoy.helper.filling.FillingArrayIntegerRandomNumbers;
+import com.lugowoy.helper.factory.FactoryArray;
+import com.lugowoy.helper.factory.creator.CreatorArrayNumbers;
+import com.lugowoy.helper.filling.array.numbers.FillingArrayRandomIntegerNumbers;
+import com.lugowoy.helper.io.reading.ReadingConsole;
 import com.lugowoy.helper.models.arrays.Array;
-import com.lugowoy.helper.other.DeterminatorSizeOfArray;
+import com.lugowoy.helper.other.ArrayLength;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -19,11 +20,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int sizeArray = DeterminatorSizeOfArray.determineSizeOfArray();
+        System.out.println("Enter length of the array : ");
+        int lengthArray = ArrayLength.getLengthArray(new ReadingConsole());
 
-        Array<Integer> array = new CreatorOfArrayModels<>(
-                                    new FactoryOfIntegerArrayModels()).create(
-                                            new FillingArrayIntegerRandomNumbers().fill(sizeArray, BOUND));
+        Array<Integer> array = FactoryArray.getFactoryArray(new CreatorArrayNumbers<Integer>()).create(
+                                                                new FillingArrayRandomIntegerNumbers().fill(lengthArray,
+                                                                                                            BOUND));
 
         System.out.println("Original " + array);
 
@@ -36,12 +38,12 @@ public class Main {
 
         for (int i = 0; i < count; i++) {
             boolean isPalindrome = false;
-            if ((array.getArray().length - count + 1) == 1) {
+            if ((array.getLength() - count + 1) == 1) {
                 isPalindrome = true;
             } else {
-                for (int j = 0; j < (array.getArray().length - count + 1) / 2; j++) {
-                    if (Objects.equals(array.getArray()[i + j], array.getArray()[i + array.getArray().length - count - j])) {
-                        if (j + 1 == (array.getArray().length - count + 1) / 2) {
+                for (int j = 0; j < (array.getLength() - count + 1) / 2; j++) {
+                    if (Objects.equals(array.get(i + j), array.get(i + array.getLength() - count - j))) {
+                        if (j + 1 == (array.getLength() - count + 1) / 2) {
                             isPalindrome = true;
                         }
                     } else {
@@ -50,7 +52,7 @@ public class Main {
                 }
             }
             if (isPalindrome) {
-                Integer[] temp = copyOfRange(array.getArray(), i, array.getArray().length - count + i + 1);
+                Integer[] temp = copyOfRange(array.getArray(), i, array.getLength() - count + i + 1);
                 if (temp.length > 1) {
                     System.out.println(Arrays.toString(temp) + ", length is equal " + temp.length);
                     return;

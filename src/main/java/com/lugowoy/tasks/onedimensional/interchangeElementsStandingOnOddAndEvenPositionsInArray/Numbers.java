@@ -1,4 +1,4 @@
-package com.lugowoy.tasks.onedimensional.interchangeTheElementsStandingOnOddAndEvenPositionsInTheArray;
+package com.lugowoy.tasks.onedimensional.interchangeElementsStandingOnOddAndEvenPositionsInArray;
 
 /** Created by Konstantin Lugowoy on 22-Feb-17. */
 

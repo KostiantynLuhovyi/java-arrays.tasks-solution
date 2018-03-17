@@ -1,4 +1,4 @@
-package com.lugowoy.tasks.onedimensional.interchangedMaximumAndMinimumElementOfTheArray;
+package com.lugowoy.tasks.onedimensional.interchangedMaximumAndMinimumElementOfArray;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -14,15 +14,15 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Numbers numbers = new Numbers(MAX_RANDOM_NUMBER, MIN_RANDOM_NUMBER  , Arrays.stream(new Integer[20])
-                            .mapToInt(value -> RANDOM.nextInt(100))
-                            .toArray());
+        Numbers numbers = new Numbers(MAX_RANDOM_NUMBER,
+                                      MIN_RANDOM_NUMBER,
+                                      Arrays.stream(new Integer[20]).mapToInt(value -> RANDOM.nextInt(100)).toArray());
 
         System.out.println("Original array : ");
         Arrays.stream(numbers.getNumbers()).forEachOrdered(value -> System.out.print(value + " "));
         System.out.println();
 
-        INTERCHANGEABLE.interchange(numbers);
+        INTERCHANGING.interchange(numbers);
 
         System.out.println("Max element : " + numbers.getMaxElement());
         System.out.println("Min element : " + numbers.getMinElement());
@@ -32,7 +32,7 @@ public class Main {
 
     }
 
-    private static final Interchangeable INTERCHANGEABLE = numbers -> {
+    private static final Interchanging INTERCHANGING = numbers -> {
         int indexMaxElement = 0, indexMinElement = 0;
 
         GetMaxAndMinElement getMaxAndMinElement = new GetMaxAndMinElement(numbers, indexMaxElement, indexMinElement).invoke();

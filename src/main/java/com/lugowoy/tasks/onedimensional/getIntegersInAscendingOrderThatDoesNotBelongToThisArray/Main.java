@@ -1,10 +1,11 @@
 package com.lugowoy.tasks.onedimensional.getIntegersInAscendingOrderThatDoesNotBelongToThisArray;
 
-import com.lugowoy.helper.factory.creator.CreatorOfArrayModels;
-import com.lugowoy.helper.factory.models.array.FactoryOfIntegerArrayModels;
-import com.lugowoy.helper.filling.FillingArrayIntegerRandomNumbers;
+import com.lugowoy.helper.factory.FactoryArray;
+import com.lugowoy.helper.factory.creator.CreatorArrayNumbers;
+import com.lugowoy.helper.filling.array.numbers.FillingArrayRandomIntegerNumbers;
+import com.lugowoy.helper.io.reading.ReadingConsole;
 import com.lugowoy.helper.models.arrays.Array;
-import com.lugowoy.helper.other.DeterminatorSizeOfArray;
+import com.lugowoy.helper.other.ArrayLength;
 
 import java.util.Arrays;
 
@@ -12,30 +13,33 @@ import java.util.Arrays;
 
 public class Main {
 
-    private static final int MIN_BOUND = -50;
-    private static final int MAX_BOUND = 50;
+    private static final int START_BOUND = -50;
+    private static final int END_BOUND = 50;
 
     public static void main(String[] args) {
 
-        int sizeArray = DeterminatorSizeOfArray.determineSizeOfArray();
+        System.out.println("Enter length of the array : ");
+        int lengthArray = ArrayLength.getLengthArray(new ReadingConsole());
 
-        Array<Integer> array = new CreatorOfArrayModels<>(
-                                    new FactoryOfIntegerArrayModels()).create(
-                                            new FillingArrayIntegerRandomNumbers().fill(sizeArray, MIN_BOUND, MAX_BOUND));
+        Array<Integer> array = FactoryArray.getFactoryArray(new CreatorArrayNumbers<Integer>()).create(
+                                                                new FillingArrayRandomIntegerNumbers().fill(lengthArray,
+                                                                                                            START_BOUND,
+                                                                                                            END_BOUND));
 
         System.out.println("Original array : ");
         Arrays.stream(array.getArray()).forEachOrdered(integer -> System.out.print(integer + " "));
         System.out.println();
 
-        Findable<Integer, Array> findable = Findable::findMaxNumber;
-        int maxNumberInTheArray = findable.find(array);
+        Finding<Integer, Array> finding = Finding::findMaxNumber;
+        int maxNumberInTheArray = finding.find(array);
         System.out.println("Max number in the array : " + maxNumberInTheArray);
 
-        findable = Findable::findMinNumber;
-        int minNumberInTheArray = findable.find(array);
+        finding = Finding::findMinNumber;
+        int minNumberInTheArray = finding.find(array);
         System.out.println("Min number in the array : " + minNumberInTheArray);
 
-        Array<Integer> arraySorted = new CreatorOfArrayModels<>(new FactoryOfIntegerArrayModels()).create(array.getArray());
+        Array<Integer> arraySorted = FactoryArray.getFactoryArray(new CreatorArrayNumbers<Integer>()).create(array.getArray());
+
         Arrays.sort(arraySorted.getArray());
 
         for (int j = minNumberInTheArray + 1; j < maxNumberInTheArray; j++) {

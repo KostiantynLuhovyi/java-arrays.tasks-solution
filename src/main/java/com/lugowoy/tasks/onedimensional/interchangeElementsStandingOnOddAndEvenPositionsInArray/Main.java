@@ -1,20 +1,23 @@
-package com.lugowoy.tasks.onedimensional.interchangeTheElementsStandingOnOddAndEvenPositionsInTheArray;
+package com.lugowoy.tasks.onedimensional.interchangeElementsStandingOnOddAndEvenPositionsInArray;
 
-import com.lugowoy.helper.filling.FillingArrayIntegerRandomNumbers;
+import com.lugowoy.helper.filling.array.numbers.FillingArrayRandomIntegerNumbers;
 
 import java.util.Arrays;
 
-import static com.lugowoy.helper.other.DefaultNumber.DEFAULT_MAX_INTEGER_ELEMENT_IN_ARRAY;
-import static com.lugowoy.helper.other.DefaultNumber.DEFAULT_MIN_INTEGER_ELEMENT_IN_ARRAY;
+import static com.lugowoy.helper.filling.array.DefaultValuesOfArray.DEFAULT_INTEGER_NEGATIVE_BOUND;
+import static com.lugowoy.helper.filling.array.DefaultValuesOfArray.DEFAULT_INTEGER_POSITIVE_BOUND;
 
 /** Created by Konstantin Lugowoy on 22-Feb-17. */
 
 public class Main {
 
+    private static final int LENGTH_ARRAY = 20;
+
     public static void main(String[] args) {
 
         Numbers numbers = new Numbers();
-        numbers.setNumbers(Arrays.stream(new FillingArrayIntegerRandomNumbers().fill(20, DEFAULT_MIN_INTEGER_ELEMENT_IN_ARRAY, DEFAULT_MAX_INTEGER_ELEMENT_IN_ARRAY))
+        numbers.setNumbers(Arrays.stream(new FillingArrayRandomIntegerNumbers().fill(LENGTH_ARRAY, DEFAULT_INTEGER_NEGATIVE_BOUND,
+                                                                                                   DEFAULT_INTEGER_POSITIVE_BOUND))
                                  .mapToInt(Integer::intValue)
                                  .toArray());
 
@@ -22,14 +25,14 @@ public class Main {
         Arrays.stream(numbers.getNumbers()).forEachOrdered(value -> System.out.print(value + " "));
         System.out.println();
 
-        INTERCHANGEABLE.interchange(numbers);
+        INTERCHANGING.interchange(numbers);
 
         System.out.println("Array after exchange of places of elements of even and odd positions : ");
         Arrays.stream(numbers.getNumbers()).forEachOrdered(value -> System.out.print(value + " "));
         
     }
 
-    private static final Interchangeable INTERCHANGEABLE = numbers -> {
+    private static final Interchanging INTERCHANGING = numbers -> {
         for (int i = 1; i < numbers.getNumbers().length; i++) {
             if (i % 2 == 0) {
                 int tmp = numbers.getNumbers()[i];

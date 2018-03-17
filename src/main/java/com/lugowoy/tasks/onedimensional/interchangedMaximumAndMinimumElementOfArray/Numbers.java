@@ -1,4 +1,4 @@
-package com.lugowoy.tasks.onedimensional.interchangedMaximumAndMinimumElementOfTheArray;
+package com.lugowoy.tasks.onedimensional.interchangedMaximumAndMinimumElementOfArray;
 
 /** Created by Konstantin Lugowoy on 13.06.2017. */
 

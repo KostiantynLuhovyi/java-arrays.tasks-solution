@@ -1,10 +1,11 @@
 package com.lugowoy.tasks.onedimensional.findLengthOfLongestSequenceOfElementsEqualToZero;
 
-import com.lugowoy.helper.factory.creator.CreatorOfArrayModels;
-import com.lugowoy.helper.factory.models.array.FactoryOfIntegerArrayModels;
-import com.lugowoy.helper.filling.FillingArrayIntegerRandomNumbers;
+import com.lugowoy.helper.factory.FactoryArray;
+import com.lugowoy.helper.factory.creator.CreatorArrayNumbers;
+import com.lugowoy.helper.filling.array.numbers.FillingArrayRandomIntegerNumbers;
+import com.lugowoy.helper.io.reading.ReadingConsole;
 import com.lugowoy.helper.models.arrays.Array;
-import com.lugowoy.helper.other.DeterminatorSizeOfArray;
+import com.lugowoy.helper.other.ArrayLength;
 
 /** Created by Konstantin Lugowoy on 18.06.2017. */
 
@@ -14,19 +15,21 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int sizeArray = DeterminatorSizeOfArray.determineSizeOfArray();
+        System.out.println("Enter length of the array : ");
+        int lengthArray = ArrayLength.getLengthArray(new ReadingConsole());
 
-        Array<Integer> array = new CreatorOfArrayModels<>(
-                                    new FactoryOfIntegerArrayModels()).create(
-                                            new FillingArrayIntegerRandomNumbers().fill(sizeArray, BOUND));
+        Array<Integer> array = FactoryArray.getFactoryArray(new CreatorArrayNumbers<Integer>()).create(
+                                                                new FillingArrayRandomIntegerNumbers().fill(lengthArray,
+                                                                                                            BOUND));
 
         System.out.println("Original " + array);
         System.out.println();
 
-        Findable<Integer, Array<Integer>> findable = Findable::findLengthOfLongestSequenceOfElementsEqualToZero;
-        int resultZeroElementsToCount = findable.find(array);
+        Finding<Integer, Array<Integer>> finding = Finding::findLengthOfLongestSequenceOfElementsEqualToZero;
+        int resultZeroElementsToCount = finding.find(array);
 
-        System.out.println("The longest sequence of consecutive array elements equal to zero is equal to " + resultZeroElementsToCount);
+        System.out.println("The longest sequence of consecutive array elements equal to zero is equal to "
+                                                                                           + resultZeroElementsToCount);
 
     }
 

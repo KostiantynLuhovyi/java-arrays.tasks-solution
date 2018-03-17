@@ -1,8 +1,9 @@
-package com.lugowoy.tasks.onedimensional.findLengthOfLongestSawtoothSequenceOfSuccessiveNumbers;
+package com.lugowoy.tasks.onedimensional.findSumOfArrayOfMultipleElementsToThisPresent;
 
 import com.lugowoy.helper.factory.FactoryArray;
 import com.lugowoy.helper.factory.creator.CreatorArrayNumbers;
 import com.lugowoy.helper.filling.array.numbers.FillingArrayRandomIntegerNumbers;
+import com.lugowoy.helper.io.reading.Reader;
 import com.lugowoy.helper.io.reading.ReadingConsole;
 import com.lugowoy.helper.models.arrays.Array;
 import com.lugowoy.helper.other.ArrayLength;
@@ -10,11 +11,11 @@ import com.lugowoy.helper.other.ArrayLength;
 import static com.lugowoy.helper.other.ArrayChecker.checkArrayNonNull;
 import static com.lugowoy.helper.other.ArrayChecker.checkLengthOfArrayIsGreaterZero;
 
-/** Created by Konstantin Lugowoy on 27.06.2017. */
+/**Created by Konstantin Lugowoy on 12-Feb-17.*/
 
 public class Main {
 
-    private static final int BOUND = 100;
+    private static final int BOUND = 50;
 
     public static void main(String[] args) {
 
@@ -25,31 +26,33 @@ public class Main {
                                                                 new FillingArrayRandomIntegerNumbers().fill(lengthArray,
                                                                                                             BOUND));
 
-        System.out.println("Original " + array);
+        System.out.println("Result fill arrays randomly integers : ");
+        for (int i = 0; i < array.getLength(); i++) {
+            if (array.get(i) != null) {
+                System.out.print(array.get(i) + " ");
+            }
+        }
+        System.out.println();
 
-        System.out.printf("The length of the longest sawtooth sequence is %d .", getLengthSawOfArrayElements(array));
+        System.out.println("Enter K number : ");
+        int K = Reader.getReader(new ReadingConsole()).readInt();
+
+        int resultOfSumNumbersOfMultipleElement = (FINDING_SUM_ELEMENTS.calculateSumOfElements(array, K));
+
+        System.out.println("Result : " + resultOfSumNumbersOfMultipleElement);
 
     }
 
-    private static int getLengthSawOfArrayElements(Array<Integer> array) {
-        int lengthSaw = 0, maxLengthSaw = 0;
-        boolean isPrev = false;
+    private static final Finding FINDING_SUM_ELEMENTS = (array, k) -> {
+        int sumElements = 0;
         try {
             if (checkArrayNonNull(array)) {
                 if (checkArrayNonNull(array.getArray()) && checkLengthOfArrayIsGreaterZero(array.getLength())) {
-                    for (int i = 1; i < array.getLength() - 1; i++) {
-                        if ((array.get(i - 1) < array.get(i))
-                                && (array.get(i) > array.get(i + 1))) {
-                            if (isPrev) {
-                                lengthSaw += 2;
-                            } else {
-                                lengthSaw = 3;
-                                isPrev = true;
+                    for (int i = 0; i < array.getLength(); i++) {
+                        if (array.get(i) != null) {
+                            if (array.get(i) % k == 0) {
+                                sumElements += array.get(i);
                             }
-                            i++;
-                        } else {
-                            isPrev = false;
-                            maxLengthSaw = Math.max(maxLengthSaw, lengthSaw);
                         }
                     }
                 }
@@ -57,7 +60,7 @@ public class Main {
         } catch (IllegalArgumentException ex) {
             System.err.println(ex.getMessage());
         }
-        return Math.max(maxLengthSaw, lengthSaw);
-    }
+        return sumElements;
+    };
 
 }
