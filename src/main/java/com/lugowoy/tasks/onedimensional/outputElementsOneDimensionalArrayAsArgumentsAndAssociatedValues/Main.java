@@ -11,9 +11,14 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String[] strings = Arrays.stream(new String[20]).map(s -> s = "Arg").toArray(String[]::new);
+        String[] strings = Arrays.stream(new String[20])
+                                 .map(s -> s = "Arg")
+                                 .toArray(String[]::new);
 
-        Integer[] integers = Arrays.stream(new Integer[20]).mapToInt(value -> RANDOM.nextInt(50)).boxed().toArray(Integer[]::new);
+        Integer[] integers = Arrays.stream(new Integer[20])
+                                   .mapToInt(value -> RANDOM.nextInt(50))
+                                   .boxed()
+                                   .toArray(Integer[]::new);
 
         Object[] objects = new Object[strings.length + integers.length];
         System.arraycopy(strings, 0, objects, 0, strings.length);
@@ -23,7 +28,8 @@ public class Main {
             int j = associativeArray.getAssociativeArray().length / 2;
             for (int i = 0; i < associativeArray.getAssociativeArray().length / 2; i++) {
                 for ( ; j < associativeArray.getAssociativeArray().length; j++) {
-                    System.out.println(associativeArray.getAssociativeArray()[i] + " : " + associativeArray.getAssociativeArray()[j]);
+                    System.out.println(associativeArray.getAssociativeArray()[i] + " : "
+                                                                           + associativeArray.getAssociativeArray()[j]);
                 }
             }
         };

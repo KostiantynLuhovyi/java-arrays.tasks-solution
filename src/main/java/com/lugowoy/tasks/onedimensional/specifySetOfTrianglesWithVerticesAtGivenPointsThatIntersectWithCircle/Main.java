@@ -1,13 +1,12 @@
 package com.lugowoy.tasks.onedimensional.specifySetOfTrianglesWithVerticesAtGivenPointsThatIntersectWithCircle;
 
-import com.lugowoy.helper.factory.creator.CreatorOfArrayModels;
-import com.lugowoy.helper.factory.creator.CreatorOfPointModels;
-import com.lugowoy.helper.factory.models.array.FactoryOfIntegerCoordinatesPointsOfArrayModels;
-import com.lugowoy.helper.factory.models.points.FactoryOfPointsWithIntegerCoordinates;
+import com.lugowoy.helper.factory.FactoryArray;
+import com.lugowoy.helper.factory.creator.CreatorArrayPoints;
+import com.lugowoy.helper.filling.array.points.FillingArrayOfPointsWithCoordinatesReadIntegerNumbers;
+import com.lugowoy.helper.io.reading.Reader;
+import com.lugowoy.helper.io.reading.ReadingConsole;
 import com.lugowoy.helper.models.arrays.Array;
 import com.lugowoy.helper.models.points.Point;
-import com.lugowoy.helper.reading.Reader;
-import com.lugowoy.helper.reading.ReadingDataUserInputInConsole;
 
 import java.util.Arrays;
 
@@ -15,35 +14,38 @@ import java.util.Arrays;
 
 public class Main {
 
-    private static Reader reader = new Reader(new ReadingDataUserInputInConsole());
+    private static final Reader READER = Reader.getReader(new ReadingConsole());
 
     public static void main(String[] args) {
 
-        int numberOfPoints = getNumberOfPoints();
+        int numberOfPoints = enterNumberOfPoints();
 
-        Array<Point<Integer>> pointsArray = new CreatorOfArrayModels<>(new FactoryOfIntegerCoordinatesPointsOfArrayModels()).create(numberOfPoints);
+        Array<Point<Integer>> pointsArray = FactoryArray.getFactoryArray(
+                                                    new CreatorArrayPoints<Integer>()).create(
+                                                        new FillingArrayOfPointsWithCoordinatesReadIntegerNumbers(READER).fill(numberOfPoints));
 
-        fillPointsArray(pointsArray);
+        /*fillPointsArray(pointsArray);*/
 
         System.out.println();
         System.out.println("Points : ");
         Arrays.stream(pointsArray.getArray()).forEachOrdered(System.out::println);
         System.out.println();
 
-        double radius = getRadius();
+        double radius = enterRadius();
 
         System.out.println();
         System.out.println("Result : ");
-        TrigonometricDeterminable<Array<Point<Integer>>, Double> trigonometricDeterminable = TrigonometricDeterminable::determineSetOfTrianglesWithVerticesAtGivenPointsThatIntersectWithCircle;
-        trigonometricDeterminable.determine(pointsArray, radius);
+        TrigonometricDeterminant<Array<Point<Integer>>, Double> trigonometricDeterminant =
+                      TrigonometricDeterminant::determineSetOfTrianglesWithVerticesAtGivenPointsThatIntersectWithCircle;
+        trigonometricDeterminant.determine(pointsArray, radius);
 
     }
 
-    private static int getNumberOfPoints() {
+    private static int enterNumberOfPoints() {
         System.out.println("Enter number of points : ");
         int numberOfPoints;
         while (true) {
-            numberOfPoints = reader.readInt();
+            numberOfPoints = READER.readInt();
             if (numberOfPoints > 0) {
                 break;
             } else {
@@ -53,11 +55,11 @@ public class Main {
         return numberOfPoints;
     }
 
-    private static double getRadius() {
+    private static double enterRadius() {
         System.out.println("Enter the radius of the circle : ");
         double radius;
         while (true) {
-            radius = reader.readInt();
+            radius = READER.readInt();
             if (radius > 50) {
                 break;
             } else {
@@ -68,12 +70,14 @@ public class Main {
         return radius;
     }
 
-    private static void fillPointsArray(Array<Point<Integer>> pointsArray) {
+    /*private static void fillPointsArray(Array<Point<Integer>> pointsArray) {
+        try {
+        if ()
         for (int i = 0; i < pointsArray.getArray().length; i++) {
             System.out.println("Enter coordinate X and Y : ");
-            pointsArray.getArray()[i] = new CreatorOfPointModels<>(new FactoryOfPointsWithIntegerCoordinates()).create(reader.readInt(), reader.readInt());
+            pointsArray.getArray()[i] = new CreatorOfPointModels<>(new FactoryOfPointsWithIntegerCoordinates()).create(READER.readInt(), READER.readInt());
         }
 
-    }
+    }*/
 
 }

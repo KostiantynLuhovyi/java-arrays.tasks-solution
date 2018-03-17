@@ -1,38 +1,40 @@
 package com.lugowoy.tasks.onedimensional.replaceTheArrayNumbersOfLargerZ;
 
-import com.lugowoy.helper.filling.FillingArrayIntegerRandomNumbers;
-import com.lugowoy.helper.reading.Reader;
-import com.lugowoy.helper.reading.ReadingDataUserInputInConsole;
-import com.lugowoy.helper.other.DeterminatorSizeOfArray;
+import com.lugowoy.helper.filling.array.numbers.FillingArrayRandomIntegerNumbers;
+import com.lugowoy.helper.io.reading.Reader;
+import com.lugowoy.helper.io.reading.ReadingConsole;
+import com.lugowoy.helper.other.ArrayLength;
 
 import java.util.Arrays;
 
-import static com.lugowoy.helper.other.DefaultNumber.DEFAULT_MAX_INTEGER_ELEMENT_IN_ARRAY;
-import static com.lugowoy.helper.other.DefaultNumber.DEFAULT_MIN_INTEGER_ELEMENT_IN_ARRAY;
+import static com.lugowoy.helper.filling.array.DefaultValuesOfArray.DEFAULT_INTEGER_NEGATIVE_BOUND;
+import static com.lugowoy.helper.filling.array.DefaultValuesOfArray.DEFAULT_INTEGER_POSITIVE_BOUND;
 
 /**Created by Konstantin Lugowoy on 13-Feb-17.*/
 
 public class Main {
 
-    private static Reader reader = new Reader(new ReadingDataUserInputInConsole());
+    private static final Reader READER = Reader.getReader(new ReadingConsole());
 
     public static void main(String[] args) {
 
-        int sizeArray = DeterminatorSizeOfArray.determineSizeOfArray();
+        System.out.println("Enter length of the array : ");
+        int lengthArray = ArrayLength.getLengthArray(new ReadingConsole());
 
         Numbers numbersSequence = new Numbers();
-        numbersSequence.setNumbers(Arrays.stream(new FillingArrayIntegerRandomNumbers().fill(sizeArray, DEFAULT_MIN_INTEGER_ELEMENT_IN_ARRAY, DEFAULT_MAX_INTEGER_ELEMENT_IN_ARRAY))
+        numbersSequence.setNumbers(Arrays.stream(new FillingArrayRandomIntegerNumbers().fill(lengthArray, DEFAULT_INTEGER_NEGATIVE_BOUND,
+                                                                                                          DEFAULT_INTEGER_POSITIVE_BOUND))
                                          .mapToInt(Integer::intValue)
                                          .toArray());
 
         System.out.println("Enter number of replace : ");
-        int numberToReplace = reader.readInt();
+        int numberToReplace = READER.readInt();
 
         System.out.println("Original array : ");
         Arrays.stream(numbersSequence.getNumbers()).forEachOrdered(value -> System.out.print(value + " "));
         System.out.println();
 
-        Replace<Numbers, Integer> numbersReplace = (Numbers numbers, Integer numberToExchange) -> {
+        Replacement<Numbers, Integer> numbersReplacement = (Numbers numbers, Integer numberToExchange) -> {
             int countToReplace = 0;
             for (int i = 0; i < numbers.getNumbers().length; i++) {
                 if (numbers.getNumbers()[i] > numberToExchange) {
@@ -43,7 +45,7 @@ public class Main {
             System.out.print("Count number of replacements : " + countToReplace);
         };
 
-        numbersReplace.replace(numbersSequence, numberToReplace);
+        numbersReplacement.replace(numbersSequence, numberToReplace);
 
         System.out.println();
         System.out.println("Result replace : ");

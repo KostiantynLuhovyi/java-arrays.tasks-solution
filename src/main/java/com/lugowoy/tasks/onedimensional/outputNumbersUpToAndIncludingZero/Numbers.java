@@ -4,7 +4,7 @@ package com.lugowoy.tasks.onedimensional.outputNumbersUpToAndIncludingZero;
 
 public class Numbers {
 
-    int[] numbers;
+    private int[] numbers;
 
     public int[] getNumbers() {
         return numbers;

@@ -1,9 +1,9 @@
-package com.lugowoy.tasks.onedimensional.replaceTheSmallestNumberInTheSequenceByTheArithmeticMeanOfTheNumbers;
+package com.lugowoy.tasks.onedimensional.replaceSmallestNumberInSequenceByArithmeticMeanOfNumbers;
 
 /** Created by Konstantin Lugowoy on 25.03.2017. */
 
 @FunctionalInterface
-public interface Replaceable<T> {
+public interface Replacement<T> {
 
     void replace(Sequence<T> sequence, T numberForReplace);
 

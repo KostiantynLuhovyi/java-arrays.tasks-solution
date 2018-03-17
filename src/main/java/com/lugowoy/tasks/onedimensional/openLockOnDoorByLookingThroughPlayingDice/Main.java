@@ -1,17 +1,17 @@
-package com.lugowoy.tasks.onedimensional.openTheLockOnTheDoorByLookingThroughThePlayingDice;
+package com.lugowoy.tasks.onedimensional.openLockOnDoorByLookingThroughPlayingDice;
 
-import com.lugowoy.helper.reading.Reader;
-import com.lugowoy.helper.reading.ReadingDataUserInputInConsole;
+import com.lugowoy.helper.io.reading.Reader;
+import com.lugowoy.helper.io.reading.ReadingConsole;
 
 /** Created by Konstantin Lugowoy on 27.03.2017. */
 
 public class Main {
 
-    private static final Fillable FILLABLE = Fillable::fillingDoorLock;
+    private static final Reader READER = Reader.getReader(new ReadingConsole());
 
-    private static final Openable OPENABLE = Openable::openDoorLock;
+    private static final Filling FILLING = Filling::fillingDoorLock;
 
-    private static Reader reader = new Reader(new ReadingDataUserInputInConsole());
+    private static final Opening OPENING = Opening::openDoorLock;
 
     public static void main(String[] args) {
         DoorLock doorLock = new DoorLock();
@@ -19,16 +19,16 @@ public class Main {
 
         String resume;
         do {
-            FILLABLE.filling(doorLock);
+            FILLING.filling(doorLock);
             System.out.println(doorLock);
-            if (OPENABLE.open(doorLock)) {
+            if (OPENING.open(doorLock)) {
                 System.out.println("Door open.");
                 break;
             } else {
                 System.out.println("Door not open. Do you want to repeat, press \'r\'.");
                 System.out.println("If you do not want to repeat, press \'f\'.");
                 System.out.println("Enter : ");
-                resume = reader.readString();
+                resume = READER.readString();
 
                 if (resume.equals("f")) break;
             }

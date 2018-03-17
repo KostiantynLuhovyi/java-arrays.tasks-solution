@@ -1,9 +1,9 @@
-package com.lugowoy.tasks.onedimensional.outputNumbersForWhichTheSumOfTheFirstTwoDigitsIsEqualToTheSumOfTheLastTwo;
+package com.lugowoy.tasks.onedimensional.outputNumbersForWhichSumOfFirstTwoDigitsIsEqualToSumOfLastTwo;
 
 /** Created by Konstantin Lugowoy on 30.05.2017. */
 
 @FunctionalInterface
-public interface Determinable {
+public interface Determinant {
 
     boolean determine(int number);
 
@@ -12,12 +12,12 @@ public interface Determinable {
 
         String stringNumber = Integer.toString(number);
         if (stringNumber.length() == 4) {
-            //right part of number
+
             int rightPartOfNumber = number % 10;
             number /= 10;
             rightPartOfNumber = rightPartOfNumber + number % 10;
             number /= 10;
-            //left part of number
+
             int leftPartOfNumber = number % 10;
             number /= 10;
             leftPartOfNumber += number;

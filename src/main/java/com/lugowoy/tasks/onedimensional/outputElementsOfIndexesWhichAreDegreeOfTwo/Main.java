@@ -1,12 +1,13 @@
 package com.lugowoy.tasks.onedimensional.outputElementsOfIndexesWhichAreDegreeOfTwo;
 
-import com.lugowoy.helper.filling.FillingArrayIntegerRandomNumbers;
-import com.lugowoy.helper.other.DeterminatorSizeOfArray;
+import com.lugowoy.helper.filling.array.numbers.FillingArrayRandomIntegerNumbers;
+import com.lugowoy.helper.io.reading.ReadingConsole;
+import com.lugowoy.helper.other.ArrayLength;
 
 import java.util.Arrays;
 
-import static com.lugowoy.helper.other.DefaultNumber.DEFAULT_MAX_INTEGER_ELEMENT_IN_ARRAY;
-import static com.lugowoy.helper.other.DefaultNumber.DEFAULT_MIN_INTEGER_ELEMENT_IN_ARRAY;
+import static com.lugowoy.helper.filling.array.DefaultValuesOfArray.DEFAULT_INTEGER_NEGATIVE_BOUND;
+import static com.lugowoy.helper.filling.array.DefaultValuesOfArray.DEFAULT_INTEGER_POSITIVE_BOUND;
 
 /** Created by Konstantin Lugowoy on 01.03.2017. */
 
@@ -14,9 +15,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int sizeArray = DeterminatorSizeOfArray.determineSizeOfArray();
+        System.out.println("Enter length of the array : ");
+        int lengthArray = ArrayLength.getLengthArray(new ReadingConsole());
 
-        Integer[] integersArray = new FillingArrayIntegerRandomNumbers().fill(sizeArray, DEFAULT_MIN_INTEGER_ELEMENT_IN_ARRAY, DEFAULT_MAX_INTEGER_ELEMENT_IN_ARRAY);
+        Integer[] integersArray = new FillingArrayRandomIntegerNumbers().fill(lengthArray, DEFAULT_INTEGER_NEGATIVE_BOUND,
+                                                                                           DEFAULT_INTEGER_POSITIVE_BOUND);
 
         System.out.println("Original : ");
         Arrays.stream(integersArray).forEachOrdered(integer -> System.out.print(integer + " "));

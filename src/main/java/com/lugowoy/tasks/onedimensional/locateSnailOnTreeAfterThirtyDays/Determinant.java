@@ -9,11 +9,11 @@ import java.util.Arrays;
 /** Created by Konstantin Lugowoy on 11.05.2017. */
 
 @FunctionalInterface
-public interface Determinable<T, V> {
+public interface Determinant<T, V> {
 
     void determine(T t, V v);
 
-    static void determine(Tree tree, WeatherArray weatherArray) {
+    static void determineSnailLocationOnTree(Tree tree, WeatherArray weatherArray) {
         Snail resultSnail = new Snail(tree.getSnail().getLocation());
         Arrays.stream(weatherArray.getWeathers()).forEachOrdered(weather -> {
             if (weather.isCloudiness()) {

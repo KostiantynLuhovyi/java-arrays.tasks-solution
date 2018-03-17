@@ -1,4 +1,4 @@
-package com.lugowoy.tasks.onedimensional.openTheLockOnTheDoorByLookingThroughThePlayingDice;
+package com.lugowoy.tasks.onedimensional.openLockOnDoorByLookingThroughPlayingDice;
 
 /** Created by Konstantin Lugowoy on 27.03.2017. */
 

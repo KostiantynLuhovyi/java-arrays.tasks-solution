@@ -9,10 +9,6 @@ public class AssociativeArray <T extends Object, V extends Object> {
 
     private Object[] associativeArray;
 
-    public AssociativeArray() {
-        System.out.println("Empty associative array.");
-    }
-
     public AssociativeArray(Object[] associativeArray) {
         this.associativeArray = associativeArray;
     }

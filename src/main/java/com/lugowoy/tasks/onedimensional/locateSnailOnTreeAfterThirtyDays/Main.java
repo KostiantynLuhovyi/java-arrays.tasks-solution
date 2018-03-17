@@ -1,7 +1,7 @@
 package com.lugowoy.tasks.onedimensional.locateSnailOnTreeAfterThirtyDays;
 
-import com.lugowoy.helper.reading.Reader;
-import com.lugowoy.helper.reading.ReadingDataUserInputInConsole;
+import com.lugowoy.helper.io.reading.Reader;
+import com.lugowoy.helper.io.reading.ReadingConsole;
 import com.lugowoy.tasks.onedimensional.locateSnailOnTreeAfterThirtyDays.entity.Snail;
 import com.lugowoy.tasks.onedimensional.locateSnailOnTreeAfterThirtyDays.entity.Tree;
 import com.lugowoy.tasks.onedimensional.locateSnailOnTreeAfterThirtyDays.entity.Weather;
@@ -14,7 +14,7 @@ import java.util.Random;
 
 public class Main {
 
-    private static final Reader READER = new Reader(new ReadingDataUserInputInConsole());
+    private static final Reader READER = Reader.getReader(new ReadingConsole());
 
     public static void main(String[] args) {
 
@@ -35,8 +35,8 @@ public class Main {
 
         fillWeatherCloudinessInTheWeatherArray(weatherArray);
 
-        Determinable<Tree, WeatherArray> determinable = Determinable::determine;
-        Determinable.determine(tree, weatherArray);
+        Determinant<Tree, WeatherArray> determinant = Determinant::determineSnailLocationOnTree;
+        determinant.determine(tree, weatherArray);
 
     }
 

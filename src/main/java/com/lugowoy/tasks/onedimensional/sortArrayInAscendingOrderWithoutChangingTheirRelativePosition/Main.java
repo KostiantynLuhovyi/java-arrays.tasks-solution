@@ -1,4 +1,4 @@
-package com.lugowoy.tasks.onedimensional.replaceWithZerosElementsThatAreModuloGreaterThanTheMaximumElement;
+package com.lugowoy.tasks.onedimensional.sortArrayInAscendingOrderWithoutChangingTheirRelativePosition;
 
 import com.lugowoy.helper.factory.FactoryArray;
 import com.lugowoy.helper.factory.creator.CreatorArrayNumbers;
@@ -12,7 +12,7 @@ import java.util.Arrays;
 import static com.lugowoy.helper.filling.array.DefaultValuesOfArray.DEFAULT_INTEGER_NEGATIVE_BOUND;
 import static com.lugowoy.helper.filling.array.DefaultValuesOfArray.DEFAULT_INTEGER_POSITIVE_BOUND;
 
-/** Created by Konstantin Lugowoy on 11.03.2017. */
+/** Created by Konstantin Lugowoy on 14.05.2017. */
 
 public class Main {
 
@@ -26,26 +26,15 @@ public class Main {
                                                                                                             DEFAULT_INTEGER_NEGATIVE_BOUND,
                                                                                                             DEFAULT_INTEGER_POSITIVE_BOUND));
 
-        System.out.println("Original sequence : ");
+        System.out.println("Original array : ");
         Arrays.stream(array.getArray()).forEachOrdered(integer -> System.out.print(integer + " "));
+
+        Sorting<Integer> sorting = Sorting::sortAnArrayInAscendingOrderWithoutChangingTheirRelativePosition;
+        sorting.sort(array);
+
         System.out.println();
-
-        int maximumNumberElement = 0;
-
-        if (Arrays.stream(array.getArray()).max(Integer::compareTo).isPresent()) {
-            maximumNumberElement = Arrays.stream(array.getArray()).max(Integer::compareTo).get();
-        }
-
-        System.out.println("Result sequence : ");
-        int finalMaximumNumberElement = maximumNumberElement;
-        Arrays.stream(array.getArray()).forEachOrdered(integer -> {
-            if (finalMaximumNumberElement != 0) {
-                if (Math.abs(integer) > finalMaximumNumberElement) {
-                    integer = 0;
-                }
-            }
-            System.out.print(integer + " ");
-        });
+        System.out.println("After sorting : ");
+        Arrays.stream(array.getArray()).forEachOrdered(integer -> System.out.print(integer + " "));
 
     }
 

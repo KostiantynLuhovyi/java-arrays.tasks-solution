@@ -1,4 +1,4 @@
-package com.lugowoy.tasks.onedimensional.replaceTheSmallestNumberInTheSequenceByTheArithmeticMeanOfTheNumbers;
+package com.lugowoy.tasks.onedimensional.replaceSmallestNumberInSequenceByArithmeticMeanOfNumbers;
 
 /** Created by Konstantin Lugowoy on 25.03.2017. */
 

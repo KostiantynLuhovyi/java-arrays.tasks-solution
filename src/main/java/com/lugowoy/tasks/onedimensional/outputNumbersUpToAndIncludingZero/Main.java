@@ -10,7 +10,10 @@ public class Main {
     public static void main(String[] args) {
 
         Numbers numbers = new Numbers();
-        numbers.setNumbers(Arrays.stream(new Integer[20]).mapToInt(value -> value = new Random().nextInt(50)).toArray());
+        numbers.setNumbers(Arrays.stream(new Integer[20])
+                                 .mapToInt(value -> value = new Random()
+                                 .nextInt(50))
+                                 .toArray());
 
         System.out.println("Original array : ");
         Arrays.stream(numbers.getNumbers()).forEachOrdered(value -> System.out.print(value + " "));

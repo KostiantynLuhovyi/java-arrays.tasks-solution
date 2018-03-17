@@ -1,4 +1,4 @@
-package com.lugowoy.tasks.onedimensional.replaceTheSmallestNumberInTheSequenceByTheArithmeticMeanOfTheNumbers;
+package com.lugowoy.tasks.onedimensional.replaceSmallestNumberInSequenceByArithmeticMeanOfNumbers;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class Main {
 
-    private static final Replaceable<Integer> REPLACEABLE = Replaceable::replaceTheSmallestNumberInTheSequence;
+    private static final Replacement<Integer> REPLACEMENT = Replacement::replaceTheSmallestNumberInTheSequence;
 
     private static final Random RANDOM = new Random();
 
@@ -26,7 +26,7 @@ public class Main {
         System.out.printf("Arithmetic mean number of the sequence is : %d", resultIntegerPartOfArithmeticMeanNumberOfTheSequence);
         System.out.println();
 
-        REPLACEABLE.replace(sequence, resultIntegerPartOfArithmeticMeanNumberOfTheSequence);
+        REPLACEMENT.replace(sequence, resultIntegerPartOfArithmeticMeanNumberOfTheSequence);
 
         System.out.println("Sequence after replacement : ");
         Arrays.stream(sequence.getSequence()).forEachOrdered(value -> System.out.print(value + " "));

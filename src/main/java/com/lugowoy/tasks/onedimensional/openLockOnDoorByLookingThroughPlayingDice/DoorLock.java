@@ -1,4 +1,4 @@
-package com.lugowoy.tasks.onedimensional.openTheLockOnTheDoorByLookingThroughThePlayingDice;
+package com.lugowoy.tasks.onedimensional.openLockOnDoorByLookingThroughPlayingDice;
 
 import java.util.Arrays;
 import java.util.Random;
