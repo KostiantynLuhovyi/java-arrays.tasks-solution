@@ -8,7 +8,7 @@ import static com.lugowoy.helper.other.ArrayChecker.checkLengthOfArrayIsGreaterZ
 /** Created by Konstantin Lugowoy on 25.03.2017. */
 
 @FunctionalInterface
-public interface Changer<T, V> {
+public interface Changing<T, V> {
 
     void change(T t, V firstArg, V secondArg);
 

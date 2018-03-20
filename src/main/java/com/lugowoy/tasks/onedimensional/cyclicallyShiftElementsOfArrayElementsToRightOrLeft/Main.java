@@ -22,17 +22,14 @@ public class Main {
         Array<Integer> array = FactoryArray.getFactoryArray(new CreatorArrayNumbers<Integer>()).create(
                                                                 new FillingArrayRandomIntegerNumbers().fill(lengthArray, BOUND));
 
-        System.out.println("Original " + array);
+        System.out.println("Original : " + array);
 
         int numberK = enterNumberK(array.getLength());
-
-        System.out.println("Number : " + numberK);
 
         Shifting<Array> shifting = Shifting::shiftElementsOfArrayElementsToRightOrLeft;
         shifting.shift(array, numberK);
 
-        System.out.println("Result after shifting elements : ");
-        System.out.println(array);
+        System.out.println("Result after shifting elements : " + array);
 
     }
 

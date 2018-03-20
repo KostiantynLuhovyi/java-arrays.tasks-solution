@@ -20,7 +20,7 @@ public interface Counting {
                             resultCount++;
                         }
                     }
-                    System.out.printf("The number of people whose age is in the range from %d to %d is equal to %d",
+                    System.out.printf("The number of people whose age is in the range from %d to %d is equal to %d .",
                             startAgeInterval, finishAgeInterval, resultCount);
                 } else {
                     System.out.println("Incorrect data. Can not count.");

@@ -7,8 +7,6 @@ import com.lugowoy.helper.io.reading.ReadingConsole;
 import com.lugowoy.helper.models.arrays.Array;
 import com.lugowoy.helper.other.ArrayLength;
 
-import java.util.Arrays;
-
 import static com.lugowoy.helper.filling.array.DefaultValuesOfArray.DEFAULT_INTEGER_NEGATIVE_BOUND;
 import static com.lugowoy.helper.filling.array.DefaultValuesOfArray.DEFAULT_INTEGER_POSITIVE_BOUND;
 
@@ -26,16 +24,14 @@ public class Main {
                                                                                                             DEFAULT_INTEGER_NEGATIVE_BOUND,
                                                                                                             DEFAULT_INTEGER_POSITIVE_BOUND));
 
-        System.out.println("Original array : ");
-        Arrays.stream(array.getArray()).forEachOrdered(integer -> System.out.print(integer + " "));
+        System.out.println("Original array : " + array);
         System.out.println();
 
         DeterminantUniqueness determinantUniqueness = DeterminantUniqueness::determineTheUniqueElementsOfTheOriginalArray;
 
         Array<Integer> newArrayFromTheUniqueElements = determinantUniqueness.determineUniqueness(array);
 
-        System.out.println("New array from the unique elements : ");
-        Arrays.stream(newArrayFromTheUniqueElements.getArray()).forEachOrdered(integer -> System.out.print(integer + " "));
+        System.out.println("New array from the unique elements : " + newArrayFromTheUniqueElements);
         System.out.println();
 
     }

@@ -1,4 +1,4 @@
-package com.lugowoy.tasks.onedimensional.compressArrayByThrowingOutNullElements;
+package com.lugowoy.tasks.onedimensional.compressArrayByThrowingOutZeroValueElements;
 
 import com.lugowoy.helper.factory.FactoryArray;
 import com.lugowoy.helper.factory.creator.CreatorArrayNumbers;

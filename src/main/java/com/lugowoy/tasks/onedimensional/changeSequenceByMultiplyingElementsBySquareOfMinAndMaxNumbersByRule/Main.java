@@ -14,8 +14,8 @@ import static com.lugowoy.helper.filling.array.DefaultValuesOfArray.DEFAULT_INTE
 
 public class Main {
 
-    private static final Changer<Array<Integer>, Integer> CHANGER =
-                                            Changer::changeSequenceByMultiplyingElementsBySquareOfMinAndMaxNumberByRule;
+    private static final Changing<Array<Integer>, Integer> CHANGING =
+                                            Changing::changeSequenceByMultiplyingElementsBySquareOfMinAndMaxNumberByRule;
 
     public static void main(String[] args) {
 
@@ -30,11 +30,11 @@ public class Main {
         System.out.println("Original sequence : " + array);
         System.out.println();
 
-        int squareMinNumberInTheSequence = getSquareMinNumberInTheSequence(array, Finder::findMinNumber);
+        int squareMinNumberInTheSequence = getSquareMinNumberInTheSequence(array, Determinant::determineMinNumber);
 
-        int squareMaxNumberInTheSequence = getSquareMaxNumberInTheSequence(array, Finder::findMaxNumber);
+        int squareMaxNumberInTheSequence = getSquareMaxNumberInTheSequence(array, Determinant::determineMaxNumber);
 
-        CHANGER.change(array, squareMinNumberInTheSequence, squareMaxNumberInTheSequence);
+        CHANGING.change(array, squareMinNumberInTheSequence, squareMaxNumberInTheSequence);
 
         System.out.println();
         System.out.println("Result sequence after changing : " + array);
@@ -42,14 +42,14 @@ public class Main {
 
     }
 
-    private static int getSquareMaxNumberInTheSequence(Array<Integer> array, Finder<Integer> finder) {
-        int squareMaxNumberInTheSequence = (int) Math.pow(finder.find(array), 2);
+    private static int getSquareMaxNumberInTheSequence(Array<Integer> array, Determinant<Integer> determinant) {
+        int squareMaxNumberInTheSequence = (int) Math.pow(determinant.determine(array), 2);
         System.out.println("Square max number in the array is " + squareMaxNumberInTheSequence + " .");
         return squareMaxNumberInTheSequence;
     }
 
-    private static int getSquareMinNumberInTheSequence(Array<Integer> array, Finder<Integer> finder) {
-        int squareMinNumberInTheSequence = (int) Math.pow(finder.find(array), 2);
+    private static int getSquareMinNumberInTheSequence(Array<Integer> array, Determinant<Integer> determinant) {
+        int squareMinNumberInTheSequence = (int) Math.pow(determinant.determine(array), 2);
         System.out.println("Square min number in the array is " + squareMinNumberInTheSequence + " .");
         return squareMinNumberInTheSequence;
     }

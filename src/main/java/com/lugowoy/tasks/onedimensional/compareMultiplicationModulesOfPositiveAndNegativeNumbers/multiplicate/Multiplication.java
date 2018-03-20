@@ -3,8 +3,8 @@ package com.lugowoy.tasks.onedimensional.compareMultiplicationModulesOfPositiveA
 /** Created by Konstantin Lugowoy on 11.03.2017. */
 
 @FunctionalInterface
-public interface Multiplication<T, V> {
+public interface Multiplication<T> {
 
-    T multiply(V v);
+    int multiply(T t);
 
 }

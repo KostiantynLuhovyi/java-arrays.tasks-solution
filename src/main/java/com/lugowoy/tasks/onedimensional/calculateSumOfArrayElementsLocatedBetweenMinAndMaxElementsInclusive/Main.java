@@ -16,6 +16,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+        System.out.println("Enter length of the array : ");
         int lengthArray = ArrayLength.getLengthArray(new ReadingConsole());
 
         Array<Integer> array = FactoryArray.getFactoryArray(new CreatorArrayNumbers<Integer>()).create(
@@ -37,11 +38,9 @@ public class Main {
         System.out.println();
 
         Calculating calculating = Calculating::calculateSumOfArrayElementsLocatedBetweenMinAndMaxElementsInclusive;
-        int sumElements = calculating.calculate(array, indexMinElement, indexMaxElement);
 
-        if (sumElements > 0) {
-            System.out.printf("Sum of array elements located between the min and max elements inclusive is : %d .", sumElements);
-        }
+        System.out.printf("Sum of array elements located between the min and max elements inclusive is : %d .",
+                           calculating.calculate(array, indexMinElement, indexMaxElement));
 
     }
 

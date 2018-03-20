@@ -7,11 +7,11 @@ import static com.lugowoy.helper.other.ArrayChecker.checkLengthOfArrayIsEqualToO
 
 /** Created by Konstantin Lugowoy on 25.03.2017. */
 
-public interface Finder<T> {
+public interface Determinant<T> {
 
-    T find(Array<T> array);
+    T determine(Array<T> array);
 
-    static Integer findMinNumber(Array<Integer> array) {
+    static Integer determineMinNumber(Array<Integer> array) {
         int valueForDetermineMinNumber = Integer.MAX_VALUE;
         int indexMinNumber = 0, resultFindMinNumber;
         try {
@@ -34,7 +34,7 @@ public interface Finder<T> {
         return resultFindMinNumber;
     }
 
-    static Integer findMaxNumber(Array<Integer> array) {
+    static Integer determineMaxNumber(Array<Integer> array) {
         int valueForDetermineMaxNumber = Integer.MIN_VALUE;
         int indexMaxNumber = 0, resultFindMaxNumber;
         try {

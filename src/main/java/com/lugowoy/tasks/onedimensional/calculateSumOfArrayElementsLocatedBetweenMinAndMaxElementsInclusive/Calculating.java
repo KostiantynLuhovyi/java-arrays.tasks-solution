@@ -19,17 +19,20 @@ public interface Calculating {
             if (checkArrayNonNull(array)) {
                 if (checkArrayNonNull(array.getArray())
                         && checkLengthOfArrayIsEqualToOrGreaterThanZero(array.getLength())) {
-                    if ((indexMinElement < indexMaxElement)) {
-                        if ((indexMinElement >= 0) && (indexMaxElement > 0)) {
-                            for (int i = indexMinElement; i <= indexMaxElement; i++) {
-                                resultSum += array.get(i);
+                        if ((indexMinElement < indexMaxElement)) {
+                            if ((indexMinElement >= 0) && (indexMaxElement > 0)) {
+                                for (int i = indexMinElement; i <= indexMaxElement; i++) {
+                                    resultSum += array.get(i);
+                                }
+                            } else {
+                                throw new IllegalArgumentException("The index of the min or max value is less than zero.");
                             }
                         } else {
-                            throw new IllegalArgumentException("The value of the index is invalid.");
-                        }
+                            throw new IllegalArgumentException("The index of the min value is greater than the index of the max value.");
+                        }/*
                     } else {
-                        throw new IllegalArgumentException("The value of the index is invalid.");
-                    }
+                        throw new IllegalArgumentException("The difference between the min and max index is too small.");
+                    }*/
                 }
             }
         } catch (IllegalArgumentException ex) {

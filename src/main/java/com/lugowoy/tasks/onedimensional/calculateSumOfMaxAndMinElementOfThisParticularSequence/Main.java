@@ -18,6 +18,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+        System.out.println("Enter length of the array : ");
         int lengthArray = ArrayLength.getLengthArray(new ReadingConsole());
 
         Array<Integer> array = FactoryArray.getFactoryArray(new CreatorArrayNumbers<Integer>()).create(
@@ -28,12 +29,12 @@ public class Main {
         System.out.println("Original : " + array);
         System.out.println();
 
-        Finding<Array<Integer>, Integer> finding = Main::findMax;
-        int maxElement = finding.find(array);
+        Determinant<Array<Integer>, Integer> determinant = Main::determineMaxElement;
+        int maxElement = determinant.determine(array);
         System.out.println("Max element in the array is " + maxElement);
 
-        finding = Main::findMin;
-        int minElement = finding.find(array);
+        determinant = Main::determineMinElement;
+        int minElement = determinant.determine(array);
         System.out.println("Min element in the array is " + minElement);
 
         System.out.println();
@@ -42,7 +43,7 @@ public class Main {
 
     }
 
-    private static int findMax(Array<Integer> array) {
+    private static int determineMaxElement(Array<Integer> array) {
         int result = 0;
         try {
             if (checkArrayNonNull(array)) {
@@ -61,7 +62,7 @@ public class Main {
         return result;
     }
 
-    private static int findMin(Array<Integer> array) {
+    private static int determineMinElement(Array<Integer> array) {
         int result = 200;
         try {
             if (checkArrayNonNull(array)) {

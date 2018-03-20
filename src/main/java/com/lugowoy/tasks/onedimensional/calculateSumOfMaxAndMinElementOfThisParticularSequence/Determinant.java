@@ -3,8 +3,8 @@ package com.lugowoy.tasks.onedimensional.calculateSumOfMaxAndMinElementOfThisPar
 /** Created by Konstantin Lugowoy on 01.03.2017. */
 
 @FunctionalInterface
-public interface Finding<T, V> {
+public interface Determinant<T, V> {
 
-    V find(T t);
+    V determine(T t);
 
 }

@@ -30,7 +30,7 @@ public class Main {
         System.out.println("Original array : " + array);
         System.out.println();
 
-        Multiplication<Integer, Array<Integer>> multiplication = MultiplicationNegativeNumbers::multiplication;
+        Multiplication<Array<Integer>> multiplication = MultiplicationNegativeNumbers::multiplication;
         int resultModuleOfNegativeNumbers = Math.abs(multiplication.multiply(array));
 
         multiplication = MultiplicationPositiveNumbers::multiplication;

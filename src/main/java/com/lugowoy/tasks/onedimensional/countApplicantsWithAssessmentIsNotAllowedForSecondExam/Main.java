@@ -21,8 +21,8 @@ public class Main {
 
         System.out.println("Result : ");
         Arrays.stream(applicantsArray)
-                .filter(applicant -> applicant.getRating() == 1 || applicant.getRating() == 2)
-                .forEachOrdered(System.out::println);
+              .filter(applicant -> applicant.getRating() == 1 || applicant.getRating() == 2)
+              .forEachOrdered(System.out::println);
         System.out.println();
 
         System.out.print("The number of applicants not admitted to exam : ");

@@ -26,8 +26,7 @@ public class Main {
                                                                                                             DEFAULT_INTEGER_NEGATIVE_BOUND,
                                                                                                             DEFAULT_INTEGER_POSITIVE_BOUND));
 
-        System.out.println("Numbers : ");
-        Arrays.stream(array.getArray()).forEachOrdered(value -> System.out.print(value + " "));
+        System.out.println("Numbers : " + array);
 
         System.out.println();
 

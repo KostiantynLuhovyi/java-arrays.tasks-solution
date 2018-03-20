@@ -15,6 +15,9 @@ import static com.lugowoy.helper.other.ArrayChecker.checkLengthOfArrayIsGreaterZ
 
 public class Main {
 
+    private static final int START_BOUND = -10000;
+    private static final int END_BOUND = 10000;
+
     public static void main(String[] args) {
 
         System.out.println("Enter length of the array : ");
@@ -22,17 +25,18 @@ public class Main {
 
         Array<Integer> array = FactoryArray.getFactoryArray(new CreatorArrayNumbers<Integer>()).create(
                                                                 new FillingArrayRandomIntegerNumbers().fill(lengthArray,
-                                                                                                            Integer.MAX_VALUE));
+                                                                                                            START_BOUND,
+                                                                                                            END_BOUND));
 
-        System.out.println("Original : \n" + array);
+        System.out.println("Original array : " + array);
         System.out.println();
 
         System.out.println("Enter specific ending number : ");
         int specificEndingNumber = Reader.getReader(new ReadingConsole()).readInt();
 
-        Array newArray = createNewArrayWhoseElementsWillBeElementsOfSourceEndingInSpecificNumber(array, specificEndingNumber);
+        Array<Integer> newArray = createNewArrayWhoseElementsWillBeElementsOfSourceEndingInSpecificNumber(array, specificEndingNumber);
 
-        System.out.println("New : \n" + newArray);
+        System.out.println("New array : " + newArray);
         System.out.println();
 
     }
@@ -45,7 +49,7 @@ public class Main {
                 if (checkArrayNonNull(array.getArray()) && checkLengthOfArrayIsGreaterZero(array.getLength())) {
                     for (int i = 0; i < array.getLength(); i++) {
                         if (Math.abs(array.get(i)) % 10 == specificEndingNumber) {
-                            resultArray.add(i);
+                            resultArray.add(array.get(i));
                         }
                     }
                 }

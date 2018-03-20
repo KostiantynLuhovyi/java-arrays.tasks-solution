@@ -9,8 +9,8 @@ import static com.lugowoy.helper.other.ArrayChecker.checkLengthOfArrayIsEqualToO
 
 public class MultiplicationNegativeNumbers {
 
-    public static Integer multiplication(Array<Integer> array) {
-        Integer resultMultiplication = 1;
+    public static int multiplication(Array<Integer> array) {
+        int resultMultiplication = 1;
         try {
             if (checkArrayNonNull(array)) {
                 if (checkArrayNonNull(array.getArray()) && checkLengthOfArrayIsEqualToOrGreaterThanZero(array.getLength())) {

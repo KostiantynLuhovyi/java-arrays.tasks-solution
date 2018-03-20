@@ -7,12 +7,12 @@ import com.lugowoy.helper.other.ArrayLength;
 
 public class Main {
 
-    private static final int BOUND_SIZE_OF_ARRAY = 50;
+    private static final int BOUND = 50;
 
     public static void main(String[] args) {
 
         System.out.println("Enter the length of the matrix elements : ");
-        int n = ArrayLength.getLengthArray(new ReadingConsole(), BOUND_SIZE_OF_ARRAY);
+        int n = ArrayLength.getLengthArray(new ReadingConsole(), BOUND);
 
         int [][] array = new int[n][n];
 

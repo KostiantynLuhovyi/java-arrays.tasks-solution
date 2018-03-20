@@ -5,8 +5,8 @@ import com.lugowoy.helper.models.arrays.Array;
 /**Created by Konstantin Lugowoy on 12-Feb-17.*/
 
 @FunctionalInterface
-public interface FillingArray<T> {
+public interface Filling {
 
-    Array<T> fillArray(Array<T> array);
+    Array<Integer> fillArray(Array<Integer> array);
 
 }

@@ -18,9 +18,6 @@ public class Main {
 
     private static final FactoryArray<Integer> FACTORY = FactoryArray.getFactoryArray(new CreatorArrayNumbers<>());
 
-    private static final int MIN_BOUND = -10;
-    private static final int MAX_BOUND = 10;
-
     public static void main(String[] args) {
 
         System.out.println("Enter length of the array : ");

@@ -9,6 +9,8 @@ import com.lugowoy.helper.other.ArrayLength;
 
 import java.util.Arrays;
 
+import static com.lugowoy.helper.models.arrays.Array.*;
+
 /** Created by Konstantin Lugowoy on 25.03.2017. */
 
 public class Main {
@@ -22,17 +24,16 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("Enter length of the array : ");
-        Array<Integer> firstArray = FACTORY.create(new FillingArrayRandomIntegerNumbers().fill(ArrayLength.getLengthArray(new ReadingConsole(),
+        Array<Integer> firstArray = FACTORY.create(new FillingArrayRandomIntegerNumbers().fill(DEFAULT_LENGTH_ARRAY,
                                                                                                MIN_BOUND,
-                                                                                               MAX_BOUND)));
+                                                                                               MAX_BOUND));
         System.out.println("A : ");
         showArray(firstArray);
         System.out.println();
 
-        Array<Integer> secondArray = FACTORY.create(new FillingArrayRandomIntegerNumbers().fill(ArrayLength.getLengthArray(new ReadingConsole(),
+        Array<Integer> secondArray = FACTORY.create(new FillingArrayRandomIntegerNumbers().fill(DEFAULT_LENGTH_ARRAY,
                                                                                                 MIN_BOUND,
-                                                                                                MAX_BOUND)));
+                                                                                                MAX_BOUND));
         System.out.println("B : ");
         showArray(secondArray);
         System.out.println();

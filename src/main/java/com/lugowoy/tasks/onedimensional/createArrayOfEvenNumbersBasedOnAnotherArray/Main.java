@@ -28,25 +28,22 @@ public class Main {
         Array<Integer> array = FACTORY.create(new FillingArrayRandomIntegerNumbers().fill(lengthArray, DEFAULT_INTEGER_NEGATIVE_BOUND,
                                                                                                        DEFAULT_INTEGER_POSITIVE_BOUND));
 
-        System.out.println("Original array numbers.");
-        Arrays.stream(array.getArray()).forEachOrdered(integer -> System.out.print(integer + " "));
+        System.out.println("Original array numbers : " + array);
 
-        Array<Integer> evenNumbersArray = FACTORY.create(getEvenNumbersArray(array));
+        Array<Integer> evenNumbersArray = getArrayWithEvenNumbers(array);
 
-        System.out.println();
-        System.out.println("Even numbers of original array.");
-        Arrays.stream(evenNumbersArray.getArray()).forEachOrdered(integer -> System.out.print(integer + " "));
+        System.out.println("Even numbers of original array : " + evenNumbersArray);
 
     }
 
-    private static Integer[] getEvenNumbersArray(Array<Integer> array) {
-        Array<Integer> tmpArray = FACTORY.create(0);
+    private static Array<Integer> getArrayWithEvenNumbers(Array<Integer> array) {
+        Array<Integer> resultArray = FACTORY.create(0);
         try {
             if (checkArrayNonNull(array)) {
                 if (checkArrayNonNull(array.getArray()) && checkLengthOfArrayIsGreaterZero(array.getLength())) {
                     for (int i = 0; i < array.getLength(); i++) {
                         if (array.get(i) % 2 == 0) {
-                            tmpArray.add(array.get(i));
+                            resultArray.add(array.get(i));
                         }
                     }
                 }
@@ -54,7 +51,7 @@ public class Main {
         } catch (IllegalArgumentException ex) {
             System.err.println(ex.getMessage());
         }
-        return tmpArray.getArray();
+        return resultArray;
     }
 
 }

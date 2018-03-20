@@ -30,12 +30,12 @@ public class Main {
         System.out.println("Elements of of the original array : " + originalIntegerArray);
         System.out.println();
 
-        Array<Integer> integerArrayIndexZero = FACTORY.create(FILLING_ARRAY.fillArray(originalIntegerArray).getArray());
+        Array<Integer> integerArrayIndexZero = FILLING.fillArray(originalIntegerArray);
 
         System.out.print("Index of zero elements of the original array : ");
-        if (integerArrayIndexZero.getArray().length != 0) {
-            for (int i = 0; i < integerArrayIndexZero.getArray().length; i++) {
-                System.out.print(integerArrayIndexZero.getArray()[i] + " ");
+        if (integerArrayIndexZero.getLength() != 0) {
+            for (int i = 0; i < integerArrayIndexZero.getLength(); i++) {
+                System.out.print(integerArrayIndexZero.get(i) + " ");
             }
         } else {
             System.out.println("It does not contain zero elements.");
@@ -43,7 +43,7 @@ public class Main {
 
     }
 
-    private static final FillingArray<Integer> FILLING_ARRAY = originalArray -> {
+    private static final Filling FILLING = originalArray -> {
         Array<Integer> tmpArray = FACTORY.create(0);
         try {
             if (checkArrayNonNull(originalArray)) {
