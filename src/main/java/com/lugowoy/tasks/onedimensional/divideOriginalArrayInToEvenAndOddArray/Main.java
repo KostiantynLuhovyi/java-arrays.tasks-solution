@@ -30,13 +30,10 @@ public class Main {
         Array<Integer> evenNumbersArray = selecting.select(originalArray, Selecting.STATUS_EVEN_NUMBERS);
         Array<Integer> oddNumbersArray = selecting.select(originalArray, Selecting.STATUS_ODD_NUMBERS);
 
-        System.out.println("Even number array created based on the original array : ");
-        System.out.println(evenNumbersArray);
+        System.out.println("Even number array created based on the original array : " + evenNumbersArray);
         System.out.println();
 
-        System.out.println("Odd number array created based on the original array : ");
-        System.out.println(oddNumbersArray);
-        System.out.println();
+        System.out.println("Odd number array created based on the original array : " + oddNumbersArray);
 
     }
 

@@ -1,4 +1,4 @@
-package com.lugowoy.tasks.onedimensional.defineRingWithCenterAtOriginWhichContainsAllPoints;
+package com.lugowoy.tasks.onedimensional.determineRingWithCenterAtOriginWhichContainsAllPoints;
 
 import com.lugowoy.helper.io.reading.Reader;
 import com.lugowoy.helper.io.reading.ReadingConsole;

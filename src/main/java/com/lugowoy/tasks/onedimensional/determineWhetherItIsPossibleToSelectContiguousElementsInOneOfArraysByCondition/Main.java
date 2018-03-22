@@ -22,7 +22,7 @@ public class Main {
         System.out.println("Enter length of the first array : ");
         int lengthFirstArray = ArrayLength.getLengthArray(new ReadingConsole());
 
-        System.out.println("Enter lrngth of the second array : ");
+        System.out.println("Enter length of the second array : ");
         int lengthSecondArray = ArrayLength.getLengthArray(new ReadingConsole());
 
         Array<Integer> firstArray = FACTORY.create(new FillingArrayRandomIntegerNumbers().fill(lengthFirstArray, BOUND));
@@ -32,8 +32,7 @@ public class Main {
         List<Array<Integer>> arrayList = determine.determine(firstArray, secondArray);
 
         if (!arrayList.isEmpty()) {
-            System.out.println("Result : ");
-            arrayList.forEach(array -> System.out.println(Arrays.toString(array.getArray()) + " "));
+            System.out.println("Result : " + arrayList);
         } else {
             System.out.println("Result array is empty.");
         }

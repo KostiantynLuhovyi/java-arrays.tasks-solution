@@ -22,8 +22,7 @@ public class Main {
                                                                 new FillingArrayRandomIntegerNumbers().fill(lengthArray,
                                                                                                             BOUND));
 
-        System.out.println("Original array : ");
-        System.out.println(array.toString());
+        System.out.println("Original array : " + array);
 
         System.out.println("Result : ");
         Determinant determinant = Determinant::determineElementsThatAreEqualToHalfSumOfNeighboringElements;

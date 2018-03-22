@@ -1,4 +1,4 @@
-package com.lugowoy.tasks.onedimensional.defineRingWithCenterAtOriginWhichContainsAllPoints;
+package com.lugowoy.tasks.onedimensional.determineRingWithCenterAtOriginWhichContainsAllPoints;
 
 /** Created by Konstantin Lugowoy on 16.05.2017. */
 

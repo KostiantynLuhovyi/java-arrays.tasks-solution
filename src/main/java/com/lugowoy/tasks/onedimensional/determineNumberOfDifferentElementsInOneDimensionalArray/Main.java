@@ -25,7 +25,7 @@ public class Main {
         Determinant<Integer> determinant = Determinant::determineTheNumberOfDifferentElementsInOneDimensionalArray;
         int numberOfDifferentElements = determinant.determine(array);
 
-        System.out.printf("In a one-dimensional array of %d different elements", numberOfDifferentElements);
+        System.out.printf("In a one-dimensional array of %d different elements.", numberOfDifferentElements);
 
     }
 
