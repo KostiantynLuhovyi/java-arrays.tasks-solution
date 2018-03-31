@@ -1,9 +1,9 @@
 # java-arrays.tasks-solution
-**In this repository are located solutions to tasks written in the Java programming language of using onedimensional and multidimensional arrays.**
+**Solutions to tasks written in the Java programming language of using onedimensional and multidimensional arrays are in this repository.**
 
-The name of the packages in which the classes are located to solve the task is the approximate condition of the task.  
+The name of the packages, in which the classes are located to solve the task, is the approximate condition of the task.  
 
-A complete description of the task you can see in the package with the solution of the problem in a file with the same name and file extension .txt  .  
+For a complete description of the task, you can check a file with the same name and file extension ".txt" inside the solution package.
 
 Many of functional solutions are implemented in the java-helper.jar library classes. 
 A detailed description of the functional contained in the library "java-helper.jar" and used for solving tasks can be found 
