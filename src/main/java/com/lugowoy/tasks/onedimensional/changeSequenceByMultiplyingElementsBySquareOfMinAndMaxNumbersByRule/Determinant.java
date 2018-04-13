@@ -16,8 +16,7 @@ public interface Determinant<T> {
         int indexMinNumber = 0, resultFindMinNumber;
         try {
             if (checkArrayNonNull(array)) {
-                if (checkArrayNonNull(array.getArray())
-                        && checkLengthOfArrayIsEqualToOrGreaterThanZero(array.getLength())) {
+                if (checkLengthOfArrayIsEqualToOrGreaterThanZero(array.getLength())) {
                     for (int i = 0; i < array.getLength(); i++) {
                         if (array.get(i) <= valueForDetermineMinNumber) {
                             valueForDetermineMinNumber = array.get(i);
@@ -39,8 +38,7 @@ public interface Determinant<T> {
         int indexMaxNumber = 0, resultFindMaxNumber;
         try {
             if (checkArrayNonNull(array)) {
-                if (checkArrayNonNull(array.getArray())
-                        && checkLengthOfArrayIsEqualToOrGreaterThanZero(array.getLength())) {
+                if (checkLengthOfArrayIsEqualToOrGreaterThanZero(array.getLength())) {
                     for (int i = 0; i < array.getLength(); i++) {
                         if (array.get(i) >= valueForDetermineMaxNumber) {
                             valueForDetermineMaxNumber = array.get(i);

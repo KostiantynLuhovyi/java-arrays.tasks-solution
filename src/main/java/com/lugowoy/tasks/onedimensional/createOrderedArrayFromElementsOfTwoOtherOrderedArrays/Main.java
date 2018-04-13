@@ -26,12 +26,12 @@ public class Main {
         Array<Integer> firstArray = FACTORY.create(new FillingArrayRandomIntegerNumbers().fill(lengthArray,
                                                                                                DEFAULT_INTEGER_NEGATIVE_BOUND,
                                                                                                DEFAULT_INTEGER_POSITIVE_BOUND));
-        Arrays.sort(firstArray.getArray());
+        Arrays.sort(firstArray.toArray(new Integer[firstArray.getLength()]));
 
         Array<Integer> secondArray = FACTORY.create(new FillingArrayRandomIntegerNumbers().fill(lengthArray,
                                                                                                 DEFAULT_INTEGER_NEGATIVE_BOUND,
                                                                                                 DEFAULT_INTEGER_POSITIVE_BOUND));
-        Arrays.sort(secondArray.getArray());
+        Arrays.sort(secondArray.toArray(new Integer[secondArray.getLength()]));
 
         System.out.println("Original first array : " + firstArray);
         System.out.println();

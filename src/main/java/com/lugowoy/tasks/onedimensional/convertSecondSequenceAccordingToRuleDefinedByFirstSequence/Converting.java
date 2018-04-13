@@ -15,8 +15,7 @@ public interface Converting<T> {
     static void convertSecondSequenceAccordingToRuleDefinedByFirstSequence(Array<Integer> firstArray, Array<Integer> secondArray) {
         try {
             if (checkArrayNonNull(firstArray) && checkArrayNonNull(secondArray)) {
-                if ((checkArrayNonNull(firstArray.getArray()) && checkArrayNonNull(secondArray.getArray()))
-                        && (checkLengthOfArrayIsGreaterZero(firstArray.getLength()) && checkLengthOfArrayIsGreaterZero(secondArray.getLength()))) {
+                if (checkLengthOfArrayIsGreaterZero(firstArray.getLength()) && checkLengthOfArrayIsGreaterZero(secondArray.getLength())) {
                     if (firstArray.getLength() == secondArray.getLength()) {
                         for (int i = 0; i < firstArray.getLength(); i++) {
                             if (firstArray.get(i) <= 0) {
@@ -26,7 +25,7 @@ public interface Converting<T> {
                             }
                         }
                     } else {
-                        throw new IllegalArgumentException("Sequence sizes are not equal.");
+                        throw new IllegalArgumentException("Sequences sizes are not equal.");
                     }
                 }
             }

@@ -18,11 +18,10 @@ public interface Merging<T> {
         Array<Integer> resultArray = null;
 
         if (checkArrayNonNull(firstArray) && checkArrayNonNull(secondArray)) {
-            if ((checkArrayNonNull(firstArray.getArray()) && checkLengthOfArrayIsGreaterZero(firstArray.getLength()))
-                    && (checkArrayNonNull(secondArray.getArray()) && checkLengthOfArrayIsGreaterZero(secondArray.getLength()))) {
+            if (checkLengthOfArrayIsGreaterZero(firstArray.getLength()) && checkLengthOfArrayIsGreaterZero(secondArray.getLength())) {
 
                 resultArray = FactoryArray.getFactoryArray(new CreatorArrayNumbers<Integer>()).create(firstArray.getLength()
-                                                                                                    + secondArray.getLength());
+                                                                                                        + secondArray.getLength());
 
                 int indexFirstArray = 0, indexSecondArray = 0;
 

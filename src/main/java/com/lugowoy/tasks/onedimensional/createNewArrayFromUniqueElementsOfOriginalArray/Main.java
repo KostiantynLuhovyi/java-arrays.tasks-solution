@@ -14,6 +14,8 @@ import static com.lugowoy.helper.filling.array.DefaultValuesOfArray.DEFAULT_INTE
 
 public class Main {
 
+    private static final DeterminantUniqueness DETERMINANT = DeterminantUniqueness::determineTheUniqueElementsOfTheOriginalArray;
+
     public static void main(String[] args) {
 
         System.out.println("Enter length of the array : ");
@@ -27,9 +29,7 @@ public class Main {
         System.out.println("Original array : " + array);
         System.out.println();
 
-        DeterminantUniqueness determinantUniqueness = DeterminantUniqueness::determineTheUniqueElementsOfTheOriginalArray;
-
-        Array<Integer> newArrayFromTheUniqueElements = determinantUniqueness.determineUniqueness(array);
+        Array<Integer> newArrayFromTheUniqueElements = DETERMINANT.determineUniqueness(array);
 
         System.out.println("New array from the unique elements : " + newArrayFromTheUniqueElements);
         System.out.println();

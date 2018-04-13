@@ -16,7 +16,7 @@ public interface Changing<T, V> {
                                                                                                          int squareMaxNumber) {
         try {
             if (checkArrayNonNull(array)) {
-                if (checkArrayNonNull(array.getArray()) && checkLengthOfArrayIsGreaterZero(array.getLength())) {
+                if (checkLengthOfArrayIsGreaterZero(array.getLength())) {
                     for (int i = 0; i < array.getLength(); i++) {
                         if (array.get(i) >= 0) {
                             array.set(i, array.get(i) * squareMinNumber);

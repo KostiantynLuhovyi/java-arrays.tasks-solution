@@ -9,6 +9,8 @@ import com.lugowoy.helper.other.ArrayLength;
 
 import static com.lugowoy.helper.filling.array.DefaultValuesOfArray.DEFAULT_INTEGER_NEGATIVE_BOUND;
 import static com.lugowoy.helper.filling.array.DefaultValuesOfArray.DEFAULT_INTEGER_POSITIVE_BOUND;
+import static com.lugowoy.helper.other.ArrayChecker.checkArrayNonNull;
+import static com.lugowoy.helper.other.ArrayChecker.checkLengthOfArrayIsEqualToOrGreaterThanZero;
 
 /** Created by Konstantin Lugowoy on 27.03.2017. */
 
@@ -37,11 +39,33 @@ public class Main {
 
         System.out.println();
 
-        Calculating calculating = Calculating::calculateSumOfArrayElementsLocatedBetweenMinAndMaxElementsInclusive;
-
         System.out.printf("Sum of array elements located between the min and max elements inclusive is : %d .",
-                           calculating.calculate(array, indexMinElement, indexMaxElement));
+                                                        CALCULATING.calculate(array, indexMinElement, indexMaxElement));
 
     }
+
+    private static final Calculating CALCULATING = (Array<Integer> array, int indexMinElement, int indexMaxElement) -> {
+        int resultSum = 0;
+        try {
+            if (checkArrayNonNull(array)) {
+                if (checkLengthOfArrayIsEqualToOrGreaterThanZero(array.getLength())) {
+                    if ((indexMinElement < indexMaxElement)) {
+                        if ((indexMinElement >= 0) && (indexMaxElement > 0)) {
+                            for (int i = indexMinElement; i <= indexMaxElement; i++) {
+                                resultSum += array.get(i);
+                            }
+                        } else {
+                            throw new IllegalArgumentException("The index of the min or max value is less than zero.");
+                        }
+                    } else {
+                        throw new IllegalArgumentException("The index of the min value is greater than the index of the max value.");
+                    }
+                }
+            }
+        } catch (IllegalArgumentException ex) {
+            System.err.println(ex.getMessage());
+        }
+        return resultSum;
+    };
 
 }

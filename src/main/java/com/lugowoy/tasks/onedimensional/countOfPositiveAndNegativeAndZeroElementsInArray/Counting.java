@@ -1,11 +1,11 @@
 package com.lugowoy.tasks.onedimensional.countOfPositiveAndNegativeAndZeroElementsInArray;
 
 import com.lugowoy.helper.models.arrays.Array;
-import com.lugowoy.helper.other.ArrayChecker;
 
 import java.util.Arrays;
 
-import static com.lugowoy.helper.other.ArrayChecker.*;
+import static com.lugowoy.helper.other.ArrayChecker.checkArrayNonNull;
+import static com.lugowoy.helper.other.ArrayChecker.checkLengthOfArrayIsGreaterZero;
 
 /** Created by Konstantin Lugowoy on 13-Feb-17. */
 
@@ -18,8 +18,10 @@ public interface Counting<T extends Number> {
         long resultValue = 0;
         try {
             if (checkArrayNonNull(array)) {
-                if (checkArrayNonNull(array.getArray()) && checkLengthOfArrayIsGreaterZero(array.getLength())) {
-                    resultValue = Math.toIntExact(Arrays.stream(array.getArray()).filter(value -> value < 0).count());
+                if (checkLengthOfArrayIsGreaterZero(array.getLength())) {
+                    resultValue = Math.toIntExact(Arrays.stream(array.toArray(new Integer[array.getLength()]))
+                                                        .filter(value -> value < 0)
+                                                        .count());
                 }
             }
         } catch (IllegalArgumentException ex) {
@@ -32,8 +34,10 @@ public interface Counting<T extends Number> {
         long resultValue = 0;
         try {
             if (checkArrayNonNull(array)) {
-                if (checkArrayNonNull(array.getArray()) && checkLengthOfArrayIsGreaterZero(array.getLength())) {
-                    resultValue = Math.toIntExact(Arrays.stream(array.getArray()).filter(value -> value > 0).count());
+                if (checkLengthOfArrayIsGreaterZero(array.getLength())) {
+                    resultValue = Math.toIntExact(Arrays.stream(array.toArray(new Integer[array.getLength()]))
+                                                        .filter(value -> value > 0)
+                                                        .count());
                 }
             }
         } catch (IllegalArgumentException ex) {
@@ -46,8 +50,10 @@ public interface Counting<T extends Number> {
         long resultValue = 0;
         try {
             if (checkArrayNonNull(array)) {
-                if (checkArrayNonNull(array.getArray()) && checkLengthOfArrayIsGreaterZero(array.getLength())) {
-                    resultValue = Math.toIntExact(Arrays.stream(array.getArray()).filter(value -> value == 0).count());
+                if (checkLengthOfArrayIsGreaterZero(array.getLength())) {
+                    resultValue = Math.toIntExact(Arrays.stream(array.toArray(new Integer[array.getLength()]))
+                                                        .filter(value -> value == 0)
+                                                        .count());
                 }
             }
         } catch (IllegalArgumentException ex) {

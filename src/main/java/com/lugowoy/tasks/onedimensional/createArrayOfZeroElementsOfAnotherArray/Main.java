@@ -47,8 +47,7 @@ public class Main {
         Array<Integer> tmpArray = FACTORY.create(0);
         try {
             if (checkArrayNonNull(originalArray)) {
-                if (checkArrayNonNull(originalArray.getArray())
-                        && checkLengthOfArrayIsGreaterZero(originalArray.getLength())) {
+                if (checkLengthOfArrayIsGreaterZero(originalArray.getLength())) {
                     for (int i = 0; i < originalArray.getLength(); i++) {
                         if (originalArray.get(i) == 0) {
                             tmpArray.add(i);

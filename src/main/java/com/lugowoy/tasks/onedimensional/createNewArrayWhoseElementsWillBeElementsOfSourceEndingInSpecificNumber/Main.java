@@ -46,7 +46,7 @@ public class Main {
         Array<Integer> resultArray = FactoryArray.getFactoryArray(new CreatorArrayNumbers<Integer>()).create(0);
         try {
             if (checkArrayNonNull(array)) {
-                if (checkArrayNonNull(array.getArray()) && checkLengthOfArrayIsGreaterZero(array.getLength())) {
+                if (checkLengthOfArrayIsGreaterZero(array.getLength())) {
                     for (int i = 0; i < array.getLength(); i++) {
                         if (Math.abs(array.get(i)) % 10 == specificEndingNumber) {
                             resultArray.add(array.get(i));

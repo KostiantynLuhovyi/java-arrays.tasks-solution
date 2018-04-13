@@ -14,8 +14,7 @@ import static com.lugowoy.helper.filling.array.DefaultValuesOfArray.DEFAULT_INTE
 
 public class Main {
 
-    private static final Changing<Array<Integer>, Integer> CHANGING =
-                                            Changing::changeSequenceByMultiplyingElementsBySquareOfMinAndMaxNumberByRule;
+    private static final Changing<Array<Integer>, Integer> CHANGING = Changing::changeSequenceByMultiplyingElementsBySquareOfMinAndMaxNumberByRule;
 
     public static void main(String[] args) {
 

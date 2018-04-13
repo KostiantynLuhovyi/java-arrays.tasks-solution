@@ -13,7 +13,7 @@ public class MultiplicationNegativeNumbers {
         int resultMultiplication = 1;
         try {
             if (checkArrayNonNull(array)) {
-                if (checkArrayNonNull(array.getArray()) && checkLengthOfArrayIsEqualToOrGreaterThanZero(array.getLength())) {
+                if (checkLengthOfArrayIsEqualToOrGreaterThanZero(array.getLength())) {
                     for (int i = 0; i < array.getLength(); i++) {
                         if (array.get(i) < 0) {
                             resultMultiplication *= array.get(i);

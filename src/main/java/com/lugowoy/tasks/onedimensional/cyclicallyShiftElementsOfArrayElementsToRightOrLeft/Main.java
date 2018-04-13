@@ -12,6 +12,8 @@ import com.lugowoy.helper.other.ArrayLength;
 
 public class Main {
 
+    private static final Shifting<Array> SHIFTING = Shifting::shiftElementsOfArrayElementsToRightOrLeft;
+
     private static final int BOUND = 100;
 
     public static void main(String[] args) {
@@ -26,8 +28,7 @@ public class Main {
 
         int numberK = enterNumberK(array.getLength());
 
-        Shifting<Array> shifting = Shifting::shiftElementsOfArrayElementsToRightOrLeft;
-        shifting.shift(array, numberK);
+        SHIFTING.shift(array, numberK);
 
         System.out.println("Result after shifting elements : " + array);
 

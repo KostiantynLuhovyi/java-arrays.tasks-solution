@@ -16,7 +16,7 @@ public interface Shifting<T> {
     static void shiftElementsOfArrayElementsToRightOrLeft(Array<Integer> array, int numberK) {
         try {
             if (checkArrayNonNull(array)) {
-                if (checkArrayNonNull(array.getArray()) && checkLengthOfArrayIsGreaterZero(array.getLength())) {
+                if (checkLengthOfArrayIsGreaterZero(array.getLength())) {
                     if (numberK > 0) {
                         moveRight(array, numberK);
                     } else if (numberK < 0) {
@@ -33,7 +33,7 @@ public interface Shifting<T> {
         for (int i = 0; i < numberK; i++) {
             int tmp = array.get(array.getLength() - 1);
 
-            System.arraycopy(array.getArray(), 0, array.getArray(), 1, array.getLength() - 1);
+            System.arraycopy(array.toArray(), 0, array.toArray(), 1, array.getLength() - 1);
 
             array.set(0, tmp);
         }
@@ -43,9 +43,9 @@ public interface Shifting<T> {
         for (int i = 0; i < abs(numberK); i++) {
             int tmp = array.get(0);
 
-            System.arraycopy(array.getArray(), 1, array.getArray(), 0, array.getLength() - 1);
+            System.arraycopy(array.toArray(), 1, array.toArray(), 0, array.getLength() - 1);
 
-            array.set(array.getArray().length - 1, tmp);
+            array.set(array.toArray().length - 1, tmp);
         }
     }
 

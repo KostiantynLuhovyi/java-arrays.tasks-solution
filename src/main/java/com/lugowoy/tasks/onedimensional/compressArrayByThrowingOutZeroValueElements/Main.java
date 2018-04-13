@@ -39,8 +39,7 @@ public class Main {
         int numberZeroElements = 0;
         try {
             if (checkArrayNonNull(array)) {
-                if (checkArrayNonNull(array.getArray())
-                        && checkLengthOfArrayIsGreaterZero(array.getLength())) {
+                if (checkLengthOfArrayIsGreaterZero(array.getLength())) {
                     Array<Integer> tmpArray = FactoryArray.getFactoryArray(new CreatorArrayNumbers<Integer>()).create(0);
                     for (int i = 0; i < array.getLength(); i++) {
                         if (array.get(i) != 0) {
@@ -49,7 +48,7 @@ public class Main {
                             numberZeroElements++;
                         }
                     }
-                    array.setArray(tmpArray.getArray());
+                    array.setArray(tmpArray.toArray(new Integer[tmpArray.getLength()]));
                 }
             }
         } catch (IllegalArgumentException ex) {
