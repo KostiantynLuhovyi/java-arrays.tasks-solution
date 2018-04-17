@@ -26,8 +26,7 @@ public class Main {
                                                                                                             START_BOUND,
                                                                                                             END_BOUND));
 
-        System.out.println("Original array : ");
-        Arrays.stream(array.getArray()).forEachOrdered(integer -> System.out.print(integer + " "));
+        System.out.println("Original array : " + array);
         System.out.println();
 
         Finding<Integer, Array> finding = Finding::findMaxNumber;
@@ -38,12 +37,12 @@ public class Main {
         int minNumberInTheArray = finding.find(array);
         System.out.println("Min number in the array : " + minNumberInTheArray);
 
-        Array<Integer> arraySorted = FactoryArray.getFactoryArray(new CreatorArrayNumbers<Integer>()).create(array.getArray());
+        Array<Integer> arraySorted = FactoryArray.getFactoryArray(new CreatorArrayNumbers<Integer>()).create(array.toArray(new Integer[array.getLength()]));
 
-        Arrays.sort(arraySorted.getArray());
+        Arrays.sort(arraySorted.toArray(new Integer[arraySorted.getLength()]));
 
         for (int j = minNumberInTheArray + 1; j < maxNumberInTheArray; j++) {
-            if (!(Arrays.binarySearch(array.getArray(), j) > 0)) {
+            if (!(Arrays.binarySearch(array.toArray(new Integer[array.getLength()]), j) > 0)) {
                 System.out.print(j + " ");
             }
         }

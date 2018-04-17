@@ -7,7 +7,7 @@ public class AssociativeArray <T extends Object, V extends Object> {
     private T[] argumentArray;
     private V[] valueArray;
 
-    private Object[] associativeArray;
+    private final Object[] associativeArray;
 
     public AssociativeArray(Object[] associativeArray) {
         this.associativeArray = associativeArray;

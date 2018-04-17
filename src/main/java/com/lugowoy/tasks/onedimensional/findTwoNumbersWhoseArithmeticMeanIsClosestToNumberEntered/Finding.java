@@ -13,7 +13,7 @@ public interface Finding<T, V> {
     static void findTwoNumbersWhoseArithmeticMeanIsClosestToNumber(double numberEntered, Array<Double> array) {
         try {
             if (checkArrayNonNull(array)) {
-                if (checkArrayNonNull(array.getArray()) && array.getArray().length > 1) {
+                if (array.getLength() > 1) {
                     double diff = (array.get(0) + array.get(1)) / 2 - numberEntered;
                     double firstNumber = array.get(0);
                     double secondNumber = array.get(1);

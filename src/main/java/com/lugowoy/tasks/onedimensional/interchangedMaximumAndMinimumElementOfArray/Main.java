@@ -53,7 +53,7 @@ public class Main {
     }
 
     private static class GetMaxAndMinElement {
-        private Numbers numbers;
+        private final Numbers numbers;
         private int indexMaxElement;
         private int indexMinElement;
 

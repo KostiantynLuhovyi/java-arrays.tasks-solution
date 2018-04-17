@@ -1,5 +1,7 @@
 package com.lugowoy.tasks.onedimensional.interchangedMaximumAndMinimumElementOfArray;
 
+import java.util.Arrays;
+
 /** Created by Konstantin Lugowoy on 13.06.2017. */
 
 public class Numbers {
@@ -13,6 +15,15 @@ public class Numbers {
         this.minElement = minElement;
         this.maxElement = maxElement;
         this.numbers = numbers;
+    }
+
+    @Override
+    public String toString() {
+        return "Numbers[" +
+                "numbers=" + Arrays.toString(numbers) +
+                ", maxElement=" + maxElement +
+                ", minElement=" + minElement +
+                ']';
     }
 
     public int[] getNumbers() {

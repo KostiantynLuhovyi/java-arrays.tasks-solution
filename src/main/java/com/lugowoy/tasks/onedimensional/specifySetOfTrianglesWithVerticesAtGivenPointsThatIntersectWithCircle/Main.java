@@ -2,7 +2,7 @@ package com.lugowoy.tasks.onedimensional.specifySetOfTrianglesWithVerticesAtGive
 
 import com.lugowoy.helper.factory.FactoryArray;
 import com.lugowoy.helper.factory.creator.CreatorArrayPoints;
-import com.lugowoy.helper.filling.array.points.FillingArrayOfPointsWithCoordinatesReadIntegerNumbers;
+import com.lugowoy.helper.filling.array.points.FillingArrayPointsCoordinatesReadIntegerNumbers;
 import com.lugowoy.helper.io.reading.Reader;
 import com.lugowoy.helper.io.reading.ReadingConsole;
 import com.lugowoy.helper.models.arrays.Array;
@@ -22,13 +22,13 @@ public class Main {
 
         Array<Point<Integer>> pointsArray = FactoryArray.getFactoryArray(
                                                     new CreatorArrayPoints<Integer>()).create(
-                                                        new FillingArrayOfPointsWithCoordinatesReadIntegerNumbers(READER).fill(numberOfPoints));
+                                                        new FillingArrayPointsCoordinatesReadIntegerNumbers(READER).fill(numberOfPoints));
 
         /*fillPointsArray(pointsArray);*/
 
         System.out.println();
         System.out.println("Points : ");
-        Arrays.stream(pointsArray.getArray()).forEachOrdered(System.out::println);
+        Arrays.stream(pointsArray.toArray()).forEachOrdered(System.out::println);
         System.out.println();
 
         double radius = enterRadius();
@@ -69,15 +69,5 @@ public class Main {
         }
         return radius;
     }
-
-    /*private static void fillPointsArray(Array<Point<Integer>> pointsArray) {
-        try {
-        if ()
-        for (int i = 0; i < pointsArray.getArray().length; i++) {
-            System.out.println("Enter coordinate X and Y : ");
-            pointsArray.getArray()[i] = new CreatorOfPointModels<>(new FactoryOfPointsWithIntegerCoordinates()).create(READER.readInt(), READER.readInt());
-        }
-
-    }*/
 
 }

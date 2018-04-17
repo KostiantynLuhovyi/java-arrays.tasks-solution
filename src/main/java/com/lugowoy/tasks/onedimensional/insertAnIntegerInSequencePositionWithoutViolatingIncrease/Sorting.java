@@ -12,7 +12,7 @@ public interface Sorting<T> {
     void sort(Array<T> array);
 
     static void sortingIntegerSequence(Array<Integer> array) {
-        Arrays.stream(array.getArray()).sorted().collect(Collectors.toList()).toArray(array.getArray());
+        Arrays.stream(array.toArray()).sorted().collect(Collectors.toList()).toArray(array.toArray());
     }
 
 }

@@ -7,8 +7,6 @@ import com.lugowoy.helper.io.reading.ReadingConsole;
 import com.lugowoy.helper.models.arrays.Array;
 import com.lugowoy.helper.other.ArrayLength;
 
-import java.util.Arrays;
-
 import static com.lugowoy.helper.filling.array.DefaultValuesOfArray.DEFAULT_INTEGER_NEGATIVE_BOUND;
 import static com.lugowoy.helper.filling.array.DefaultValuesOfArray.DEFAULT_INTEGER_POSITIVE_BOUND;
 
@@ -26,15 +24,13 @@ public class Main {
                                                                                                             DEFAULT_INTEGER_NEGATIVE_BOUND,
                                                                                                             DEFAULT_INTEGER_POSITIVE_BOUND));
 
-        System.out.println("Original array : ");
-        Arrays.stream(array.getArray()).forEachOrdered(integer -> System.out.print(integer + " "));
+        System.out.println("Original array : " + array);
 
         Sorting<Integer> sorting = Sorting::sortAnArrayInAscendingOrderWithoutChangingTheirRelativePosition;
         sorting.sort(array);
 
         System.out.println();
-        System.out.println("After sorting : ");
-        Arrays.stream(array.getArray()).forEachOrdered(integer -> System.out.print(integer + " "));
+        System.out.println("After sorting : " + array);
 
     }
 

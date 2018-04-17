@@ -1,7 +1,5 @@
 package com.lugowoy.tasks.onedimensional.determineMaxRadiusOfCircleWithCenterAtOriginWhichContainsAllPoints;
 
-import java.util.Objects;
-
 /** Created by Konstantin Lugowoy on 14.05.2017. */
 
 @FunctionalInterface

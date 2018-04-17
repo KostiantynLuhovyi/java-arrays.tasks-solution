@@ -3,6 +3,8 @@ package com.lugowoy.tasks.onedimensional.sortArrayInAscendingOrderWithoutChangin
 import com.lugowoy.helper.models.arrays.Array;
 import com.lugowoy.helper.other.ArrayChecker;
 
+import static com.lugowoy.helper.other.ArrayChecker.checkArrayNonNull;
+
 /** Created by Konstantin Lugowoy on 14.05.2017. */
 
 @FunctionalInterface
@@ -12,8 +14,8 @@ public interface Sorting<T> {
 
     static void sortAnArrayInAscendingOrderWithoutChangingTheirRelativePosition(Array<Integer> array) {
         try {
-            if (ArrayChecker.checkArrayNonNull(array)) {
-                if (ArrayChecker.checkArrayNonNull(array.getArray()) && ArrayChecker.checkLengthOfArrayIsGreaterZero(array.getLength())) {
+            if (checkArrayNonNull(array)) {
+                if (ArrayChecker.checkLengthOfArrayIsGreaterZero(array.getLength())) {
                     int tmp;
                     for (int i = 0; i < array.getLength(); i++) {
                         for (int j = 0; j < array.getLength() - i - 1; j++) {

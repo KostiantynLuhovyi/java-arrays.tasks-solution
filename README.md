@@ -51,7 +51,7 @@ If you have any questions about this repository or the solution of the tasks in 
     * compressArrayByThrowingEverySecondElement  
         * _Given an array with the number of n elements.
            "Squeeze" the array, throwing out every second element from it._  
-    * compressArrayByThrowingOutNullElements  
+    * compressArrayByThrowingOutZeroValueElements  
         * _An array containing integers is specified.
            Compress it, throwing out the zero elements._
     * convertSecondSequenceAccordingToRuleDefinedByFirstSequence  
@@ -82,14 +82,6 @@ If you have any questions about this repository or the solution of the tasks in 
            Form from the elements of these arrays an ordered array C._  
     * cyclicallyShiftElementsOfArrayElementsToRightOrLeft  
         * _Given an array A. Cyclically shift the elements of the array to K elements to the right (to the left)._  
-    * defineRingWithCenterAtOriginWhichContainsAllPoints  
-        * _In a one-dimensional array with an even number of elements (2N) there are coordinates of N points of the plane.
-           They are arranged in the following order: x1, y1, x2, y2, x3, y3, etc.
-           Define a ring with center at the origin, which contains all points._  
-    * defineTriangleForWhichDifferenceInNumberOfPointsOutsideAndInsideIsMinimal  
-        * _In a one-dimensional array with an even number of elements (2N) there are coordinates of N points of the plane.
-           They are arranged in the following order: x1, y1, x2, y2, x3, y3, etc.
-           Identify three points that are the vertices of a triangle for which the difference in the number of points outside it and inside is minimal._  
     * determineElementsThatAreEqualToHalfSumOfNeighboringElements  
         * _Determine the elements that are equal to the half-sum of the neighboring elements._  
     * determineIndexOfPrimeNumbersInArray  
@@ -115,12 +107,20 @@ If you have any questions about this repository or the solution of the tasks in 
            Find the number of pairs of points, the distance between which is maximally (assume that such a pair is unique)._  
     * determinePairsOfNumbersFromSequenceWhoseSumIsEqualToEnteredNumber  
         * _Given a sequence of integers a1, a2, ..., an. Indicate pairs of numbers ai, aj such that ai + aj = m._  
+    * determineRingWithCenterAtOriginWhichContainsAllPoints  
+        * _In a one-dimensional array with an even number of elements (2N) there are coordinates of N points of the plane.
+           They are arranged in the following order: x1, y1, x2, y2, x3, y3, etc.
+           Define a ring with center at the origin, which contains all points._  
     * determineSequenceOfNumbersIsIncreasing  
         * _Given a sequence of integer numbers a1, a2, ..., an. Determine whether it is increasing._  
     * determineTimeOfStayOfCustomerInQueue  
         * _At the counter of the store, a line of n customers lined up.
            The service time of the i-th customer is tj (i = 1, ..., n).
            Determine the time Ci of the stay of the i-th customer in the queue._  
+    * determineTriangleForWhichDifferenceInNumberOfPointsOutsideAndInsideIsMinimal  
+        * _In a one-dimensional array with an even number of elements (2N) there are coordinates of N points of the plane.
+           They are arranged in the following order: x1, y1, x2, y2, x3, y3, etc.
+           Identify three points that are the vertices of a triangle for which the difference in the number of points outside it and inside is minimal._  
     * determineWhetherElementsOfSecondSequenceInFirstSequence  
         * _Two sequences a1, a2, ..., an and b1, b2, ..., bm (m <n) are given.
            In each of them, the members are different.

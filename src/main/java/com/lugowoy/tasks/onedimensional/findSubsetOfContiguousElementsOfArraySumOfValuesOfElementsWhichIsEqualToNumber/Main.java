@@ -10,6 +10,7 @@ import com.lugowoy.helper.other.ArrayLength;
 
 import static com.lugowoy.helper.filling.array.DefaultValuesOfArray.DEFAULT_INTEGER_POSITIVE_BOUND;
 import static com.lugowoy.helper.other.ArrayChecker.checkArrayNonNull;
+import static com.lugowoy.helper.other.ArrayChecker.checkLengthOfArrayIsEqualToOrGreaterThanZero;
 
 /** Created by Konstantin Lugowoy on 18.06.2017. */
 
@@ -34,12 +35,10 @@ public class Main {
         Array<Integer> resultArray = FactoryArray.getFactoryArray(new CreatorArrayNumbers<Integer>()).create(finding.find(array, number));
 
         try {
-            if (checkArrayNonNull(resultArray)) {
-                if (resultArray.getArray() != null) {
-                    System.out.println("Result : " + resultArray);
-                } else {
-                    System.out.println("An array does not contain such a sequence of elements.");
-                }
+            if (checkArrayNonNull(resultArray) && checkLengthOfArrayIsEqualToOrGreaterThanZero(resultArray.getLength())) {
+                System.out.println("Result : " + resultArray);
+            } else {
+                System.out.println("An array does not contain such a sequence of elements.");
             }
         } catch (IllegalArgumentException ex) {
             System.err.println(ex.getMessage());

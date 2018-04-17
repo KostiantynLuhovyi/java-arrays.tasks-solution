@@ -36,7 +36,7 @@ public class Main {
         boolean isPrev = false;
         try {
             if (checkArrayNonNull(array)) {
-                if (checkArrayNonNull(array.getArray()) && checkLengthOfArrayIsGreaterZero(array.getLength())) {
+                if (checkLengthOfArrayIsGreaterZero(array.getLength())) {
                     for (int i = 1; i < array.getLength() - 1; i++) {
                         if ((array.get(i - 1) < array.get(i))
                                 && (array.get(i) > array.get(i + 1))) {

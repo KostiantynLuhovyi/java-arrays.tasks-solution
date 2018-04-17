@@ -26,13 +26,12 @@ public class Main {
                                                                                                             START_BOUND,
                                                                                                             END_BOUND));
 
-        System.out.println("Original array : ");
-        Arrays.stream(array.getArray()).forEachOrdered(value -> System.out.print(value + " "));
+        System.out.println("Original array : " + array);
         System.out.println();
 
         System.out.println("Result numbers for which the sum of the first two digits is equal to the sum of the last two : ");
         Determinant determinant = Determinant::determineNumbersForWhichTheSumOfTheFirstTwoDigitsIsEqualToTheSumOfTheLastTwo;
-        Arrays.stream(array.getArray()).forEachOrdered(value -> {
+        Arrays.stream(array.toArray(new Integer[array.getLength()])).forEachOrdered(value -> {
             if (determinant.determine(value)) {
                 System.out.print(value + " ");
             }

@@ -26,19 +26,18 @@ public class Main {
                                                                                                             DEFAULT_INTEGER_NEGATIVE_BOUND,
                                                                                                             DEFAULT_INTEGER_POSITIVE_BOUND));
 
-        System.out.println("Original sequence : ");
-        Arrays.stream(array.getArray()).forEachOrdered(integer -> System.out.print(integer + " "));
+        System.out.println("Original sequence : " + array);
         System.out.println();
 
         int maximumNumberElement = 0;
 
-        if (Arrays.stream(array.getArray()).max(Integer::compareTo).isPresent()) {
-            maximumNumberElement = Arrays.stream(array.getArray()).max(Integer::compareTo).get();
+        if (Arrays.stream(array.toArray(new Integer[array.getLength()])).max(Integer::compareTo).isPresent()) {
+            maximumNumberElement = Arrays.stream(array.toArray(new Integer[array.getLength()])).max(Integer::compareTo).get();
         }
 
         System.out.println("Result sequence : ");
         int finalMaximumNumberElement = maximumNumberElement;
-        Arrays.stream(array.getArray()).forEachOrdered(integer -> {
+        Arrays.stream(array.toArray(new Integer[array.getLength()])).forEachOrdered(integer -> {
             if (finalMaximumNumberElement != 0) {
                 if (Math.abs(integer) > finalMaximumNumberElement) {
                     integer = 0;

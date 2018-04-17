@@ -8,6 +8,7 @@ import com.lugowoy.helper.io.reading.Reader;
 import com.lugowoy.helper.io.reading.ReadingConsole;
 import com.lugowoy.helper.models.arrays.Array;
 import com.lugowoy.helper.models.points.Point;
+import com.lugowoy.helper.other.ArrayChecker;
 import com.lugowoy.helper.other.GeneratorRandomNumber;
 
 import java.util.Arrays;
@@ -24,8 +25,8 @@ public class Main {
 
         fillArrayPoints(pointsArray);
 
-        System.out.println("\nPoints : ");
-        Arrays.stream(pointsArray.getArray()).forEachOrdered(System.out::println);
+        System.out.println("Points : ");
+        Arrays.stream(pointsArray.toArray()).forEachOrdered(System.out::println);
         System.out.println();
 
         Finding<Array<Point<Double>>> finding = Finding::findIndicesOfMaxDistanceBetweenPoints;
@@ -55,10 +56,16 @@ public class Main {
     }
 
     private static void fillArrayPoints(Array<Point<Double>> pointArray) {
-        for (int i = 0; i < pointArray.getArray().length; i++) {
-            double coordinateX = GeneratorRandomNumber.generateDouble();
-            double coordinateY = GeneratorRandomNumber.generateDouble();
-            pointArray.set(i, FactoryPoint.getFactoryPoint(new CreatorPoint<Double>()).create(coordinateX, coordinateY));
+        try {
+            if (ArrayChecker.checkArrayNonNull(pointArray)) {
+                for (int i = 0; i < pointArray.getLength(); i++) {
+                    double coordinateX = GeneratorRandomNumber.generateDouble();
+                    double coordinateY = GeneratorRandomNumber.generateDouble();
+                    pointArray.set(i, FactoryPoint.getFactoryPoint(new CreatorPoint<Double>()).create(coordinateX, coordinateY));
+                }
+            }
+        } catch (IllegalArgumentException ex) {
+            System.err.println(ex.getMessage());
         }
     }
 

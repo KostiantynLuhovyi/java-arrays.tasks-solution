@@ -10,8 +10,6 @@ import com.lugowoy.helper.other.ArrayLength;
 import java.util.Arrays;
 import java.util.Objects;
 
-import static java.util.Arrays.copyOfRange;
-
 /** Created by Konstantin Lugowoy on 18.06.2017. */
 
 public class Main {
@@ -52,7 +50,7 @@ public class Main {
                 }
             }
             if (isPalindrome) {
-                Integer[] temp = copyOfRange(array.getArray(), i, array.getLength() - count + i + 1);
+                Integer[] temp = Arrays.copyOfRange(array.toArray(new Integer[array.getLength()]), i, array.getLength() - count + i + 1);
                 if (temp.length > 1) {
                     System.out.println(Arrays.toString(temp) + ", length is equal " + temp.length);
                     return;

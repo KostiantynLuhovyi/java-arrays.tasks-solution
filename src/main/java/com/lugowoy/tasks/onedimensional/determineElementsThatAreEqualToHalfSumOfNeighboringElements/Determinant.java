@@ -1,9 +1,6 @@
 package com.lugowoy.tasks.onedimensional.determineElementsThatAreEqualToHalfSumOfNeighboringElements;
 
 import com.lugowoy.helper.models.arrays.Array;
-import com.lugowoy.helper.other.ArrayChecker;
-
-import java.util.Objects;
 
 import static com.lugowoy.helper.other.ArrayChecker.*;
 

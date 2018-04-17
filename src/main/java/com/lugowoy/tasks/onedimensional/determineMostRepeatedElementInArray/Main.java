@@ -26,11 +26,11 @@ public class Main {
         System.out.println("Original array : " + array);
         System.out.println();
 
-        determineTheMostRepeatedElementsInAnArray.determine(array);
+        DETERMINANT.determine(array);
 
     }
 
-    private static Determinant<Integer> determineTheMostRepeatedElementsInAnArray = array -> {
+    private static final Determinant<Integer> DETERMINANT = array -> {
         int count, countMax = 0, value = 1, num = 0;
         try {
             if (checkArrayNonNull(array)) {

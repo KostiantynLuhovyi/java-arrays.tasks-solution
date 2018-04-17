@@ -1,7 +1,9 @@
 package com.lugowoy.tasks.onedimensional.findLengthOfLongestSequenceOfElementsEqualToZero;
 
 import com.lugowoy.helper.models.arrays.Array;
-import com.lugowoy.helper.other.ArrayChecker;
+
+import static com.lugowoy.helper.other.ArrayChecker.checkArrayNonNull;
+import static com.lugowoy.helper.other.ArrayChecker.checkLengthOfArrayIsGreaterZero;
 
 /** Created by Konstantin Lugowoy on 18.06.2017. */
 
@@ -13,8 +15,8 @@ public interface Finding<T, V> {
      static Integer findLengthOfLongestSequenceOfElementsEqualToZero(Array<Integer> array) {
          int resultCount = 0, count = 0;
          try {
-             if (ArrayChecker.checkArrayNonNull(array)) {
-                 if (ArrayChecker.checkArrayNonNull(array.getArray())) {
+             if (checkArrayNonNull(array)) {
+                 if (checkLengthOfArrayIsGreaterZero(array.getLength())) {
                      for (int i = 0; i < array.getLength(); i++) {
                          if (array.get(i) == 0) {
                              count++;

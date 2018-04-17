@@ -15,7 +15,7 @@ public interface Inserting<T> {
     static void insertElement(Integer integer, Array<Integer> array) {
         try {
             if (checkArrayNonNull(array)) {
-                if (checkArrayNonNull(array.getArray()) && checkLengthOfArrayIsGreaterZero(array.getLength())) {
+                if (checkLengthOfArrayIsGreaterZero(array.getLength())) {
                     if (integer != null) {
                         for (int i = 1; i < array.getLength(); i++) {
                             if (((integer > array.get(i - 10)) || (integer.intValue() == (array.get(i - 1))))

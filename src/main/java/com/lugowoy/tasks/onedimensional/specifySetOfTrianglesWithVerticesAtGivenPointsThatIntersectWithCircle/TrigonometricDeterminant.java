@@ -2,10 +2,9 @@ package com.lugowoy.tasks.onedimensional.specifySetOfTrianglesWithVerticesAtGive
 
 import com.lugowoy.helper.models.arrays.Array;
 import com.lugowoy.helper.models.points.Point;
-import com.lugowoy.helper.other.ArrayChecker;
 
-import static com.lugowoy.helper.other.ArrayChecker.*;
-import static java.lang.Math.abs;
+import static com.lugowoy.helper.other.ArrayChecker.checkArrayNonNull;
+import static com.lugowoy.helper.other.ArrayChecker.checkLengthOfArrayIsGreaterZero;
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 
@@ -19,7 +18,7 @@ public interface TrigonometricDeterminant<T, V> {
     static void determineSetOfTrianglesWithVerticesAtGivenPointsThatIntersectWithCircle(Array<Point<Integer>> pointArray, double radius) {
         try {
             if (checkArrayNonNull(pointArray)) {
-                if (checkArrayNonNull(pointArray.getArray()) && checkLengthOfArrayIsGreaterZero(pointArray.getLength())) {
+                if (checkLengthOfArrayIsGreaterZero(pointArray.getLength())) {
                     int countTriangle = 0;
                     for (int i = 0; i < pointArray.getLength() - 2; i++) {
                         for (int j = i + 1; j < pointArray.getLength() - 1; j++) {

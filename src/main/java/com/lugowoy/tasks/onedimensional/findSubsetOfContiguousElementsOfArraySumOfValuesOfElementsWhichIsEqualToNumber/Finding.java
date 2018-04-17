@@ -18,7 +18,7 @@ public interface Finding<T, V> {
         Integer[] resultArray = null;
         try {
             if (checkArrayNonNull(array)) {
-                if (checkArrayNonNull(array.getArray()) && checkLengthOfArrayIsEqualToOrGreaterThanZero(array.getLength())) {
+                if (checkLengthOfArrayIsEqualToOrGreaterThanZero(array.getLength())) {
                     int sum = array.get(0);
                     int i = 0, j = 1;
 
@@ -29,7 +29,7 @@ public interface Finding<T, V> {
                         } else if (sum > number) {
                             sum -= array.get(i++);
                         } else {
-                            resultArray = Arrays.copyOfRange(array.getArray(), i, j);
+                            resultArray = Arrays.copyOfRange(array.toArray(new Integer[array.getLength()]), i, j);
                             break;
                         }
                     }

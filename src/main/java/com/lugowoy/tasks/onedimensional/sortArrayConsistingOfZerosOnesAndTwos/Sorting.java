@@ -14,7 +14,7 @@ public interface Sorting<T> {
     static void sortArray(Array<Integer> array) {
         try {
             if (checkArrayNonNull(array)) {
-                if (checkArrayNonNull(array.getArray()) && checkLengthOfArrayIsGreaterZero(array.getLength())) {
+                if (checkLengthOfArrayIsGreaterZero(array.getLength())) {
                     int index = 0;
 
                     for (int i = 0; i < array.getLength(); i++) {

@@ -8,8 +8,6 @@ import com.lugowoy.helper.io.reading.ReadingConsole;
 import com.lugowoy.helper.models.arrays.Array;
 import com.lugowoy.helper.other.ArrayLength;
 
-import java.util.Arrays;
-
 import static com.lugowoy.helper.filling.array.DefaultValuesOfArray.DEFAULT_INTEGER_NEGATIVE_BOUND;
 import static com.lugowoy.helper.filling.array.DefaultValuesOfArray.DEFAULT_INTEGER_POSITIVE_BOUND;
 
@@ -27,24 +25,23 @@ public class Main {
                                                                                                             DEFAULT_INTEGER_NEGATIVE_BOUND,
                                                                                                             DEFAULT_INTEGER_POSITIVE_BOUND));
 
-        System.out.println("Original sequence : ");
-        Arrays.stream(array.getArray()).forEachOrdered(integer -> System.out.print(integer + " "));
+        System.out.println("Original sequence : " + array);
         System.out.println();
 
-        System.out.println("Sorted sequence : ");
         Sorting<Integer> sorting = Sorting::sortingIntegerSequence;
         sorting.sort(array);
-        Arrays.stream(array.getArray()).forEachOrdered(integer -> System.out.print(integer + " "));
+
+        System.out.println("Sorted sequence : " + array);
         System.out.println();
 
         System.out.println("Enter numbers to insert : ");
         int insertNumber = Reader.getReader(new ReadingConsole()).readInt();
         System.out.println();
 
-        System.out.println("Result sequence : ");
         Inserting<Integer> inserting = Inserting::insertElement;
         inserting.insert(insertNumber, array);
-        Arrays.stream(array.getArray()).forEachOrdered(integer -> System.out.print(integer + " "));
+
+        System.out.println("Result sequence : " + array);
 
     }
 
