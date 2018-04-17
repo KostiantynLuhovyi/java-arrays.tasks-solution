@@ -15,12 +15,12 @@ public interface Determinant<T> {
         int countResult = 0;
         try {
             if (checkArrayNonNull(array)) {
-                if (checkArrayNonNull(array.getArray()) && checkLengthOfArrayIsGreaterZero(array.getLength())) {
+                if (checkLengthOfArrayIsGreaterZero(array.getLength())) {
                     for (int i = 0; i < array.getLength() - 1; i++) {
                         for (int j = i + 1; j < array.getLength(); j++) {
                             if ((array.get(i) + array.get(j)) == numberForEqual) {
                                 System.out.printf("Element %d , with index %d a plus, element %d, with index %d is equal %d",
-                                        array.get(i), i, array.get(j), j, numberForEqual);
+                                                                           array.get(i), i, array.get(j), j, numberForEqual);
                                 countResult++;
                                 System.out.println();
                             }

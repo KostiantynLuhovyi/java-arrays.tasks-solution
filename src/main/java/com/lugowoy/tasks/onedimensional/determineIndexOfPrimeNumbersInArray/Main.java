@@ -11,6 +11,8 @@ import com.lugowoy.helper.other.ArrayLength;
 
 public class Main {
 
+    private static final Determinant<Integer> DETERMINANT = Determinant::determineTheIndexOfPrimesInAnArray;
+
     private static final int BOUND = 100;
 
     public static void main(String[] args) {
@@ -26,10 +28,9 @@ public class Main {
         System.out.println();
 
         System.out.println("The indexes of elements which are prime numbers : ");
-        Determinant<Integer> determinant = Determinant::determineTheIndexOfPrimesInAnArray;
-        for (int i = 0; i < array.getArray().length; i++) {
-            if (determinant.determine(array.getArray()[i])) {
-                System.out.print(i + " ");
+        for (int i = 0; i < array.getLength(); i++) {
+            if (DETERMINANT.determine(array.get(i))) {
+                System.out.print(i + ", ");
             }
         }
 

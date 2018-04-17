@@ -36,20 +36,20 @@ public class Main {
         System.out.println("Enter result to the modulo : ");
         int resultModulo = READER.readInt();
 
-        DETERMINANT.determinate(array.getArrayOfIntegerPrimitiveNumbers(), numberToModulo, resultModulo);
+        DETERMINANT.determinate(array, numberToModulo, resultModulo);
     }
 
-    private static final Determinant DETERMINANT = (numbers, numberToModulo, resultModulo) -> {
+    private static final Determinant DETERMINANT = (array, numberToModulo, resultModulo) -> {
         System.out.println("Result to the modulo operation : ");
         int countResult = 0;
-        for (int number : numbers) {
+        for (int number : array.toArray(new Integer[array.getLength()])) {
             if (number % numberToModulo == resultModulo) {
                 System.out.print(number + " ");
             } else {
                 countResult++;
             }
         }
-        if (countResult == numbers.length) {
+        if (countResult == array.getLength()) {
             System.out.println("No numbers which satisfy the condition.");
         }
     };

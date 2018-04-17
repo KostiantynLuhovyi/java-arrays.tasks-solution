@@ -15,9 +15,9 @@ public interface Determinant<T extends Number> {
         int resultCountOfDifferentElements = 0;
         try {
             if (checkArrayNonNull(array)) {
-                if ((checkArrayNonNull(array.getArray())) && (array.getArray().length > 2)) {
-                    for (int i = 0; i < array.getArray().length; i++) {
-                        if (isUnique(array.getArray()[i], array)) {
+                if (array.getLength() > 2) {
+                    for (int i = 0; i < array.getLength(); i++) {
+                        if (isUnique(array.get(i), array)) {
                             resultCountOfDifferentElements++;
                         }
                     }
@@ -29,16 +29,16 @@ public interface Determinant<T extends Number> {
         return resultCountOfDifferentElements;
     }
 
-    static boolean isUnique(int number, Array<Integer> array) {
+    private static boolean isUnique(int number, Array<Integer> array) {
         boolean isUnique = false;
         int countUnique = 0;
 
         try {
             if (checkArrayNonNull(array)) {
-                if ((checkArrayNonNull(array.getArray())) && (array.getArray().length > 2)) {
+                if (array.getLength() > 2) {
                     if (number >= 0) {
-                        for (int i = 0; i < array.getArray().length; i++) {
-                            if (number == array.getArray()[i]) {
+                        for (int i = 0; i < array.getLength(); i++) {
+                            if (number == array.get(i)) {
                                 countUnique++;
                             }
                         }

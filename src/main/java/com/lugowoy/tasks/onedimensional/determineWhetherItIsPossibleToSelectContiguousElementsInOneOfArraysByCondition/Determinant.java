@@ -25,16 +25,14 @@ public interface Determinant<T> {
 
         try {
             if (checkArrayNonNull(firstArray) && checkArrayNonNull(secondArray)) {
-                if ((checkArrayNonNull(firstArray.getArray())
-                                                       && checkArrayNonNull(secondArray.getArray()))
-                        && (checkLengthOfArrayIsGreaterZero(firstArray.getLength())
-                                                       && checkLengthOfArrayIsGreaterZero(secondArray.getLength()))) {
+                if (checkLengthOfArrayIsGreaterZero(firstArray.getLength())
+                        && checkLengthOfArrayIsGreaterZero(secondArray.getLength())) {
                     while (n + 1 < k) {
                         for (int i = 0; i < secondArray.getLength() - (k - 1 - n); i++) {
                             Array<Integer> tempResultArray = FactoryArray.getFactoryArray(
                                                                 new CreatorArrayNumbers<Integer>()).create(
-                                                                        Arrays.copyOfRange(firstArray.getArray(), n, k));
-                            if (Arrays.equals(tempResultArray.getArray(), Arrays.copyOfRange(secondArray.getArray(), i, k - n + i))) {
+                                                                        Arrays.copyOfRange(firstArray.toArray(new Integer[firstArray.getLength()]), n, k));
+                            if (Arrays.equals(tempResultArray.toArray(), Arrays.copyOfRange(secondArray.toArray(), i, k - n + i))) {
                                 resultList.add(tempResultArray);
                             }
                         }

@@ -7,8 +7,6 @@ import com.lugowoy.helper.io.reading.ReadingConsole;
 import com.lugowoy.helper.models.arrays.Array;
 import com.lugowoy.helper.other.ArrayLength;
 
-import java.util.Arrays;
-
 import static com.lugowoy.helper.filling.array.DefaultValuesOfArray.DEFAULT_INTEGER_NEGATIVE_BOUND;
 import static com.lugowoy.helper.filling.array.DefaultValuesOfArray.DEFAULT_INTEGER_POSITIVE_BOUND;
 
@@ -26,8 +24,7 @@ public class Main {
                                                                                                             DEFAULT_INTEGER_NEGATIVE_BOUND,
                                                                                                             DEFAULT_INTEGER_POSITIVE_BOUND));
 
-        System.out.println("Sequence : ");
-        Arrays.stream(array.getArray()).forEachOrdered(integer -> System.out.print(integer + " "));
+        System.out.println("Sequence : " + array);
 
         boolean resultIncreasingSequence = false;
             if (array.get(1) > array.get(0)) {
@@ -36,8 +33,11 @@ public class Main {
 
         System.out.println();
 
-        if (resultIncreasingSequence) System.out.println("The sequence of increasing.");
-        else System.out.println("The sequence of a not increasing");
+        if (resultIncreasingSequence) {
+            System.out.println("The sequence of increasing.");
+        } else {
+            System.out.println("The sequence of a not increasing");
+        }
 
     }
 

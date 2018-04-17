@@ -20,7 +20,7 @@ public interface Selecting<T> {
         Array<Integer> tmpArray = FactoryArray.getFactoryArray(new CreatorArrayNumbers<Integer>()).create(0);
         try {
             if (checkArrayNonNull(array)) {
-                if (checkArrayNonNull(array.getArray()) && checkLengthOfArrayIsGreaterZero(array.getLength())) {
+                if (checkLengthOfArrayIsGreaterZero(array.getLength())) {
                     if (statusNumbers == STATUS_EVEN_NUMBERS) {
                         for (int i = 0; i < array.getLength(); i++) {
                             if (array.get(i) != null) {

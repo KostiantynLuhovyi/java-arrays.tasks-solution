@@ -11,6 +11,8 @@ import com.lugowoy.helper.other.ArrayLength;
 
 public class Main {
 
+    private static final Determinant<Integer> DETERMINANT = Determinant::determineTheNumberOfDifferentElementsInOneDimensionalArray;
+
     public static void main(String[] args) {
 
         System.out.println("Enter length of the array : ");
@@ -22,8 +24,7 @@ public class Main {
         System.out.println("Original array : " + array);
         System.out.println();
 
-        Determinant<Integer> determinant = Determinant::determineTheNumberOfDifferentElementsInOneDimensionalArray;
-        int numberOfDifferentElements = determinant.determine(array);
+        int numberOfDifferentElements = DETERMINANT.determine(array);
 
         System.out.printf("In a one-dimensional array of %d different elements.", numberOfDifferentElements);
 

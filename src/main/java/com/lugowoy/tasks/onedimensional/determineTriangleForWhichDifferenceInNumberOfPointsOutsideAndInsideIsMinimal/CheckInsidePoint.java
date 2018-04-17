@@ -1,5 +1,4 @@
-package com.lugowoy.tasks.onedimensional.defineTriangleForWhichDifferenceInNumberOfPointsOutsideAndInsideIsMinimal;
-
+package com.lugowoy.tasks.onedimensional.determineTriangleForWhichDifferenceInNumberOfPointsOutsideAndInsideIsMinimal;
 
 import com.lugowoy.helper.calculating.CalculationUsingThreeParameters;
 import com.lugowoy.helper.models.points.Point;

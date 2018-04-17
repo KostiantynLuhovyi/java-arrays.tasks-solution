@@ -11,6 +11,8 @@ import com.lugowoy.helper.other.ArrayLength;
 
 public class Main {
 
+    private static final Determinant DETERMINANT = Determinant::determineElementsThatAreEqualToHalfSumOfNeighboringElements;
+
     private static final int BOUND = 20;
 
     public static void main(String[] args) {
@@ -25,8 +27,8 @@ public class Main {
         System.out.println("Original array : " + array);
 
         System.out.println("Result : ");
-        Determinant determinant = Determinant::determineElementsThatAreEqualToHalfSumOfNeighboringElements;
-        determinant.determine(array);
+
+        DETERMINANT.determine(array);
 
     }
 

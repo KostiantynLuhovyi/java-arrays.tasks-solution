@@ -1,4 +1,4 @@
-package com.lugowoy.tasks.onedimensional.defineTriangleForWhichDifferenceInNumberOfPointsOutsideAndInsideIsMinimal;
+package com.lugowoy.tasks.onedimensional.determineTriangleForWhichDifferenceInNumberOfPointsOutsideAndInsideIsMinimal;
 
 import com.lugowoy.helper.factory.FactoryArray;
 import com.lugowoy.helper.factory.FactoryPoint;
@@ -11,13 +11,13 @@ import com.lugowoy.helper.io.reading.ReadingConsole;
 import com.lugowoy.helper.models.arrays.Array;
 import com.lugowoy.helper.models.points.Point;
 
-import java.util.Arrays;
-
 /** Created by Konstantin Lugowoy on 03.07.2017. */
 
 public class Main {
 
     private static final Reader READER = Reader.getReader(new ReadingConsole());
+
+    private static final Determinant<Array<Point<Double>>> DETERMINANT = Determinant::defineTriangle;
 
     private static final double START_BOUND = -50d;
     private static final double END_BOUND = 50d;
@@ -41,11 +41,10 @@ public class Main {
         System.out.println(pointArray);
         System.out.println();
 
-        Determinant<Array<Point<Double>>> arrayDeterminant = Determinant::defineTriangle;
-        Array<Point<Double>> resultPointArray = arrayDeterminant.define(pointArray);
 
-        System.out.println("Result points of triangle : ");
-        Arrays.stream(resultPointArray.getArray()).forEachOrdered(System.out::println);
+        Array<Point<Double>> resultPointArray = DETERMINANT.define(pointArray);
+
+        System.out.println("Result points of triangle : " + resultPointArray);
 
     }
 

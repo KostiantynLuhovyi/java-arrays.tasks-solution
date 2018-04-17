@@ -34,7 +34,7 @@ public class Main {
         int count, countMax = 0, value = 1, num = 0;
         try {
             if (checkArrayNonNull(array)) {
-                if ((checkArrayNonNull(array.getArray())) && (array.getLength() > 2)) {
+                if (array.getLength() > 2) {
                     for (int i = 0; i < array.getLength(); i++) {
                         count = 1;
                         for (int j = i + 1; j < array.getLength(); j++) {

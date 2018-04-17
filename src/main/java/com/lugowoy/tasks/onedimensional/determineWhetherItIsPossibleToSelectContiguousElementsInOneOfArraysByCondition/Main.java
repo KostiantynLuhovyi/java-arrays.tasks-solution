@@ -7,7 +7,6 @@ import com.lugowoy.helper.io.reading.ReadingConsole;
 import com.lugowoy.helper.models.arrays.Array;
 import com.lugowoy.helper.other.ArrayLength;
 
-import java.util.Arrays;
 import java.util.List;
 
 /** Created by Konstantin Lugowoy on 22.06.2017. */
@@ -15,6 +14,7 @@ import java.util.List;
 public class Main {
 
     private static final FactoryArray<Integer> FACTORY = FactoryArray.getFactoryArray(new CreatorArrayNumbers<>());
+
     private static final int BOUND = 100;
 
     public static void main(String[] args) {

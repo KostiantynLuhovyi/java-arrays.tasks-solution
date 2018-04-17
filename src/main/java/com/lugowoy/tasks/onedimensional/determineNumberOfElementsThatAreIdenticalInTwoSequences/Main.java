@@ -12,6 +12,9 @@ import com.lugowoy.helper.other.ArrayLength;
 public class Main {
 
     private static final FactoryArray<Integer> FACTORY = FactoryArray.getFactoryArray(new CreatorArrayNumbers<>());
+
+    private static final Determinant<Array<Integer>> DETERMINANT = Determinant::determineTheNumberOfElementsThatAreIdenticalInTwoSequences;
+
     private static final int BOUND = 50;
 
     public static void main(String[] args) {
@@ -31,8 +34,7 @@ public class Main {
         System.out.println("Elements of the second array : " + secondArray);
         System.out.println();
 
-        Determinant<Array<Integer>> determinant = Determinant::determineTheNumberOfElementsThatAreIdenticalInTwoSequences;
-        int numberOfIdenticalElementsInTheTwoSequence = determinant.determine(firstArray, secondArray);
+        int numberOfIdenticalElementsInTheTwoSequence = DETERMINANT.determine(firstArray, secondArray);
 
         System.out.println("Number of identical elements in the two array : " + numberOfIdenticalElementsInTheTwoSequence);
 

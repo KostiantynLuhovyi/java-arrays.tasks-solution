@@ -17,7 +17,7 @@ public interface Determinant {
     static void determineElementsThatAreEqualToHalfSumOfNeighboringElements(Array<Integer> array) {
         try {
             if (checkArrayNonNull(array)) {
-                if ((checkArrayNonNull(array.getArray())) && (array.getArray().length > 2)) {
+                if (array.getLength() > 2) {
                     int counterCoincidence = 0;
                     for (int i = 1; i < array.getLength() - 1; i++) {
                         if (((array.get(i - 1) + array.get((i + 1)) / 2) == array.get(i))) {

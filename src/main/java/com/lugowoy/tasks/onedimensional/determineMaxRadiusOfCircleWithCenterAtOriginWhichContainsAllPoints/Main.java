@@ -15,6 +15,8 @@ public class Main {
 
     private static final Reader READER = Reader.getReader(new ReadingConsole());
 
+    private static final Determinant DETERMINANT = Determinant::determineTeMaxRadius;
+
     public static void main(String[] args) {
 
         ArrayOfCoordinates arrayOfCoordinates = new ArrayOfCoordinates();
@@ -39,8 +41,7 @@ public class Main {
         }
 
         System.out.println();
-        Determinant determinable = Determinant::determineTeMaxRadius;
-        System.out.printf("Maximal radius is %.2f", determinable.determine(arrayOfCoordinates));
+        System.out.printf("Maximal radius is %.2f", DETERMINANT.determine(arrayOfCoordinates));
 
     }
 

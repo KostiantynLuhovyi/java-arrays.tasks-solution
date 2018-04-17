@@ -4,6 +4,7 @@ import com.lugowoy.helper.io.reading.Reader;
 import com.lugowoy.helper.io.reading.ReadingConsole;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Arrays;
 
 /** Created by Konstantin Lugowoy on 16.03.2017. */
@@ -32,7 +33,7 @@ public class Main {
 
         BigDecimal resultTime = determinant.determine(customerQueue, numberOfCustomersInTheQueue);
 
-        System.out.printf("Result time : %f", resultTime.setScale(2, BigDecimal.ROUND_DOWN).doubleValue());
+        System.out.printf("Result time : %f", resultTime.setScale(2, RoundingMode.DOWN).doubleValue());
 
     }
 

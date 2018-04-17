@@ -13,6 +13,8 @@ public class Main {
 
     private static final FactoryArray<Integer> FACTORY = FactoryArray.getFactoryArray(new CreatorArrayNumbers<>());
 
+    private static final Determinant<Array<Integer>> DETERMINANT = Determinant::determineWhetherTheElementsOfTheSecondSequenceInTheFirstSequence;
+
     private static final int BOUND = 50;
 
     public static void main(String[] args) {
@@ -32,8 +34,7 @@ public class Main {
         System.out.println("Second array : " + secondArray);
         System.out.println();
 
-        Determinant<Array<Integer>> determinant = Determinant::determineWhetherTheElementsOfTheSecondSequenceInTheFirstSequence;
-        boolean resultDetermine = determinant.determine(firstArray, secondArray);
+        boolean resultDetermine = DETERMINANT.determine(firstArray, secondArray);
 
         if (resultDetermine) {
             System.out.println("Elements of the second sequence are included in the first sequence.");

@@ -8,9 +8,11 @@ public class Main {
 
     private static final Determinant DETERMINANT = Determinant::determineOfPairsOfPoints;
 
+    private static final int NUMBER_OF_POINTS = 20;
+
     public static void main(String[] args) {
 
-        Point[] pointsArray = new Point[20];
+        Point[] pointsArray = new Point[NUMBER_OF_POINTS];
 
         fill(pointsArray);
 
