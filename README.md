@@ -190,6 +190,8 @@ If you have any questions about this repository or the solution of the tasks in 
     * outputNumbersForWhichSumOfFirstTwoDigitsIsEqualToSumOfLastTwo  
         * _An array of n four-digit natural numbers is given.
            Output to display only numbers those on which the sum of the first two digits is equal to the sum of the last two digits._  
+        * outputNumbersFromArrayThatSatisfyConditionForSolutionOfTask  
+        * _Write a program that has an array of random integers and prints three of its (not necessarily distinct) elements x, y, and z, such that x * y = z._  
     * outputNumbersUpToAndIncludingZero  
         * _Given a sequence of numbers. Print out all the numbers up to and including zero._  
     * outputToDisplayNumberForParticularCondition  

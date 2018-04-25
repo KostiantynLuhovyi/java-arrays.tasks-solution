@@ -1,0 +1,1 @@
+Write a program that has an array of random integers and prints three of its (not necessarily distinct) elements x, y, and z, such that x * y = z.
