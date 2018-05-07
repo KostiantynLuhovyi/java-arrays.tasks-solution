@@ -102,6 +102,9 @@ If you have any questions about this repository or the solution of the tasks in 
     * determineNumberOfElementsThatAreIdenticalInTwoSequences  
         * _Two sequences of integers a1, a2, ..., an and b1, b2, ..., bm are given. All the members of the sequences are distinct numbers.
            Find how many elements of the first sequence coincide with the elements of the second sequence._  
+    * determineNumberOfLocalMaximaInArray  
+        * _Write a program that enter a non-empty array of integers and prints the number of local maxima 
+           (an element is a local maximum if it has neighbors elements larger than itself)._  
     * determineNumberOfPairsOfPointsDistanceBetweenWhichIsMaximally  
         * _The coordinates of n points on the plane are given: (X1, Y2), ..., (Xn, Yn) (n ≤ 40).
            Find the number of pairs of points, the distance between which is maximally (assume that such a pair is unique)._  
