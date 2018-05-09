@@ -84,6 +84,8 @@ If you have any questions about this repository or the solution of the tasks in 
         * _Given an array A. Cyclically shift the elements of the array to K elements to the right (to the left)._  
     * determineElementsThatAreEqualToHalfSumOfNeighboringElements  
         * _Determine the elements that are equal to the half-sum of the neighboring elements._  
+    * determineGreatestCommonDivisorForArrayOfNumbers  
+        * _Write a program that enter a sequence of integers that finds and prints their greatest common divisor._  
     * determineIndexOfPrimeNumbersInArray  
         * _The integer array of dimension of N is set.
            Whether there are among array elements prime numbers?
