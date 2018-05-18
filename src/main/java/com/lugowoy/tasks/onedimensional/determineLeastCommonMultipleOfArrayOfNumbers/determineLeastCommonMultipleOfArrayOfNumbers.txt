@@ -1,0 +1,1 @@
+Write a program that enter an array of integers, finds and prints their least common multiple a number.

@@ -90,6 +90,8 @@ If you have any questions about this repository or the solution of the tasks in 
         * _The integer array of dimension of N is set.
            Whether there are among array elements prime numbers?
            If yes, that to output index numbers of these elements._  
+    * determineLeastCommonMultipleOfArrayOfNumbers  
+        * _Write a program that enter an array of integers, finds and prints their least common multiple a number._  
     * determineMaxRadiusOfCircleWithCenterAtOriginWhichContainsAllPoints  
         * _In a one-dimensional array with an even number of elements (2N) there are coordinates of N points of the plane.
            They are arranged in the following order: x1, y1, x2, y2, x3, y3, etc.

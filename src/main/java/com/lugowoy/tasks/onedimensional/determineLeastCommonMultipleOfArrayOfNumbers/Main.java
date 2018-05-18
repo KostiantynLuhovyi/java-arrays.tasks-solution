@@ -1,4 +1,4 @@
-package com.lugowoy.tasks.onedimensional.determineGreatestCommonDivisorForArrayOfNumbers;
+package com.lugowoy.tasks.onedimensional.determineLeastCommonMultipleOfArrayOfNumbers;
 
 import com.lugowoy.helper.factory.FactoryArray;
 import com.lugowoy.helper.factory.creator.CreatorArrayNumbers;
@@ -20,14 +20,14 @@ public class Main {
 
         Array<Integer> array = FACTORY_ARRAY.create(new FillingArrayRandomIntegerNumbers().fill(lengthArray));
 
-        System.out.println("Array : " + array);
+        System.out.println("Array " + array);
 
-        print(DeterminantGreatestCommonDivisor::determineGreatestCommonDivisor, array);
+        printValueOfLeastCommonMultiple(DeterminantLeastCommonMultiple::determineLeastCommonMultiple, array);
 
     }
 
-    private static void print(DeterminantGreatestCommonDivisor determinantGCD, Array<Integer> array) {
-        System.out.println("The greatest common divisor of the array is : " + determinantGCD.determine(array) + " .");
+    private static void printValueOfLeastCommonMultiple(DeterminantLeastCommonMultiple determinantLCM, Array<Integer> array) {
+        System.out.println("The least common multiple of the array is : " + determinantLCM.determine(array) + " .");
     }
 
 }
