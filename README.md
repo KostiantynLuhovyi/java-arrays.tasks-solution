@@ -5,6 +5,9 @@ The name of the packages in which the classes are located to solve the task is t
 
 A complete description of the task you can see in the package with the solution of the problem in a file with the same name and file extension .txt  .  
 
+The package com.lugowoy.helper contains classes for performing various auxiliary functions. 
+Also, if the function is encountered when solving several tasks, then the function is placed in a separate class in this package.
+
 Many of functional solutions are implemented in the java-helper.jar library classes. 
 A detailed description of the functional contained in the library "java-helper.jar" and used for solving tasks can be found 
 in the repository by the link: https://github.com/LugowoyKonstantin/java-helper.tasks-solution
@@ -84,6 +87,9 @@ If you have any questions about this repository or the solution of the tasks in 
         * _Given an array A. Cyclically shift the elements of the array to K elements to the right (to the left)._  
     * determineElementsThatAreEqualToHalfSumOfNeighboringElements  
         * _Determine the elements that are equal to the half-sum of the neighboring elements._  
+    * determineEquilibriumBetweenWeightOfSubjects  
+        * _Write a program that enter a sequence of integers that counts them as the masses of objects available
+           and finds out whether all these items can be put on two cups of the weighing-machine so that achieve balance._  
     * determineGreatestCommonDivisorForArrayOfNumbers  
         * _Write a program that enter a sequence of integers that finds and prints their greatest common divisor._  
     * determineIndexOfPrimeNumbersInArray  
