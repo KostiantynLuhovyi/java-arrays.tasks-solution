@@ -1,9 +1,9 @@
 # java-arrays.tasks-solution
-**In this repository are located solutions to tasks written in the Java programming language of using onedimensional and multidimensional arrays.**
+**Solutions to tasks written in the Java programming language of using onedimensional and multidimensional arrays are in this repository.**
 
-The name of the packages in which the classes are located to solve the task is the approximate condition of the task.  
+The name of the packages, in which the classes are located to solve the task, is the approximate condition of the task.  
 
-A complete description of the task you can see in the package with the solution of the problem in a file with the same name and file extension .txt  .  
+For a complete description of the task, you can check a file with the same name and file extension ".txt" inside the solution package.
 
 The package com.lugowoy.helper contains classes for performing various auxiliary functions. 
 Also, if the function is encountered when solving several tasks, then the function is placed in a separate class in this package.
