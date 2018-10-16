@@ -34,7 +34,7 @@ public class Main {
             if ((finishAgeInterval > 0) && (finishAgeInterval <= 150)) {
                 break;
             } else {
-                System.out.println("Not correct value of finish age interval. Re-enter : ");
+                System.err.println("Not correct value of finish age interval. Re-enter : ");
             }
         }
         return finishAgeInterval;
@@ -48,7 +48,7 @@ public class Main {
             if ((startAgeInterval >= 0 ) && (startAgeInterval <= 140)) {
                 break;
             } else {
-                System.out.println("Not correct value of start age interval. Re-enter : ");
+                System.err.println("Not correct value of start age interval. Re-enter : ");
             }
         }
         return startAgeInterval;
@@ -63,7 +63,7 @@ public class Main {
                 humans = createArrayOfHumans(numberOfPeople);
                 break;
             } else {
-                System.out.println("The number of people for counting is less than or equal to zero. Re-enter : ");
+                System.err.println("The number of people for counting is less than or equal to zero. Re-enter : ");
             }
         }
         return humans;

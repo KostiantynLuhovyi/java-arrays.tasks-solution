@@ -1,11 +1,7 @@
 package com.lugowoy.tasks.onedimensional.createOrderedArrayFromElementsOfTwoOtherOrderedArrays;
 
-import com.lugowoy.helper.factory.FactoryArray;
-import com.lugowoy.helper.factory.creator.CreatorArrayNumbers;
-import com.lugowoy.helper.models.arrays.Array;
-
-import static com.lugowoy.helper.other.ArrayChecker.checkArrayNonNull;
-import static com.lugowoy.helper.other.ArrayChecker.checkLengthOfArrayIsGreaterZero;
+import com.lugowoy.helper.models.Array;
+import com.lugowoy.helper.other.CheckerArray;
 
 /** Created by Konstantin Lugowoy on 30.05.2017. */
 
@@ -16,15 +12,10 @@ public interface Merging<T> {
 
     static Array<Integer> mergeArrays(Array<Integer> firstArray, Array<Integer> secondArray) {
         Array<Integer> resultArray = null;
-
-        if (checkArrayNonNull(firstArray) && checkArrayNonNull(secondArray)) {
-            if (checkLengthOfArrayIsGreaterZero(firstArray.getLength()) && checkLengthOfArrayIsGreaterZero(secondArray.getLength())) {
-
-                resultArray = FactoryArray.getFactoryArray(new CreatorArrayNumbers<Integer>()).create(firstArray.getLength()
-                                                                                                        + secondArray.getLength());
-
+        if (CheckerArray.checkArrayNonNull(firstArray) && CheckerArray.checkArrayNonNull(secondArray)) {
+            if (CheckerArray.checkLengthOfArrayIsGreaterZero(firstArray.getLength()) && CheckerArray.checkLengthOfArrayIsGreaterZero(secondArray.getLength())) {
+                resultArray = Array.create(firstArray.getLength() + secondArray.getLength());
                 int indexFirstArray = 0, indexSecondArray = 0;
-
                 for (int i = 0; i < resultArray.getLength(); i++) {
                     if ((indexFirstArray < firstArray.getLength())
                             && (indexSecondArray < secondArray.getLength())) {

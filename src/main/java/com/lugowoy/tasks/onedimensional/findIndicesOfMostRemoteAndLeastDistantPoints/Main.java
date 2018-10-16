@@ -1,14 +1,10 @@
 package com.lugowoy.tasks.onedimensional.findIndicesOfMostRemoteAndLeastDistantPoints;
 
-import com.lugowoy.helper.factory.FactoryArray;
-import com.lugowoy.helper.factory.FactoryPoint;
-import com.lugowoy.helper.factory.creator.CreatorArrayPoints;
-import com.lugowoy.helper.factory.creator.CreatorPoint;
 import com.lugowoy.helper.io.reading.Reader;
 import com.lugowoy.helper.io.reading.ReadingConsole;
-import com.lugowoy.helper.models.arrays.Array;
-import com.lugowoy.helper.models.points.Point;
-import com.lugowoy.helper.other.ArrayChecker;
+import com.lugowoy.helper.models.Array;
+import com.lugowoy.helper.models.Point;
+import com.lugowoy.helper.other.CheckerArray;
 import com.lugowoy.helper.other.GeneratorRandomNumber;
 
 import java.util.Arrays;
@@ -21,7 +17,7 @@ public class Main {
 
         int numberPointOfPlane = getNumberQuantityPointsOfPlane();
 
-        Array<Point<Double>> pointsArray = FactoryArray.getFactoryArray(new CreatorArrayPoints<Double>()).create(numberPointOfPlane);
+        Array<Point<Double>> pointsArray = Array.create(numberPointOfPlane);
 
         fillArrayPoints(pointsArray);
 
@@ -56,16 +52,12 @@ public class Main {
     }
 
     private static void fillArrayPoints(Array<Point<Double>> pointArray) {
-        try {
-            if (ArrayChecker.checkArrayNonNull(pointArray)) {
-                for (int i = 0; i < pointArray.getLength(); i++) {
-                    double coordinateX = GeneratorRandomNumber.generateDouble();
-                    double coordinateY = GeneratorRandomNumber.generateDouble();
-                    pointArray.set(i, FactoryPoint.getFactoryPoint(new CreatorPoint<Double>()).create(coordinateX, coordinateY));
-                }
+        if (CheckerArray.checkArrayNonNull(pointArray)) {
+            for (int i = 0; i < pointArray.getLength(); i++) {
+                double coordinateX = GeneratorRandomNumber.generateDouble();
+                double coordinateY = GeneratorRandomNumber.generateDouble();
+                pointArray.set(i, Point.create(coordinateX, coordinateY));
             }
-        } catch (IllegalArgumentException ex) {
-            System.err.println(ex.getMessage());
         }
     }
 

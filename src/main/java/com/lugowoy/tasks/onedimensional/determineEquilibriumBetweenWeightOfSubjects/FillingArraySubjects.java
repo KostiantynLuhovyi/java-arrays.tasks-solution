@@ -1,14 +1,11 @@
-package com.lugowoy.helper.filling;
+package com.lugowoy.tasks.onedimensional.determineEquilibriumBetweenWeightOfSubjects;
 
-import com.lugowoy.helper.factory.CreatorArraySubjects;
-import com.lugowoy.helper.factory.FactoryArray;
 import com.lugowoy.helper.filling.array.FillingArray;
-import com.lugowoy.helper.models.arrays.Array;
-import com.lugowoy.tasks.onedimensional.determineEquilibriumBetweenWeightOfSubjects.Subject;
+import com.lugowoy.helper.models.Array;
+import com.lugowoy.helper.other.CheckerArray;
 
-import static com.lugowoy.helper.filling.array.FillingArrayChecker.checkLengthArray;
-import static com.lugowoy.helper.filling.array.FillingArrayChecker.checkNonNullArrayObject;
-import static com.lugowoy.helper.models.arrays.Array.DEFAULT_LENGTH_ARRAY;
+import static com.lugowoy.helper.filling.array.CheckerFillingArray.checkNonNullArray;
+import static com.lugowoy.helper.models.Array.DEFAULT_LENGTH_ARRAY;
 
 /**
  * Created by Konstantin Lugowoy on 27.05.2018.
@@ -47,7 +44,8 @@ public class FillingArraySubjects implements FillingArray<Subject> {
      * */
     @Override
     public void fill(Array<Subject> array) throws IllegalArgumentException {
-        if (checkNonNullArrayObject(array)) {
+        //todo delete exception
+        if (checkNonNullArray(array)) {
             this.initializeArrayElements(array, this.numbersArray);
         } else {
             throw new IllegalArgumentException(new NullPointerException("The argument object is null."));
@@ -63,8 +61,9 @@ public class FillingArraySubjects implements FillingArray<Subject> {
      * */
     @Override
     public void fill(Subject[] subjects) throws IllegalArgumentException {
+        //todo delete exception
         if (subjects != null) {
-            this.initializeArrayElements(FactoryArray.getFactoryArray(new CreatorArraySubjects()).create(subjects), this.numbersArray);
+            this.initializeArrayElements(Array.create(subjects), this.numbersArray);
         } else {
             throw new IllegalArgumentException(new NullPointerException("The argument array is null."));
         }
@@ -83,12 +82,12 @@ public class FillingArraySubjects implements FillingArray<Subject> {
     @Override
     public Subject[] fill(int lengthArray) {
         Subject[] subjects;
-        if (checkLengthArray(lengthArray)) {
+        if (CheckerArray.checkLengthOfArrayIsEqualToOrGreaterThanZero(lengthArray)) {
             subjects = new Subject[lengthArray];
-            this.initializeArrayElements(FactoryArray.getFactoryArray(new CreatorArraySubjects()).create(subjects), this.numbersArray);
+            this.initializeArrayElements(Array.create(subjects), this.numbersArray);
         } else {
             subjects = new Subject[DEFAULT_LENGTH_ARRAY];
-            this.initializeArrayElements(FactoryArray.getFactoryArray(new CreatorArraySubjects()).create(subjects), this.numbersArray);
+            this.initializeArrayElements(Array.create(subjects), this.numbersArray);
         }
         return subjects;
     }

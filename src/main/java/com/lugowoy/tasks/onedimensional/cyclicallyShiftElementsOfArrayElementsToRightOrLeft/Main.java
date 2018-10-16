@@ -1,12 +1,10 @@
 package com.lugowoy.tasks.onedimensional.cyclicallyShiftElementsOfArrayElementsToRightOrLeft;
 
-import com.lugowoy.helper.factory.FactoryArray;
-import com.lugowoy.helper.factory.creator.CreatorArrayNumbers;
 import com.lugowoy.helper.filling.array.numbers.FillingArrayRandomIntegerNumbers;
 import com.lugowoy.helper.io.reading.Reader;
 import com.lugowoy.helper.io.reading.ReadingConsole;
-import com.lugowoy.helper.models.arrays.Array;
-import com.lugowoy.helper.other.ArrayLength;
+import com.lugowoy.helper.models.Array;
+import com.lugowoy.helper.other.LengthArray;
 
 /** Created by Konstantin Lugowoy on 19.06.2017. */
 
@@ -19,10 +17,9 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("Enter length of the array : ");
-        int lengthArray = ArrayLength.getLengthArray(new ReadingConsole());
+        int lengthOfArray = LengthArray.getLengthOfArray(new ReadingConsole());
 
-        Array<Integer> array = FactoryArray.getFactoryArray(new CreatorArrayNumbers<Integer>()).create(
-                                                                new FillingArrayRandomIntegerNumbers().fill(lengthArray, BOUND));
+        Array<Integer> array = Array.create(new FillingArrayRandomIntegerNumbers().fill(lengthOfArray, BOUND));
 
         System.out.println("Original : " + array);
 
@@ -43,11 +40,9 @@ public class Main {
             if ((numberK >= sizeArray) || (numberK > -sizeArray)) {
                 break;
             } else if (numberK == 0) {
-                System.out.println("The number must not be zero.");
-                System.out.println("Re-enter : ");
+                System.err.println("The number must not be zero. Re-enter : ");
             } else {
-                System.out.println("The number does not match the condition.");
-                System.out.println("Re-enter : ");
+                System.err.println("The number does not match the condition. Re-enter : ");
             }
         }
         return numberK;

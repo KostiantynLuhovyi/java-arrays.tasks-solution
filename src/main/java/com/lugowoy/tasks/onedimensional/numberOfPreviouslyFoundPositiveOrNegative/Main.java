@@ -2,12 +2,12 @@ package com.lugowoy.tasks.onedimensional.numberOfPreviouslyFoundPositiveOrNegati
 
 import com.lugowoy.helper.filling.array.numbers.FillingArrayRandomIntegerNumbers;
 import com.lugowoy.helper.io.reading.ReadingConsole;
-import com.lugowoy.helper.other.ArrayLength;
+import com.lugowoy.helper.other.LengthArray;
 
 import java.util.Arrays;
 
-import static com.lugowoy.helper.filling.array.DefaultValuesOfArray.DEFAULT_INTEGER_NEGATIVE_BOUND;
-import static com.lugowoy.helper.filling.array.DefaultValuesOfArray.DEFAULT_INTEGER_POSITIVE_BOUND;
+import static com.lugowoy.helper.filling.DefaultValuesForFilling.DEFAULT_INTEGER_NEGATIVE_BOUND;
+import static com.lugowoy.helper.filling.DefaultValuesForFilling.DEFAULT_INTEGER_POSITIVE_BOUND;
 
 /**Created by Konstantin Lugowoy on 12-Feb-17.*/
 
@@ -16,10 +16,10 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("Enter length of the array : ");
-        int lengthArray = ArrayLength.getLengthArray(new ReadingConsole());
+        int lengthOfArray = LengthArray.getLengthOfArray(new ReadingConsole());
 
         SequenceOfIntegers sequence = new SequenceOfIntegers();
-        sequence.setSequenceOfIntegers(Arrays.stream(new FillingArrayRandomIntegerNumbers().fill(lengthArray,
+        sequence.setSequenceOfIntegers(Arrays.stream(new FillingArrayRandomIntegerNumbers().fill(lengthOfArray,
                                                                                                  DEFAULT_INTEGER_NEGATIVE_BOUND,
                                                                                                  DEFAULT_INTEGER_POSITIVE_BOUND))
                                              .mapToInt(Integer::intValue)

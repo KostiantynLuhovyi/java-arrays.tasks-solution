@@ -1,7 +1,7 @@
 package com.lugowoy.tasks.onedimensional.determineTriangleForWhichDifferenceInNumberOfPointsOutsideAndInsideIsMinimal;
 
 import com.lugowoy.helper.calculating.CalculationUsingThreeParameters;
-import com.lugowoy.helper.models.points.Point;
+import com.lugowoy.helper.models.Point;
 
 /** Created by Konstantin Lugowoy on 08.07.2017. */
 

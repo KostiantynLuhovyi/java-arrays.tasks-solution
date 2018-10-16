@@ -9,7 +9,7 @@
     <version>1.0</version>
 
     <properties>
-        <java.version>1.9</java.version>
+        <java.version>10</java.version>
     </properties>
 
     <build>
@@ -40,9 +40,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.lugowoy.helper</groupId>
+            <groupId>com.lugowoy</groupId>
             <artifactId>java-helper</artifactId>
-            <version>1.2</version>
+            <version>1.6.2</version>
         </dependency>
     </dependencies>
 

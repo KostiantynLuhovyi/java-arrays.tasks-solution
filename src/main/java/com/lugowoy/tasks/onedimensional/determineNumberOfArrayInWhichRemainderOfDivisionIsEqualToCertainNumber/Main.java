@@ -1,12 +1,10 @@
 package com.lugowoy.tasks.onedimensional.determineNumberOfArrayInWhichRemainderOfDivisionIsEqualToCertainNumber;
 
-import com.lugowoy.helper.factory.FactoryArray;
-import com.lugowoy.helper.factory.creator.CreatorArrayNumbers;
 import com.lugowoy.helper.filling.array.numbers.FillingArrayRandomIntegerNumbers;
 import com.lugowoy.helper.io.reading.Reader;
 import com.lugowoy.helper.io.reading.ReadingConsole;
-import com.lugowoy.helper.models.arrays.ArrayOfNumbers;
-import com.lugowoy.helper.other.ArrayLength;
+import com.lugowoy.helper.models.Array;
+import com.lugowoy.helper.other.LengthArray;
 
 /**Created by Konstantin Lugowoy on 14-Feb-17.*/
 
@@ -20,12 +18,9 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("Enter length of the array : ");
-        int lengthArray = ArrayLength.getLengthArray(new ReadingConsole());
+        int lengthOfArray = LengthArray.getLengthOfArray(new ReadingConsole());
 
-        ArrayOfNumbers<Integer> array = (ArrayOfNumbers<Integer>) FactoryArray.getFactoryArray(new CreatorArrayNumbers<Integer>()).create(
-                                                                                                new FillingArrayRandomIntegerNumbers().fill(lengthArray,
-                                                                                                                                            START_BOUND,
-                                                                                                                                            END_BOUND));
+        Array<Integer> array = Array.create(new FillingArrayRandomIntegerNumbers().fill(lengthOfArray, START_BOUND, END_BOUND));
 
         System.out.println("Original array : " + array);
         System.out.println();
@@ -50,7 +45,7 @@ public class Main {
             }
         }
         if (countResult == array.getLength()) {
-            System.out.println("No numbers which satisfy the condition.");
+            System.err.println("No numbers which satisfy the condition.");
         }
     };
 

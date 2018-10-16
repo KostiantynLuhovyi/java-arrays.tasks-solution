@@ -13,16 +13,13 @@ public interface Determinant<T> {
             if (arrayOfCoordinates.getArrayOfCoordinates() != null) {
                 if ((arrayOfCoordinates.getArrayOfCoordinates().length > 0)
                         && (arrayOfCoordinates.getArrayOfCoordinates().length % 2 == 0)) {
-
                     for (int i = 0; i < arrayOfCoordinates.getArrayOfCoordinates().length; i += 2) {
                         double radius = getRadius(arrayOfCoordinates, i);
                         resultCoordinates[0] = radius < resultCoordinates[0] ? radius : resultCoordinates[0];
                         resultCoordinates[1] = radius > resultCoordinates[1] ? radius : resultCoordinates[1];
                     }
-
                     resultCoordinates[0] = Math.sqrt(resultCoordinates[0]);
                     resultCoordinates[1] = Math.sqrt(resultCoordinates[1]);
-
                     System.out.printf("The circle containing all points has %.2f the radius " +
                                       "of the inner circle and %.2f the radius of the outer circle.",
                                                                             resultCoordinates[0], resultCoordinates[1]);

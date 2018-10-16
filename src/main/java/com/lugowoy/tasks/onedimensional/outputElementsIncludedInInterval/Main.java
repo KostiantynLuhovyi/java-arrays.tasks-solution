@@ -3,12 +3,12 @@ package com.lugowoy.tasks.onedimensional.outputElementsIncludedInInterval;
 import com.lugowoy.helper.filling.array.numbers.FillingArrayRandomIntegerNumbers;
 import com.lugowoy.helper.io.reading.Reader;
 import com.lugowoy.helper.io.reading.ReadingConsole;
-import com.lugowoy.helper.other.ArrayLength;
+import com.lugowoy.helper.other.LengthArray;
 
 import java.util.Arrays;
 
-import static com.lugowoy.helper.filling.array.DefaultValuesOfArray.DEFAULT_INTEGER_NEGATIVE_BOUND;
-import static com.lugowoy.helper.filling.array.DefaultValuesOfArray.DEFAULT_INTEGER_POSITIVE_BOUND;
+import static com.lugowoy.helper.filling.DefaultValuesForFilling.DEFAULT_INTEGER_NEGATIVE_BOUND;
+import static com.lugowoy.helper.filling.DefaultValuesForFilling.DEFAULT_INTEGER_POSITIVE_BOUND;
 
 /** Created by Konstantin Lugowoy on 06.03.2017. */
 
@@ -19,10 +19,10 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("Enter length of the array : ");
-        int lengthArray = ArrayLength.getLengthArray(new ReadingConsole());
+        int lengthOfArray = LengthArray.getLengthOfArray(new ReadingConsole());
 
-        Integer[] integers = new FillingArrayRandomIntegerNumbers().fill(lengthArray, DEFAULT_INTEGER_NEGATIVE_BOUND,
-                                                                                      DEFAULT_INTEGER_POSITIVE_BOUND);
+        Integer[] integers = new FillingArrayRandomIntegerNumbers().fill(lengthOfArray, DEFAULT_INTEGER_NEGATIVE_BOUND,
+                                                                                        DEFAULT_INTEGER_POSITIVE_BOUND);
 
         System.out.println("Original sequence : ");
         Arrays.stream(integers).forEachOrdered(integer -> System.out.print(integer + " "));

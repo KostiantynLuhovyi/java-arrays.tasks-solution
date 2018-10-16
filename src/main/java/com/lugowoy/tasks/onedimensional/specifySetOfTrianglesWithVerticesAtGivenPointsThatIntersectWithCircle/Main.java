@@ -1,12 +1,10 @@
 package com.lugowoy.tasks.onedimensional.specifySetOfTrianglesWithVerticesAtGivenPointsThatIntersectWithCircle;
 
-import com.lugowoy.helper.factory.FactoryArray;
-import com.lugowoy.helper.factory.creator.CreatorArrayPoints;
-import com.lugowoy.helper.filling.array.points.FillingArrayPointsCoordinatesReadIntegerNumbers;
+import com.lugowoy.helper.filling.array.points.FillingArrayPointsReadIntegerNumbers;
 import com.lugowoy.helper.io.reading.Reader;
 import com.lugowoy.helper.io.reading.ReadingConsole;
-import com.lugowoy.helper.models.arrays.Array;
-import com.lugowoy.helper.models.points.Point;
+import com.lugowoy.helper.models.Array;
+import com.lugowoy.helper.models.Point;
 
 import java.util.Arrays;
 
@@ -20,11 +18,7 @@ public class Main {
 
         int numberOfPoints = enterNumberOfPoints();
 
-        Array<Point<Integer>> pointsArray = FactoryArray.getFactoryArray(
-                                                    new CreatorArrayPoints<Integer>()).create(
-                                                        new FillingArrayPointsCoordinatesReadIntegerNumbers(READER).fill(numberOfPoints));
-
-        /*fillPointsArray(pointsArray);*/
+        Array<Point<Integer>> pointsArray = Array.create(new FillingArrayPointsReadIntegerNumbers(READER).fill(numberOfPoints));
 
         System.out.println();
         System.out.println("Points : ");

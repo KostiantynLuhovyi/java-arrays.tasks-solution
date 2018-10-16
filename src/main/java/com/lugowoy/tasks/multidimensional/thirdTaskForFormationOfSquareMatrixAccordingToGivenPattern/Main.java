@@ -1,7 +1,7 @@
 package com.lugowoy.tasks.multidimensional.thirdTaskForFormationOfSquareMatrixAccordingToGivenPattern;
 
 import com.lugowoy.helper.io.reading.ReadingConsole;
-import com.lugowoy.helper.other.ArrayLength;
+import com.lugowoy.helper.other.LengthArray;
 
 /** Created by Konstantin Lugowoy on 16.10.2017. */
 
@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("Enter the length of the matrix elements : ");
-        int n = ArrayLength.getLengthArray(new ReadingConsole(), BOUND);
+        int n = LengthArray.getLengthOfArray(new ReadingConsole(), BOUND);
 
         int [][] array = new int[n][n];
 

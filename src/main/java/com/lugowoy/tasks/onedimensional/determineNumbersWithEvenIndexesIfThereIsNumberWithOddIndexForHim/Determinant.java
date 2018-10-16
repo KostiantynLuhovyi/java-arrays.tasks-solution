@@ -1,6 +1,6 @@
 package com.lugowoy.tasks.onedimensional.determineNumbersWithEvenIndexesIfThereIsNumberWithOddIndexForHim;
 
-import com.lugowoy.helper.models.arrays.Array;
+import com.lugowoy.helper.models.Array;
 
 /** Created by Konstantin Lugowoy on 07.05.2018. */
 
@@ -29,7 +29,6 @@ public interface Determinant {
         if (counterOfResult == 0) {
             System.out.println("No numbers match the condition.");
         }
-
     }
 
     private static boolean checkEvenIndex(int i) {

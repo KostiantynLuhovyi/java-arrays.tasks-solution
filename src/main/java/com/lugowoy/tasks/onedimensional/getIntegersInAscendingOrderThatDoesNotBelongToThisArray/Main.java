@@ -1,11 +1,9 @@
 package com.lugowoy.tasks.onedimensional.getIntegersInAscendingOrderThatDoesNotBelongToThisArray;
 
-import com.lugowoy.helper.factory.FactoryArray;
-import com.lugowoy.helper.factory.creator.CreatorArrayNumbers;
 import com.lugowoy.helper.filling.array.numbers.FillingArrayRandomIntegerNumbers;
 import com.lugowoy.helper.io.reading.ReadingConsole;
-import com.lugowoy.helper.models.arrays.Array;
-import com.lugowoy.helper.other.ArrayLength;
+import com.lugowoy.helper.models.Array;
+import com.lugowoy.helper.other.LengthArray;
 
 import java.util.Arrays;
 
@@ -19,12 +17,9 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("Enter length of the array : ");
-        int lengthArray = ArrayLength.getLengthArray(new ReadingConsole());
+        int lengthOfArray = LengthArray.getLengthOfArray(new ReadingConsole());
 
-        Array<Integer> array = FactoryArray.getFactoryArray(new CreatorArrayNumbers<Integer>()).create(
-                                                                new FillingArrayRandomIntegerNumbers().fill(lengthArray,
-                                                                                                            START_BOUND,
-                                                                                                            END_BOUND));
+        Array<Integer> array = Array.create(new FillingArrayRandomIntegerNumbers().fill(lengthOfArray, START_BOUND, END_BOUND));
 
         System.out.println("Original array : " + array);
         System.out.println();
@@ -37,7 +32,7 @@ public class Main {
         int minNumberInTheArray = finding.find(array);
         System.out.println("Min number in the array : " + minNumberInTheArray);
 
-        Array<Integer> arraySorted = FactoryArray.getFactoryArray(new CreatorArrayNumbers<Integer>()).create(array.toArray(new Integer[array.getLength()]));
+        Array<Integer> arraySorted = Array.create(array.toArray(new Integer[array.getLength()]));
 
         Arrays.sort(arraySorted.toArray(new Integer[arraySorted.getLength()]));
 

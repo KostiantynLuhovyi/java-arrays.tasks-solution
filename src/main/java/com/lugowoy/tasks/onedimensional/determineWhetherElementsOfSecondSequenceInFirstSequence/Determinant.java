@@ -1,9 +1,7 @@
 package com.lugowoy.tasks.onedimensional.determineWhetherElementsOfSecondSequenceInFirstSequence;
 
-import com.lugowoy.helper.models.arrays.Array;
-
-import static com.lugowoy.helper.other.ArrayChecker.checkArrayNonNull;
-import static com.lugowoy.helper.other.ArrayChecker.checkLengthOfArrayIsGreaterZero;
+import com.lugowoy.helper.models.Array;
+import com.lugowoy.helper.other.CheckerArray;
 
 /** Created by Konstantin Lugowoy on 12.04.2017. */
 
@@ -15,21 +13,17 @@ public interface Determinant<T> {
     static boolean determineWhetherTheElementsOfTheSecondSequenceInTheFirstSequence(Array<Integer> firstArray,
                                                                                     Array<Integer> secondArray) {
         boolean result = true;
-        try {
-            if (checkArrayNonNull(firstArray) && checkArrayNonNull(secondArray)) {
-                if (checkLengthOfArrayIsGreaterZero(firstArray.getLength())
-                        && checkLengthOfArrayIsGreaterZero(secondArray.getLength())) {
-                    label:
-                    for (int i = 0; i < firstArray.getLength(); i++) {
-                        for (int j = 0; j < secondArray.getLength(); j++) {
-                            if (i == j) continue label;
-                            result = false;
-                        }
+        if (CheckerArray.checkArrayNonNull(firstArray) && CheckerArray.checkArrayNonNull(secondArray)) {
+            if (CheckerArray.checkLengthOfArrayIsGreaterZero(firstArray.getLength())
+                    && CheckerArray.checkLengthOfArrayIsGreaterZero(secondArray.getLength())) {
+                label:
+                for (int i = 0; i < firstArray.getLength(); i++) {
+                    for (int j = 0; j < secondArray.getLength(); j++) {
+                        if (i == j) continue label;
+                        result = false;
                     }
                 }
             }
-        } catch (IllegalArgumentException ex) {
-            System.err.println(ex.getMessage());
         }
         return result;
     }

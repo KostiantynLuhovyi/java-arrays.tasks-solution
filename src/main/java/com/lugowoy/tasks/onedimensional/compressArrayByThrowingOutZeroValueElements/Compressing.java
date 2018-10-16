@@ -1,6 +1,6 @@
 package com.lugowoy.tasks.onedimensional.compressArrayByThrowingOutZeroValueElements;
 
-import com.lugowoy.helper.models.arrays.Array;
+import com.lugowoy.helper.models.Array;
 
 /** Created by Konstantin Lugowoy on 16.03.2017. */
 

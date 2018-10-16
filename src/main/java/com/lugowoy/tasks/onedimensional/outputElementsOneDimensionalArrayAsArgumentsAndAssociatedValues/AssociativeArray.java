@@ -2,7 +2,7 @@ package com.lugowoy.tasks.onedimensional.outputElementsOneDimensionalArrayAsArgu
 
 /** Created by Konstantin Lugowoy on 23-Feb-17. */
 
-public class AssociativeArray <T extends Object, V extends Object> {
+public class AssociativeArray <T, V> {
 
     private T[] argumentArray;
     private V[] valueArray;

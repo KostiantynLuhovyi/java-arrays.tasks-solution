@@ -1,6 +1,6 @@
 package com.lugowoy.tasks.onedimensional.determineGreatestCommonDivisorForArrayOfNumbers;
 
-import com.lugowoy.helper.models.arrays.Array;
+import com.lugowoy.helper.models.Array;
 
 /** Created by Konstantin Lugowoy on 09.05.2018. */
 
@@ -20,7 +20,6 @@ public interface DeterminantGreatestCommonDivisor {
     private static int determineGCDOfTwoNumbers(int firstNumber, int secondNumber) {
         int resultValueOfGCD = 0;
         int moduleOfFirstNumber = Math.abs(firstNumber), moduleOfSecondNumber = Math.abs(secondNumber);
-
         while ((moduleOfFirstNumber != 0) && (moduleOfSecondNumber != 0)) {
             int tmp = moduleOfFirstNumber % moduleOfSecondNumber;
             moduleOfFirstNumber = moduleOfSecondNumber;

@@ -1,6 +1,6 @@
 package com.lugowoy.tasks.onedimensional.determineEquilibriumBetweenWeightOfSubjects;
 
-import com.lugowoy.helper.models.arrays.Array;
+import com.lugowoy.helper.models.Array;
 
 /** Created by Konstantin Lugowoy on 27.05.2018. */
 

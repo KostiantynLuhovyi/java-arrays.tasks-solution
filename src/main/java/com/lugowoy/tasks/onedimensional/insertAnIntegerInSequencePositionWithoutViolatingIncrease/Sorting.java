@@ -1,6 +1,6 @@
 package com.lugowoy.tasks.onedimensional.insertAnIntegerInSequencePositionWithoutViolatingIncrease;
 
-import com.lugowoy.helper.models.arrays.Array;
+import com.lugowoy.helper.models.Array;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;

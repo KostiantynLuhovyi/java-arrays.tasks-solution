@@ -1,9 +1,7 @@
 package com.lugowoy.tasks.onedimensional.convertSecondSequenceAccordingToRuleDefinedByFirstSequence;
 
-import com.lugowoy.helper.models.arrays.Array;
-
-import static com.lugowoy.helper.other.ArrayChecker.checkArrayNonNull;
-import static com.lugowoy.helper.other.ArrayChecker.checkLengthOfArrayIsGreaterZero;
+import com.lugowoy.helper.models.Array;
+import com.lugowoy.helper.other.CheckerArray;
 
 /** Created by Konstantin Lugowoy on 25.03.2017. */
 
@@ -13,24 +11,21 @@ public interface Converting<T> {
     void convert(Array<T> firstArray, Array<T> secondArray);
     
     static void convertSecondSequenceAccordingToRuleDefinedByFirstSequence(Array<Integer> firstArray, Array<Integer> secondArray) {
-        try {
-            if (checkArrayNonNull(firstArray) && checkArrayNonNull(secondArray)) {
-                if (checkLengthOfArrayIsGreaterZero(firstArray.getLength()) && checkLengthOfArrayIsGreaterZero(secondArray.getLength())) {
-                    if (firstArray.getLength() == secondArray.getLength()) {
-                        for (int i = 0; i < firstArray.getLength(); i++) {
-                            if (firstArray.get(i) <= 0) {
-                                secondArray.set(i, secondArray.get(i) * 10);
-                            } else {
-                                secondArray.set(i, 0);
-                            }
+        if (CheckerArray.checkArrayNonNull(firstArray) && CheckerArray.checkArrayNonNull(secondArray)) {
+            if (CheckerArray.checkLengthOfArrayIsGreaterZero(firstArray.getLength())
+                    && CheckerArray.checkLengthOfArrayIsGreaterZero(secondArray.getLength())) {
+                if (firstArray.getLength() == secondArray.getLength()) {
+                    for (int i = 0; i < firstArray.getLength(); i++) {
+                        if (firstArray.get(i) <= 0) {
+                            secondArray.set(i, secondArray.get(i) * 10);
+                        } else {
+                            secondArray.set(i, 0);
                         }
-                    } else {
-                        throw new IllegalArgumentException("Sequences sizes are not equal.");
                     }
+                } else {
+                    System.err.println("Sequences sizes are not equal.");
                 }
             }
-        } catch (IllegalArgumentException ex) {
-            System.err.println(ex.getMessage());
         }
     }
 

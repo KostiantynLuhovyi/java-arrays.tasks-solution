@@ -1,15 +1,10 @@
 package com.lugowoy.tasks.onedimensional.determineTriangleForWhichDifferenceInNumberOfPointsOutsideAndInsideIsMinimal;
 
-import com.lugowoy.helper.factory.FactoryArray;
-import com.lugowoy.helper.factory.FactoryPoint;
-import com.lugowoy.helper.factory.creator.CreatorArrayNumbers;
-import com.lugowoy.helper.factory.creator.CreatorArrayPoints;
-import com.lugowoy.helper.factory.creator.CreatorPoint;
 import com.lugowoy.helper.filling.array.numbers.FillingArrayRandomDoubleNumbers;
 import com.lugowoy.helper.io.reading.Reader;
 import com.lugowoy.helper.io.reading.ReadingConsole;
-import com.lugowoy.helper.models.arrays.Array;
-import com.lugowoy.helper.models.points.Point;
+import com.lugowoy.helper.models.Array;
+import com.lugowoy.helper.models.Point;
 
 /** Created by Konstantin Lugowoy on 03.07.2017. */
 
@@ -26,10 +21,7 @@ public class Main {
 
         int lengthArray = enterLengthOfArray();
 
-        Array<Double> array = FactoryArray.getFactoryArray(new CreatorArrayNumbers<Double>()).create(
-                                                                new FillingArrayRandomDoubleNumbers().fill(lengthArray,
-                                                                                                           START_BOUND,
-                                                                                                           END_BOUND));
+        Array<Double> array = Array.create(new FillingArrayRandomDoubleNumbers().fill(lengthArray, START_BOUND, END_BOUND));
 
         System.out.println("Coordinates : ");
         System.out.println(array);
@@ -40,7 +32,6 @@ public class Main {
         System.out.println("Points : ");
         System.out.println(pointArray);
         System.out.println();
-
 
         Array<Point<Double>> resultPointArray = DETERMINANT.define(pointArray);
 
@@ -56,20 +47,19 @@ public class Main {
             if (sizeArray % 2 == 0) {
                 break;
             } else {
-                System.out.println("Number of the size array must be a even number.");
-                System.out.println("Re-enter : ");
+                System.out.println("Number of the size array must be a even number. Re-enter : ");
             }
         }
         return sizeArray;
     }
 
      private static Point<Double> fillPointCoordinates(double coordinateX, double coordinateY) {
-        return FactoryPoint.getFactoryPoint(new CreatorPoint<Double>()).create(coordinateX, coordinateY);
+        return Point.create(coordinateX, coordinateY);
      }
 
 
     private static Array<Point<Double>> createAndFillArrayOfPoints(Array<Double> arrayOfCoordinates) {
-        Array<Point<Double>> pointArray = FactoryArray.getFactoryArray(new CreatorArrayPoints<Double>()).create(0);
+        Array<Point<Double>> pointArray = Array.create(0);
         int countForCreate = 0;
         for (int i = 0; i < arrayOfCoordinates.getLength(); i++) {
             if (countForCreate == 1) {

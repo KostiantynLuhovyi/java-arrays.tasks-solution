@@ -1,6 +1,6 @@
 package com.lugowoy.tasks.onedimensional.determineNumberOfArrayInWhichRemainderOfDivisionIsEqualToCertainNumber;
 
-import com.lugowoy.helper.models.arrays.Array;
+import com.lugowoy.helper.models.Array;
 
 /**Created by Konstantin Lugowoy on 14-Feb-17.*/
 

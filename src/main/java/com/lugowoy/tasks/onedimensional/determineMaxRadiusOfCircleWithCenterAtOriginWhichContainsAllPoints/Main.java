@@ -6,8 +6,8 @@ import com.lugowoy.helper.other.GeneratorRandomNumber;
 
 import java.util.Arrays;
 
-import static com.lugowoy.helper.filling.array.DefaultValuesOfArray.DEFAULT_INTEGER_NEGATIVE_BOUND;
-import static com.lugowoy.helper.filling.array.DefaultValuesOfArray.DEFAULT_INTEGER_POSITIVE_BOUND;
+import static com.lugowoy.helper.filling.DefaultValuesForFilling.DEFAULT_INTEGER_NEGATIVE_BOUND;
+import static com.lugowoy.helper.filling.DefaultValuesForFilling.DEFAULT_INTEGER_POSITIVE_BOUND;
 
 /** Created by Konstantin Lugowoy on 14.05.2017. */
 

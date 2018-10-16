@@ -1,6 +1,6 @@
 package com.lugowoy.tasks.onedimensional.determineNumberOfLocalMaximaInArray;
 
-import com.lugowoy.helper.models.arrays.Array;
+import com.lugowoy.helper.models.Array;
 
 /** Created by Konstantin Lugowoy on 07.05.2018. */
 
@@ -9,7 +9,7 @@ public interface Determinant {
 
     void determine(Array<Integer> array);
 
-    static void determineNumbersOfLocalMaxima(Array<Integer> array) {
+    static void determineNumbersOfLocalMaximum(Array<Integer> array) {
         int counterOfLocalMaximum = 0;
         for (int i = 1; i < array.getLength() - 1; i++) {
             if ((array.get(i - 1) > array.get(i)) && (array.get(i + 1) > array.get(i))) {
@@ -18,7 +18,7 @@ public interface Determinant {
             }
         }
         if (counterOfLocalMaximum == 0) {
-            System.out.println("The array did not determine numbers that would be considered local maxima");
+            System.out.println("The array did not determine numbers that would be considered local maximum.");
         }
     }
 
