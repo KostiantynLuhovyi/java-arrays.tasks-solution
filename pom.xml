@@ -9,7 +9,7 @@
     <version>1.0</version>
 
     <properties>
-        <java.version>10</java.version>
+        <java.version>1.9</java.version>
     </properties>
 
     <build>
