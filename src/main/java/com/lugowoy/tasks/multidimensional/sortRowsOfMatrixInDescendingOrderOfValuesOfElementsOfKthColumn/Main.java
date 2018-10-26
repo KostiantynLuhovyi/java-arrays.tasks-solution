@@ -1,4 +1,4 @@
-package com.lugowoy.tasks.multidimensional.sortRowsOfMatrixInAscendingOrderOfValuesOfElementsOfKthColumn;
+package com.lugowoy.tasks.multidimensional.sortRowsOfMatrixInDescendingOrderOfValuesOfElementsOfKthColumn;
 
 import com.lugowoy.helper.filling.matrixes.numbers.FillingMatrixRandomIntegerNumbers;
 import com.lugowoy.helper.io.reading.Reader;
@@ -30,18 +30,18 @@ public class Main {
         System.out.println("Original matrix : ");
         System.out.println(matrix);
 
-        sortRowsOfMatrixInAscendingOrderOfValuesOfElementsOfKthColumn(matrix, indexRowToSort);
+        sortRowsOfMatrixInDescendingOrderOfValuesOfElementsOfKthColumn(matrix, indexRowToSort);
 
         System.out.println("Result : ");
         System.out.println(matrix);
 
     }
 
-    private static void sortRowsOfMatrixInAscendingOrderOfValuesOfElementsOfKthColumn(Matrix<Integer> matrix, int indexRowToSort) {
+    private static void sortRowsOfMatrixInDescendingOrderOfValuesOfElementsOfKthColumn(Matrix<Integer> matrix, int indexRowToSort) {
         Integer[][] ints = matrix.getMatrix(new Integer[matrix.getRows()][matrix.getColumns()]);
         for (int i = 0; i < ints.length; i++) {
             for (int j = i + 1; j < ints.length; j++) {
-                if (ints[i][indexRowToSort] > ints[j][indexRowToSort]) {
+                if (ints[i][indexRowToSort] < ints[j][indexRowToSort]) {
                     for (int k = 0; k < ints.length; k++) {
                         int temp = ints[i][k];
                         ints[i][k] = ints[j][k];
