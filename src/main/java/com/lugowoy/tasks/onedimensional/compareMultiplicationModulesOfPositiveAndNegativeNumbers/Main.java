@@ -8,8 +8,8 @@ import com.lugowoy.tasks.onedimensional.compareMultiplicationModulesOfPositiveAn
 import com.lugowoy.tasks.onedimensional.compareMultiplicationModulesOfPositiveAndNegativeNumbers.multiplicate.MultiplicationNegativeNumbers;
 import com.lugowoy.tasks.onedimensional.compareMultiplicationModulesOfPositiveAndNegativeNumbers.multiplicate.MultiplicationPositiveNumbers;
 
-import static com.lugowoy.helper.filling.DefaultValuesForFilling.DEFAULT_INTEGER_NEGATIVE_BOUND;
-import static com.lugowoy.helper.filling.DefaultValuesForFilling.DEFAULT_INTEGER_POSITIVE_BOUND;
+import static com.lugowoy.helper.filling.DefaultValuesForFilling.NEGATIVE_INTEGER_BOUND;
+import static com.lugowoy.helper.filling.DefaultValuesForFilling.POSITIVE_INTEGER_BOUND;
 
 /** Created by Konstantin Lugowoy on 11.03.2017. */
 
@@ -20,8 +20,8 @@ public class Main {
         System.out.println("Enter length of the array : ");
         int lengthOfArray = LengthArray.getLengthOfArray(new ReadingConsole());
 
-        Array<Integer> array = Array.create(new FillingArrayRandomIntegerNumbers().fill(lengthOfArray, DEFAULT_INTEGER_NEGATIVE_BOUND,
-                                                                                                       DEFAULT_INTEGER_POSITIVE_BOUND));
+        Array<Integer> array = Array.create(new FillingArrayRandomIntegerNumbers().fill(lengthOfArray, NEGATIVE_INTEGER_BOUND,
+                                                                                                       POSITIVE_INTEGER_BOUND));
 
         System.out.println("Original array : " + array);
         System.out.println();

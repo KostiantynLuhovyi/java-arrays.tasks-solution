@@ -6,8 +6,8 @@ import com.lugowoy.helper.other.GeneratorRandomNumber;
 
 import java.util.Arrays;
 
-import static com.lugowoy.helper.filling.DefaultValuesForFilling.DEFAULT_INTEGER_NEGATIVE_BOUND;
-import static com.lugowoy.helper.filling.DefaultValuesForFilling.DEFAULT_INTEGER_POSITIVE_BOUND;
+import static com.lugowoy.helper.filling.DefaultValuesForFilling.NEGATIVE_INTEGER_BOUND;
+import static com.lugowoy.helper.filling.DefaultValuesForFilling.POSITIVE_INTEGER_BOUND;
 
 /** Created by Konstantin Lugowoy on 14.05.2017. */
 
@@ -25,8 +25,8 @@ public class Main {
         int numberOfPoints = READER.readInt();
 
         arrayOfCoordinates.setCoordinatesOfPoints(Arrays.stream(new Integer[numberOfPoints * 2])
-                                                        .mapToInt(value -> value = GeneratorRandomNumber.generateInt(DEFAULT_INTEGER_NEGATIVE_BOUND,
-                                                                                                                     DEFAULT_INTEGER_POSITIVE_BOUND))
+                                                        .mapToInt(value -> value = GeneratorRandomNumber.generateInt(NEGATIVE_INTEGER_BOUND,
+                                                                                                                     POSITIVE_INTEGER_BOUND))
                                                         .toArray());
 
         System.out.println("Coordinates of points : ");

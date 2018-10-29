@@ -7,7 +7,7 @@ import com.lugowoy.helper.models.Array;
 import com.lugowoy.helper.other.CheckerArray;
 import com.lugowoy.helper.other.LengthArray;
 
-import static com.lugowoy.helper.filling.DefaultValuesForFilling.DEFAULT_INTEGER_POSITIVE_BOUND;
+import static com.lugowoy.helper.filling.DefaultValuesForFilling.POSITIVE_INTEGER_BOUND;
 
 /** Created by Konstantin Lugowoy on 18.06.2017. */
 
@@ -18,7 +18,7 @@ public class Main {
         System.out.println("Enter length of the array : ");
         int lengthOfArray = LengthArray.getLengthOfArray(new ReadingConsole());
 
-        Array<Integer> array = Array.create(new FillingArrayRandomIntegerNumbers().fill(lengthOfArray, DEFAULT_INTEGER_POSITIVE_BOUND));
+        Array<Integer> array = Array.create(new FillingArrayRandomIntegerNumbers().fill(lengthOfArray, POSITIVE_INTEGER_BOUND));
 
         System.out.println("Original " + array);
         System.out.println();

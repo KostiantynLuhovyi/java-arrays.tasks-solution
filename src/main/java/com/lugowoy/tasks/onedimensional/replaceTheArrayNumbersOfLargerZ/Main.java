@@ -1,5 +1,6 @@
 package com.lugowoy.tasks.onedimensional.replaceTheArrayNumbersOfLargerZ;
 
+import com.lugowoy.helper.filling.DefaultValuesForFilling;
 import com.lugowoy.helper.filling.array.numbers.FillingArrayRandomIntegerNumbers;
 import com.lugowoy.helper.io.reading.Reader;
 import com.lugowoy.helper.io.reading.ReadingConsole;
@@ -7,8 +8,8 @@ import com.lugowoy.helper.other.LengthArray;
 
 import java.util.Arrays;
 
-import static com.lugowoy.helper.filling.DefaultValuesForFilling.DEFAULT_INTEGER_NEGATIVE_BOUND;
-import static com.lugowoy.helper.filling.DefaultValuesForFilling.DEFAULT_INTEGER_POSITIVE_BOUND;
+import static com.lugowoy.helper.filling.DefaultValuesForFilling.NEGATIVE_INTEGER_BOUND;
+import static com.lugowoy.helper.filling.DefaultValuesForFilling.POSITIVE_INTEGER_BOUND;
 
 /**Created by Konstantin Lugowoy on 13-Feb-17.*/
 
@@ -22,8 +23,7 @@ public class Main {
         int lengthOfArray = LengthArray.getLengthOfArray(new ReadingConsole());
 
         Numbers numbersSequence = new Numbers();
-        numbersSequence.setNumbers(Arrays.stream(new FillingArrayRandomIntegerNumbers().fill(lengthOfArray, DEFAULT_INTEGER_NEGATIVE_BOUND,
-                                                                                                            DEFAULT_INTEGER_POSITIVE_BOUND))
+        numbersSequence.setNumbers(Arrays.stream(new FillingArrayRandomIntegerNumbers().fill(lengthOfArray, NEGATIVE_INTEGER_BOUND, POSITIVE_INTEGER_BOUND))
                                          .mapToInt(Integer::intValue)
                                          .toArray());
 

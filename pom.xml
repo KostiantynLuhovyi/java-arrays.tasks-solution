@@ -42,7 +42,7 @@
         <dependency>
             <groupId>com.lugowoy</groupId>
             <artifactId>java-helper</artifactId>
-            <version>1.6.2</version>
+            <version>LATEST</version>
         </dependency>
     </dependencies>
 

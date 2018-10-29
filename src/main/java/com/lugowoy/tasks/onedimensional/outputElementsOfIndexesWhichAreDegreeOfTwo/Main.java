@@ -6,8 +6,8 @@ import com.lugowoy.helper.other.LengthArray;
 
 import java.util.Arrays;
 
-import static com.lugowoy.helper.filling.DefaultValuesForFilling.DEFAULT_INTEGER_NEGATIVE_BOUND;
-import static com.lugowoy.helper.filling.DefaultValuesForFilling.DEFAULT_INTEGER_POSITIVE_BOUND;
+import static com.lugowoy.helper.filling.DefaultValuesForFilling.NEGATIVE_INTEGER_BOUND;
+import static com.lugowoy.helper.filling.DefaultValuesForFilling.POSITIVE_INTEGER_BOUND;
 
 /** Created by Konstantin Lugowoy on 01.03.2017. */
 
@@ -18,8 +18,8 @@ public class Main {
         System.out.println("Enter length of the array : ");
         int lengthOfArray = LengthArray.getLengthOfArray(new ReadingConsole());
 
-        Integer[] integersArray = new FillingArrayRandomIntegerNumbers().fill(lengthOfArray, DEFAULT_INTEGER_NEGATIVE_BOUND,
-                                                                                             DEFAULT_INTEGER_POSITIVE_BOUND);
+        Integer[] integersArray = new FillingArrayRandomIntegerNumbers().fill(lengthOfArray, NEGATIVE_INTEGER_BOUND,
+                                                                                             POSITIVE_INTEGER_BOUND);
 
         System.out.println("Original : ");
         Arrays.stream(integersArray).forEachOrdered(integer -> System.out.print(integer + " "));

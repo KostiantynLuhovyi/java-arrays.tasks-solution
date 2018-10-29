@@ -4,8 +4,8 @@ import com.lugowoy.helper.filling.array.numbers.FillingArrayRandomIntegerNumbers
 
 import java.util.Arrays;
 
-import static com.lugowoy.helper.filling.DefaultValuesForFilling.DEFAULT_INTEGER_NEGATIVE_BOUND;
-import static com.lugowoy.helper.filling.DefaultValuesForFilling.DEFAULT_INTEGER_POSITIVE_BOUND;
+import static com.lugowoy.helper.filling.DefaultValuesForFilling.NEGATIVE_INTEGER_BOUND;
+import static com.lugowoy.helper.filling.DefaultValuesForFilling.POSITIVE_INTEGER_BOUND;
 
 /** Created by Konstantin Lugowoy on 22-Feb-17. */
 
@@ -16,7 +16,8 @@ public class Main {
     public static void main(String[] args) {
 
         Numbers numbers = new Numbers();
-        numbers.setNumbers(Arrays.stream(new FillingArrayRandomIntegerNumbers().fill(LENGTH_ARRAY, DEFAULT_INTEGER_NEGATIVE_BOUND, DEFAULT_INTEGER_POSITIVE_BOUND))
+        numbers.setNumbers(Arrays.stream(new FillingArrayRandomIntegerNumbers().fill(LENGTH_ARRAY, NEGATIVE_INTEGER_BOUND,
+                                                                                                   POSITIVE_INTEGER_BOUND))
                                  .mapToInt(Integer::intValue)
                                  .toArray());
 
