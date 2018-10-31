@@ -1,10 +1,8 @@
 package com.lugowoy.tasks.multidimensional.buildMatrixSubtractingFromElementsOfEachRowOfMatrixItsArithmeticAverage;
 
-import com.lugowoy.helper.filling.DefaultValuesForFilling;
 import com.lugowoy.helper.filling.matrixes.numbers.FillingMatrixRandomDoubleNumbers;
 import com.lugowoy.helper.io.reading.Reader;
 import com.lugowoy.helper.io.reading.ReadingConsole;
-import com.lugowoy.helper.models.Array;
 import com.lugowoy.helper.models.Matrix;
 
 import java.math.BigDecimal;
