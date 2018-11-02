@@ -42,11 +42,11 @@ public class Main {
         double resultArithmeticAverage = 0;
         for (int i = 0; i < matrix.getRows(); i++) {
             for (int j = 0; j < matrix.getColumns(); j++) {
-                resultArithmeticAverage += matrix.getElementMatrix(i, j);
+                resultArithmeticAverage += matrix.getElement(i, j);
             }
             resultArithmeticAverage /= matrix.getColumns();
             for (int j = 0; j < matrix.getColumns(); j++) {
-                matrix.setElementMatrix(i, j, new BigDecimal(matrix.getElementMatrix(i, j) - resultArithmeticAverage).setScale(2, RoundingMode.HALF_DOWN).doubleValue());
+                matrix.setElement(i, j, new BigDecimal(matrix.getElement(i, j) - resultArithmeticAverage).setScale(2, RoundingMode.HALF_DOWN).doubleValue());
             }
             resultArithmeticAverage = 0;
         }

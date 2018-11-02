@@ -12,7 +12,7 @@ public interface RotatorIntegerMatrixClockwise {
         Integer[][] tmpMatrix = new Integer[matrix.getRows()][matrix.getColumns()];
         for (int i = 0; i < matrix.getRows(); i++)
             for (int j = 0; j < matrix.getColumns(); j++) {
-                tmpMatrix[matrix.getColumns() - 1 - j][i] = matrix.getElementMatrix(i, j);
+                tmpMatrix[matrix.getColumns() - 1 - j][i] = matrix.getElement(i, j);
             }
         matrix.setMatrix(tmpMatrix);
     }

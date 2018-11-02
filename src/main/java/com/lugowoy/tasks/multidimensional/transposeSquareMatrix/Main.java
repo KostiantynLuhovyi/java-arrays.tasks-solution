@@ -21,9 +21,9 @@ public class Main {
 
         for (int i = 0; i < matrix.getRows(); i++) {
             for (int j = i + 1; j < matrix.getColumns(); j++) {
-                int tmp = matrix.getElementMatrix(i, j);
-                matrix.setElementMatrix(i, j, matrix.getElementMatrix(j, i));
-                matrix.setElementMatrix(j, i, tmp);
+                int tmp = matrix.getElement(i, j);
+                matrix.setElement(i, j, matrix.getElement(j, i));
+                matrix.setElement(j, i, tmp);
             }
         }
 

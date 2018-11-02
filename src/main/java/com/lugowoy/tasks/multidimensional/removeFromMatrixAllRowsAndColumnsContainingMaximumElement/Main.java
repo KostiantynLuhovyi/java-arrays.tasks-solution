@@ -52,7 +52,7 @@ public class Main {
                 if (j > indexMatrixColumn - 1) {
                     column = 1;
                 }
-                tmpInts[i][j] = matrix.getElementMatrix(i + row, j + column);
+                tmpInts[i][j] = matrix.getElement(i + row, j + column);
             }
         }
         matrix.setMatrix(tmpInts);
@@ -73,7 +73,7 @@ public class Main {
             int resultMaxElement = Integer.MIN_VALUE;
             for (int i = 0; i < matrix.getRows(); i++) {
                 for (int j = 0; j < matrix.getColumns(); j++) {
-                    int elementOfMatrix = matrix.getElementMatrix(i, j);
+                    int elementOfMatrix = matrix.getElement(i, j);
                     if (elementOfMatrix > resultMaxElement) {
                         this.indexMaxElementMatrixRow = i;
                         this.indexMaxElementMatrixColumn = j;

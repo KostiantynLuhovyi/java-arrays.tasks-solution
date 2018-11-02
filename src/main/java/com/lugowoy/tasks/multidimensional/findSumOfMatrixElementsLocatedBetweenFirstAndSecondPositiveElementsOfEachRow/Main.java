@@ -39,12 +39,12 @@ public class Main {
         boolean secondPositive = false;
         for (int i = 0; i < matrix.getRows(); i++) {
             for (int j = 0; j < matrix.getColumns(); j++) {
-                if (matrix.getElementMatrix(i, j) > 0 && firstPositive)
+                if (matrix.getElement(i, j) > 0 && firstPositive)
                     secondPositive = true;
                 else if (firstPositive && !secondPositive){
-                    tmpSum += matrix.getElementMatrix(i, j);
+                    tmpSum += matrix.getElement(i, j);
                 }
-                else if (matrix.getElementMatrix(i, j) > 0 && !firstPositive)
+                else if (matrix.getElement(i, j) > 0 && !firstPositive)
                     firstPositive = true;
             }
             if (firstPositive && !secondPositive) {

@@ -61,7 +61,7 @@ public class Main {
         Array<Integer> resultArray = Array.create(0);
         for (int i = 0; i < matrix.getRows(); i++) {
             for (int j = 0; j < matrix.getColumns(); j++) {
-                resultArray.add(matrix.getElementMatrix(i, j));
+                resultArray.add(matrix.getElement(i, j));
             }
         }
         return resultArray;

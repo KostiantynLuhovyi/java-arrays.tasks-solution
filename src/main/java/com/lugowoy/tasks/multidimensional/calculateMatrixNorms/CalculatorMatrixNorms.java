@@ -18,7 +18,7 @@ public interface CalculatorMatrixNorms {
         for (int i = 0; i < matrix.getRows(); i++) {
             double sum = 0;
             for (int j = 0; j < matrix.getColumns(); j++) {
-                sum += abs(matrix.getElementMatrix(i, j));
+                sum += abs(matrix.getElement(i, j));
             }
             resultNorm = max(resultNorm, sum);
         }
@@ -30,7 +30,7 @@ public interface CalculatorMatrixNorms {
         for (int i = 0; i < matrix.getRows(); i++) {
             double sum = 0;
             for (int j = 0; j < matrix.getColumns(); j++) {
-                sum += abs(matrix.getElementMatrix(j, i));
+                sum += abs(matrix.getElement(j, i));
             }
             resultNorm = max(resultNorm, sum);
         }
