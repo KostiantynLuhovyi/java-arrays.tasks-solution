@@ -1,0 +1,1 @@
+Rebuild the given matrix, rearranging the columns in it so that the values of their characteristics decrease.
