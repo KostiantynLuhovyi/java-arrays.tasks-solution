@@ -1,9 +1,9 @@
 package com.lugowoy.tasks.multidimensional.buildMatrixSubtractingFromElementsOfEachRowOfMatrixItsArithmeticAverage;
 
-import com.lugowoy.helper.filling.matrixes.numbers.FillingMatrixRandomDoubleNumbers;
-import com.lugowoy.helper.io.reading.Reader;
+import com.lugowoy.helper.filling.matrix.numbers.FillingMatrixRandomDouble;
 import com.lugowoy.helper.io.reading.ReadingConsole;
 import com.lugowoy.helper.models.Matrix;
+import com.lugowoy.helper.other.MatrixAttributes;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -11,22 +11,20 @@ import java.math.RoundingMode;
 import static com.lugowoy.helper.filling.DefaultValuesForFilling.POSITIVE_DOUBLE_BOUND;
 
 /**
- * Created by Konstantin Lugowoy on 30.10.2018.
+ * Build a matrix, subtracting from the elements of each row of the matrix its arithmetic average.
+ * <p>
+ * Created by LugowoyKonstantin on 30.10.2018.
  */
 
 public class Main {
 
-    private static final Reader READER = Reader.getReader(new ReadingConsole());
-
     public static void main(String[] args) {
 
-        System.out.println("Enter the number of rows for the matrix : ");
-        int rows = READER.readInt();
+        MatrixAttributes matrixAttributes = MatrixAttributes.getInstanceMatrixAttributes(new ReadingConsole());
 
-        System.out.println("Enter the number of columns for the matrix : ");
-        int columns = READER.readInt();
-
-        Matrix<Double> matrix = Matrix.create(new FillingMatrixRandomDoubleNumbers().fill(rows, columns, POSITIVE_DOUBLE_BOUND));
+        Matrix<Double> matrix = new Matrix<>(new FillingMatrixRandomDouble().fill(matrixAttributes.getRows(),
+                                                                                  matrixAttributes.getColumns(),
+                                                                                  POSITIVE_DOUBLE_BOUND));
 
         System.out.println("Original matrix : ");
         System.out.println(matrix);

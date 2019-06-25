@@ -2,7 +2,8 @@ package com.lugowoy.tasks.multidimensional.calculateMatrixNorms;
 
 import com.lugowoy.helper.models.Matrix;
 
-import static java.lang.Math.*;
+import static java.lang.Math.abs;
+import static java.lang.Math.max;
 
 /**
  * Created by Konstantin Lugowoy on 30.10.2018.

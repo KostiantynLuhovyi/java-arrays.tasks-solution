@@ -1,1 +1,0 @@
-Compact the matrix by removing rows and columns filled with zeros from it.

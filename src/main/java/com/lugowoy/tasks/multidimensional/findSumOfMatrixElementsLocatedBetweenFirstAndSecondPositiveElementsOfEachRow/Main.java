@@ -1,35 +1,35 @@
 package com.lugowoy.tasks.multidimensional.findSumOfMatrixElementsLocatedBetweenFirstAndSecondPositiveElementsOfEachRow;
 
-import com.lugowoy.helper.filling.matrixes.numbers.FillingMatrixRandomIntegerNumbers;
-import com.lugowoy.helper.io.reading.Reader;
+import com.lugowoy.helper.filling.matrix.numbers.FillingMatrixRandomInteger;
 import com.lugowoy.helper.io.reading.ReadingConsole;
 import com.lugowoy.helper.models.Matrix;
+import com.lugowoy.helper.other.MatrixAttributes;
 
 import static com.lugowoy.helper.filling.DefaultValuesForFilling.NEGATIVE_INTEGER_BOUND;
 import static com.lugowoy.helper.filling.DefaultValuesForFilling.POSITIVE_INTEGER_BOUND;
 
 /**
+ * Find the sum of matrix elements located between the first and second positive elements of each row.
+ * <p>
  * Created by Konstantin Lugowoy on 29.10.2018.
  */
 
 public class Main {
 
-    private static final Reader READER = Reader.getReader(new ReadingConsole());
-
     public static void main(String[] args) {
 
-        System.out.println("Enter the number rows for the matrix : ");
-        int rows = READER.readInt();
+        MatrixAttributes matrixAttributes = MatrixAttributes.getInstanceMatrixAttributes(new ReadingConsole());
 
-        System.out.println("Enter the number columns for the matrix : ");
-        int columns = READER.readInt();
-
-        Matrix<Integer> matrix = Matrix.create(new FillingMatrixRandomIntegerNumbers().fill(rows, columns, NEGATIVE_INTEGER_BOUND, POSITIVE_INTEGER_BOUND));
+        Matrix<Integer> matrix = new Matrix<>(new FillingMatrixRandomInteger().fill(matrixAttributes.getRows(),
+                                                                                    matrixAttributes.getColumns(),
+                                                                                    NEGATIVE_INTEGER_BOUND,
+                                                                                    POSITIVE_INTEGER_BOUND));
 
         System.out.println("Matrix : ");
         System.out.println(matrix);
 
         findSumOfMatrixElementsLocatedBetweenFirstAndSecondPositiveElementsOfEachRow(matrix);
+
     }
 
     private static void findSumOfMatrixElementsLocatedBetweenFirstAndSecondPositiveElementsOfEachRow(Matrix<Integer> matrix) {

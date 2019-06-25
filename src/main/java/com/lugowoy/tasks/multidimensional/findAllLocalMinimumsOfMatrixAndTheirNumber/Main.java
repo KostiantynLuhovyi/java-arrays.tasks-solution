@@ -1,9 +1,9 @@
 package com.lugowoy.tasks.multidimensional.findAllLocalMinimumsOfMatrixAndTheirNumber;
 
-import com.lugowoy.helper.filling.matrixes.numbers.FillingMatrixRandomIntegerNumbers;
-import com.lugowoy.helper.io.reading.Reader;
+import com.lugowoy.helper.filling.matrix.numbers.FillingMatrixRandomInteger;
 import com.lugowoy.helper.io.reading.ReadingConsole;
 import com.lugowoy.helper.models.Matrix;
+import com.lugowoy.helper.other.MatrixAttributes;
 
 /**
  * Created by Konstantin Lugowoy on 23.11.2018.
@@ -11,18 +11,15 @@ import com.lugowoy.helper.models.Matrix;
 
 public class Main {
 
-    private static final Reader READER = Reader.getReader(new ReadingConsole());
-    private static final int BOUND = 10;
+    private static final int UPPER_BOUND = 10;
 
     public static void main(String[] args) {
 
-        System.out.println("Enter the number of rows for the matrix : ");
-        int rows = READER.readInt();
+        MatrixAttributes matrixAttributes = MatrixAttributes.getInstanceMatrixAttributes(new ReadingConsole());
 
-        System.out.println("Enter the number of columns for the matrix : ");
-        int columns = READER.readInt();
-
-        Matrix<Integer> matrix = Matrix.create(new FillingMatrixRandomIntegerNumbers().fill(rows, columns, BOUND));
+        Matrix<Integer> matrix = new Matrix<>(new FillingMatrixRandomInteger().fill(matrixAttributes.getRows(),
+                                                                                    matrixAttributes.getColumns(),
+                                                                                    UPPER_BOUND));
 
         System.out.println("Matrix : ");
         System.out.println(matrix);

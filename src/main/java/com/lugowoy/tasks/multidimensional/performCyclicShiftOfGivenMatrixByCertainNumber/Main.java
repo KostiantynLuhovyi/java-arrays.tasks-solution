@@ -1,11 +1,14 @@
 package com.lugowoy.tasks.multidimensional.performCyclicShiftOfGivenMatrixByCertainNumber;
 
-import com.lugowoy.helper.filling.matrixes.numbers.FillingMatrixRandomIntegerNumbers;
+import com.lugowoy.helper.filling.matrix.numbers.FillingMatrixRandomInteger;
 import com.lugowoy.helper.io.reading.Reader;
 import com.lugowoy.helper.io.reading.ReadingConsole;
 import com.lugowoy.helper.models.Matrix;
+import com.lugowoy.helper.other.MatrixAttributes;
 
 /**
+ * Perform a cyclic shift of a given matrix by a certain number of positions to the right (left, up, down).
+ * <p>
  * Created by Konstantin Lugowoy on 28.10.2018.
  */
 
@@ -13,22 +16,20 @@ public class Main {
 
     private static final Reader READER = Reader.getReader(new ReadingConsole());
 
-    private static final int BOUND = 20;
+    private static final int UPPER_BOUND = 20;
 
     public static void main(String[] args) {
 
-        System.out.println("Enter the number of rows for the matrix :");
-        int rows = READER.readInt();
+        MatrixAttributes matrixAttributes = MatrixAttributes.getInstanceMatrixAttributes(new ReadingConsole());
 
-        System.out.println("Enter the number of columns for the matrix : ");
-        int columns = READER.readInt();
-
-        Matrix<Integer> matrix = Matrix.create(new FillingMatrixRandomIntegerNumbers().fill(rows, columns, BOUND));
+        Matrix<Integer> matrix = new Matrix<>(new FillingMatrixRandomInteger().fill(matrixAttributes.getRows(),
+                                                                                    matrixAttributes.getColumns(),
+                                                                                    UPPER_BOUND));
 
         System.out.println("Original matrix : ");
         System.out.println(matrix);
 
-        int numberToShiftMatrix = enterNumberToShiftMatrix(rows);
+        int numberToShiftMatrix = enterNumberToShiftMatrix(matrixAttributes.getRows());
 
         System.out.println("Select an action to perform : ");
         System.out.println("Press 1, to shift the matrix to the right.");
@@ -39,19 +40,19 @@ public class Main {
 
         Shifter<Integer> shifter;
         switch (selectValue) {
-            case 1 :
+            case 1:
                 shifter = ShifterIntegerMatrix::shiftMatrixToRight;
                 shifter.shift(matrix, numberToShiftMatrix);
                 break;
-            case 2 :
+            case 2:
                 shifter = ShifterIntegerMatrix::shiftMatrixToLeft;
                 shifter.shift(matrix, numberToShiftMatrix);
                 break;
-            case 3 :
+            case 3:
                 shifter = ShifterIntegerMatrix::shiftMatrixToUp;
                 shifter.shift(matrix, numberToShiftMatrix);
                 break;
-            case 4 :
+            case 4:
                 shifter = ShifterIntegerMatrix::shiftMatrixToDown;
                 shifter.shift(matrix, numberToShiftMatrix);
                 break;

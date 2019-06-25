@@ -1,30 +1,29 @@
 package com.lugowoy.tasks.multidimensional.calculateMatrixNorms;
 
-import com.lugowoy.helper.filling.matrixes.numbers.FillingMatrixRandomDoubleNumbers;
-import com.lugowoy.helper.io.reading.Reader;
+import com.lugowoy.helper.filling.matrix.numbers.FillingMatrixRandomDouble;
 import com.lugowoy.helper.io.reading.ReadingConsole;
 import com.lugowoy.helper.models.Matrix;
+import com.lugowoy.helper.other.MatrixAttributes;
 
-import static com.lugowoy.helper.filling.DefaultValuesForFilling.*;
+import static com.lugowoy.helper.filling.DefaultValuesForFilling.NEGATIVE_DOUBLE_BOUND;
+import static com.lugowoy.helper.filling.DefaultValuesForFilling.POSITIVE_DOUBLE_BOUND;
 
 /**
+ * Calculate the matrix norms.
+ * <p>
  * Created by Konstantin Lugowoy on 30.10.2018.
  */
 
 public class Main {
 
-    private static final Reader READER = Reader.getReader(new ReadingConsole());
-
     public static void main(String[] args) {
 
-        System.out.println("Enter the number of rows for the matrix : ");
-        int rows = READER.readInt();
+        MatrixAttributes matrixAttributes = MatrixAttributes.getInstanceMatrixAttributes(new ReadingConsole());
 
-        System.out.println("Enter the number of columns for the matrix : ");
-        int columns = READER.readInt();
-
-        Matrix<Double> matrix = Matrix.create(new FillingMatrixRandomDoubleNumbers().fill(rows, columns, NEGATIVE_DOUBLE_BOUND,
-                                                                                                         POSITIVE_DOUBLE_BOUND));
+        Matrix<Double> matrix = new Matrix<>(new FillingMatrixRandomDouble().fill(matrixAttributes.getRows(),
+                                                                                  matrixAttributes.getColumns(),
+                                                                                  NEGATIVE_DOUBLE_BOUND,
+                                                                                  POSITIVE_DOUBLE_BOUND));
 
         System.out.println("Matrix : ");
         System.out.println(matrix);

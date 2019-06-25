@@ -1,1 +1,0 @@
-Build a matrix, subtracting from the elements of each row of the matrix its arithmetic average.

@@ -1,31 +1,29 @@
 package com.lugowoy.tasks.multidimensional.findAndDisplayLargestNumberOfIncreasingElementsOfMatrixGoingInRow;
 
-import com.lugowoy.helper.filling.matrixes.numbers.FillingMatrixRandomIntegerNumbers;
-import com.lugowoy.helper.io.reading.Reader;
+import com.lugowoy.helper.filling.matrix.numbers.FillingMatrixRandomInteger;
 import com.lugowoy.helper.io.reading.ReadingConsole;
 import com.lugowoy.helper.models.Array;
 import com.lugowoy.helper.models.Matrix;
+import com.lugowoy.helper.other.MatrixAttributes;
 
 /**
+ * Find and display the largest number of increasing elements of the matrix, going in a row.
+ * <p>
  * Created by Konstantin Lugowoy on 28.10.2018.
  */
 
 public class Main {
 
-    private static final Reader READER = Reader.getReader(new ReadingConsole());
-
-    private static final int START_BOUND = -20;
-    private static final int END_BOUND = 20;
+    private static final int LOWER_BOUND = -20;
+    private static final int UPPER_BOUND = 20;
 
     public static void main(String[] args) {
 
-        System.out.println("Enter the number of rows for the matrix : ");
-        int rows = READER.readInt();
+        MatrixAttributes matrixAttributes = MatrixAttributes.getInstanceMatrixAttributes(new ReadingConsole());
 
-        System.out.println("Enter the number of columns for the matrix : ");
-        int columns = READER.readInt();
-
-        Matrix<Integer> matrix = Matrix.create(new FillingMatrixRandomIntegerNumbers().fill(rows, columns, START_BOUND, END_BOUND));
+        Matrix<Integer> matrix = new Matrix<>(new FillingMatrixRandomInteger().fill(matrixAttributes.getRows(),
+                                                                                    matrixAttributes.getColumns(),
+                                                                                    LOWER_BOUND, UPPER_BOUND));
 
         System.out.println("Matrix : ");
         System.out.println(matrix);
@@ -54,11 +52,11 @@ public class Main {
         Integer[] integers = new Integer[maxSequence + 1];
         System.arraycopy(tmpArray.toArray(new Integer[tmpArray.getLength()]), indexLastIncreasingElement - maxSequence,
                          integers, 0, maxSequence + 1);
-        return Array.create(integers);
+        return new Array<>(integers);
     }
 
     private static Array<Integer> convertMatrixIntoArray(Matrix<Integer> matrix) {
-        Array<Integer> resultArray = Array.create(0);
+        Array<Integer> resultArray = new Array<>(0);
         for (int i = 0; i < matrix.getRows(); i++) {
             for (int j = 0; j < matrix.getColumns(); j++) {
                 resultArray.add(matrix.getElement(i, j));
