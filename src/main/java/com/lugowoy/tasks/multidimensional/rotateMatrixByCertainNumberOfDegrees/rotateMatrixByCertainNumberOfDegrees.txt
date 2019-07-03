@@ -1,1 +1,0 @@
-Rotation of the matrix by a certain number of degrees.

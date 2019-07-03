@@ -6,6 +6,8 @@ import com.lugowoy.helper.models.Matrix;
 import com.lugowoy.helper.other.MatrixAttributes;
 
 import static com.lugowoy.helper.filling.DefaultValuesForFilling.POSITIVE_INTEGER_BOUND;
+import static com.lugowoy.helper.other.MatrixAttributes.MSG_ENTER_CONSOLE_COLUMN;
+import static com.lugowoy.helper.other.MatrixAttributes.MSG_ENTER_CONSOLE_ROW;
 
 /**
  * Created by Konstantin Lugowoy on 06.11.2018.
@@ -15,7 +17,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        MatrixAttributes matrixAttributes = MatrixAttributes.getInstanceMatrixAttributes(new ReadingConsole());
+        MatrixAttributes matrixAttributes = new MatrixAttributes();
+        matrixAttributes.setMatrixAttributes(new ReadingConsole(), System.out, MSG_ENTER_CONSOLE_ROW, MSG_ENTER_CONSOLE_COLUMN);
 
         Matrix<Integer> matrix = new Matrix<>(new FillingMatrixRandomInteger().fill(matrixAttributes.getRows(),
                                                                                     matrixAttributes.getColumns(),

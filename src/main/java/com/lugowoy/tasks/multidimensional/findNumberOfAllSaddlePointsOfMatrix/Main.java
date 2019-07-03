@@ -5,6 +5,9 @@ import com.lugowoy.helper.io.reading.ReadingConsole;
 import com.lugowoy.helper.models.Matrix;
 import com.lugowoy.helper.other.MatrixAttributes;
 
+import static com.lugowoy.helper.other.MatrixAttributes.MSG_ENTER_CONSOLE_COLUMN;
+import static com.lugowoy.helper.other.MatrixAttributes.MSG_ENTER_CONSOLE_ROW;
+
 /**
  * Find the number of all saddle points of the matrix.
  * <p>
@@ -17,7 +20,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        MatrixAttributes matrixAttributes = MatrixAttributes.getInstanceMatrixAttributes(new ReadingConsole());
+        MatrixAttributes matrixAttributes = new MatrixAttributes();
+        matrixAttributes.setMatrixAttributes(new ReadingConsole(), System.out, MSG_ENTER_CONSOLE_ROW, MSG_ENTER_CONSOLE_COLUMN);
 
         Matrix<Integer> matrix = new Matrix<>(new FillingMatrixRandomInteger().fill(matrixAttributes.getRows(),
                                                                                     matrixAttributes.getColumns(),

@@ -60,10 +60,47 @@ If you have any questions about this repository or the solution of the tasks in 
         * _Move the minimum matrix element to the specified location using permutation of rows and columns._  
     * `performCyclicShiftOfGivenMatrixByCertainNumber`  
         * _Perform a cyclic shift of a given matrix by a certain number of positions to the right (left, up, down)._  
+    * `rearrangeElementsOfSquareRealMatrixInAscendingOrderAlongDiagonal`  
+        * _Rearrange the elements of a square real matrix in ascending order along the diagonal._  
+    * `rearrangeElementsOfSquareRealMatrixInDescendingOrderAlongDiagonal`  
+        * _Rearrange the elements of a square real matrix in descending order along the diagonal._  
+    * `rebuildMatrixRearrangingColumnsInItSoThatValuesOfTheirCharacteristicsDecrease`  
+        * _Rebuild the given matrix, rearranging the columns in it so that the values of their characteristics decrease._  
+    * `rebuildMatrixRearrangingColumnsInItSoThatValuesOfTheirCharacteristicsIncrease`  
+        * _Rebuild the given matrix, rearranging the columns in it so that the values of their characteristics increase._  
+    * `rebuildMatrixRearrangingRowsInItSoThatElementsInRowsOfResultingMatrixAreIncreased`  
+        * _Rebuild the matrix, rearranging the rows in it so that the elements in the rows of the resulting matrix are increased._  
+    * `rebuildMatrixRearrangingRowsInItSoThatValuesOfTheirCharacteristicsDecrease`  
+        * _Rebuild the given matrix, rearranging the rows in it so that the values of their characteristics decrease._  
+    * `rebuildMatrixRearrangingRowsInItSoThatValuesOfTheirCharacteristicsIncrease`  
+        * _Rebuild the given matrix, rearranging the rows in it so that the values of their characteristics increase._  
+    * `removeFromMatrixAllRowsAndColumnsContainingMaximumElement`  
+        * _Find the maximum element(s) in the matrix and remove from the matrix all the rows and columns containing it._  
+    * `rotateMatrixByCertainNumberOfDegrees`  
+        * _Rotation of the matrix by a certain number of degrees_  
+    * `roundAllElementsOfMatrixToInteger`  
+        * _Round all elements of the matrix to an integer._  
     * `secondTaskForFormationOfSquareMatrixAccordingToGivenPattern`  
-        * _Description of the template for the formation of the matrix you will find in the file that is in the package with solution of the task._  
+        * _Form a square matrix of order n according to a given pattern:_
+           _0	0	0	…	0	0	1_
+           _0	0	0	…	0	2	0_
+           _0	0	0	…	3	0	0_
+           _…	…	…	…	…	…	…_
+           _0	n-1	0	…	0	0	0_
+           _n	0	0	…	0	0	0_  
+    * `sortColumnsOfMatrixInAscendingOrderOfValuesOfElementsOfKthRow`  
+        * _Sort the columns in ascending order of values of the elements of k-th row._  
+    * `sortColumnsOfMatrixInDescendingOrderOfValuesOfElementsOfKthRow`  
+        * _Sort the columns in descending order of values of the elements of k-th row._  
+    ...
     * `thirdTaskForFormationOfSquareMatrixAccordingToGivenPattern`
-        * _Description of the template for the formation of the matrix you will find in the file that is in the package with solution of the task._
+        * _Form a square matrix of order n according to a given pattern:_  
+           _n	0	0	…	0	0	0_  
+           _0	n-1	0	…	0	0	0_  
+           _0	0	n-2	…	0	0	0_  
+           _…	…	…	…	…	…	…_  
+           _0	0	0	…	0	2	0_  
+           _0	0	0	…	0	0	1_  
 * `onedimensional`  
     * `calculateSumOfArrayElementsLocatedBetweenMinAndMaxElementsInclusive`  
         * _Given an array of numbers.

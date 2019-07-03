@@ -7,6 +7,8 @@ import com.lugowoy.helper.other.MatrixAttributes;
 
 import static com.lugowoy.helper.filling.DefaultValuesForFilling.NEGATIVE_DOUBLE_BOUND;
 import static com.lugowoy.helper.filling.DefaultValuesForFilling.POSITIVE_DOUBLE_BOUND;
+import static com.lugowoy.helper.other.MatrixAttributes.MSG_ENTER_CONSOLE_COLUMN;
+import static com.lugowoy.helper.other.MatrixAttributes.MSG_ENTER_CONSOLE_ROW;
 
 /**
  * Calculate the matrix norms.
@@ -18,7 +20,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        MatrixAttributes matrixAttributes = MatrixAttributes.getInstanceMatrixAttributes(new ReadingConsole());
+        MatrixAttributes matrixAttributes = new MatrixAttributes();
+        matrixAttributes.setMatrixAttributes(new ReadingConsole(), System.out, MSG_ENTER_CONSOLE_ROW, MSG_ENTER_CONSOLE_COLUMN);
 
         Matrix<Double> matrix = new Matrix<>(new FillingMatrixRandomDouble().fill(matrixAttributes.getRows(),
                                                                                   matrixAttributes.getColumns(),

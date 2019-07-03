@@ -1,1 +1,0 @@
-Rebuild the matrix, rearranging the rows in it so that the elements in the rows of the resulting matrix are increased.

@@ -1,1 +1,0 @@
-Find the maximum element(s) in the matrix and remove from the matrix all the rows and columns containing it.

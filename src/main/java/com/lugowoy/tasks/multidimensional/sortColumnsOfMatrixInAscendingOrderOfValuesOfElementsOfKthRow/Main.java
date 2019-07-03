@@ -1,31 +1,34 @@
 package com.lugowoy.tasks.multidimensional.sortColumnsOfMatrixInAscendingOrderOfValuesOfElementsOfKthRow;
 
-import com.lugowoy.helper.filling.matrixes.numbers.FillingMatrixRandomIntegerNumbers;
+import com.lugowoy.helper.filling.matrix.numbers.FillingMatrixRandomInteger;
 import com.lugowoy.helper.io.reading.Reader;
 import com.lugowoy.helper.io.reading.ReadingConsole;
 import com.lugowoy.helper.models.Matrix;
+import com.lugowoy.helper.other.MatrixAttributes;
+
+import static com.lugowoy.helper.other.MatrixAttributes.MSG_ENTER_CONSOLE_COLUMN;
+import static com.lugowoy.helper.other.MatrixAttributes.MSG_ENTER_CONSOLE_ROW;
 
 /**
+ * Sort the columns in ascending order of values of the elements of k-th row.
+ * <p>
  * Created by Konstantin Lugowoy on 27.10.2018.
  */
 
 public class Main {
 
-    private static final Reader READER = Reader.getReader(new ReadingConsole());
-
-    private static final int BOUND = 20;
+    private static final int UPPER_BOUND = 20;
 
     public static void main(String[] args) {
 
-        System.out.println("Enter number of rows in the matrix : ");
-        int rows = READER.readInt();
+        MatrixAttributes matrixAttributes = new MatrixAttributes();
+        matrixAttributes.setMatrixAttributes(new ReadingConsole(), System.out, MSG_ENTER_CONSOLE_ROW, MSG_ENTER_CONSOLE_COLUMN);
 
-        System.out.println("Enter number of columns in the matrix : ");
-        int columns = READER.readInt();
+        Matrix<Integer> matrix = new Matrix<>(new FillingMatrixRandomInteger().fill(matrixAttributes.getRows(),
+                                                                                    matrixAttributes.getColumns(),
+                                                                                    UPPER_BOUND));
 
-        Matrix<Integer> matrix = Matrix.create(new FillingMatrixRandomIntegerNumbers().fill(rows, columns, BOUND));
-
-        int indexColumnToSort = enterIndexColumnToSort(columns);
+        int indexColumnToSort = enterIndexColumnToSort(matrix.getColumns());
 
         System.out.println("Original matrix : ");
         System.out.println(matrix);
@@ -56,8 +59,9 @@ public class Main {
     private static int enterIndexColumnToSort(int rows) {
         int resultIndexRow;
         System.out.println("Enter the column number to sort : ");
+        Reader reader = Reader.getReader(new ReadingConsole());
         while (true) {
-            resultIndexRow = READER.readInt();
+            resultIndexRow = reader.readInt();
             if (resultIndexRow >= 0 && resultIndexRow <= rows) {
                 break;
             } else {

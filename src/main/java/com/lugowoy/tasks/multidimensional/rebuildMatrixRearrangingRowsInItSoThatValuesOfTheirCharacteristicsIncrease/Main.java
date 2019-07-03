@@ -1,30 +1,32 @@
 package com.lugowoy.tasks.multidimensional.rebuildMatrixRearrangingRowsInItSoThatValuesOfTheirCharacteristicsIncrease;
 
-import com.lugowoy.helper.filling.matrixes.numbers.FillingMatrixRandomIntegerNumbers;
-import com.lugowoy.helper.io.reading.Reader;
+import com.lugowoy.helper.filling.matrix.numbers.FillingMatrixRandomInteger;
 import com.lugowoy.helper.io.reading.ReadingConsole;
 import com.lugowoy.helper.models.Matrix;
+import com.lugowoy.helper.other.MatrixAttributes;
+
+import static com.lugowoy.helper.other.MatrixAttributes.MSG_ENTER_CONSOLE_COLUMN;
+import static com.lugowoy.helper.other.MatrixAttributes.MSG_ENTER_CONSOLE_ROW;
 
 /**
+ * Rebuild the given matrix, rearranging the rows in it so that the values of their characteristics increase.
+ * <p>
  * Created by Konstantin Lugowoy on 27.11.2018.
  */
 
 public class Main {
 
-    private static final Reader READER = Reader.getReader(new ReadingConsole());
-
-    private static final int START_BOUND = -10;
-    private static final int END_BOUND = 10;
+    private static final int LOWER_BOUND = -10;
+    private static final int UPPER_BOUND = 10;
 
     public static void main(String[] args) {
 
-        System.out.println("Enter the number of rows for the matrix : ");
-        int rows = READER.readInt();
+        MatrixAttributes matrixAttributes = new MatrixAttributes();
+        matrixAttributes.setMatrixAttributes(new ReadingConsole(), System.out, MSG_ENTER_CONSOLE_ROW, MSG_ENTER_CONSOLE_COLUMN);
 
-        System.out.println("Enter the number of columns for the matrix : ");
-        int columns = READER.readInt();
-
-        Matrix<Integer> matrix = Matrix.create(new FillingMatrixRandomIntegerNumbers().fill(rows, columns, START_BOUND, END_BOUND));
+        Matrix<Integer> matrix = new Matrix<>(new FillingMatrixRandomInteger().fill(matrixAttributes.getRows(),
+                                                                                    matrixAttributes.getColumns(),
+                                                                                    LOWER_BOUND, UPPER_BOUND));
 
         System.out.println("Original matrix : ");
         System.out.println(matrix);

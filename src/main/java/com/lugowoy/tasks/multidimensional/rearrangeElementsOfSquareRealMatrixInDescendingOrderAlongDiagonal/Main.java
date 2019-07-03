@@ -1,28 +1,33 @@
 package com.lugowoy.tasks.multidimensional.rearrangeElementsOfSquareRealMatrixInDescendingOrderAlongDiagonal;
 
-import com.lugowoy.helper.filling.matrixes.numbers.FillingMatrixRandomDoubleNumbers;
+import com.lugowoy.helper.filling.matrix.numbers.FillingMatrixRandomDouble;
 import com.lugowoy.helper.io.reading.Reader;
 import com.lugowoy.helper.io.reading.ReadingConsole;
 import com.lugowoy.helper.models.Matrix;
+import com.lugowoy.helper.other.MatrixAttributes;
+
+import static com.lugowoy.helper.other.MatrixAttributes.MSG_ENTER_CONSOLE_COLUMN;
+import static com.lugowoy.helper.other.MatrixAttributes.MSG_ENTER_CONSOLE_ROW;
 
 /**
+ * Rearrange the elements of a square real matrix in descending order along the diagonal.
+ * <p>
  * Created by Konstantin Lugowoy on 28.11.2018.
  */
 
 public class Main {
 
     private static final Reader READER = Reader.getReader(new ReadingConsole());
-    private static final double BOUND = 10;
+    private static final double UPPER_BOUND = 10;
 
     public static void main(String[] args) {
 
-        System.out.println("Enter the number of rows for the matrix : ");
-        int rows = READER.readInt();
+        MatrixAttributes matrixAttributes = new MatrixAttributes();
+        matrixAttributes.setMatrixAttributes(new ReadingConsole(), System.out, MSG_ENTER_CONSOLE_ROW, MSG_ENTER_CONSOLE_COLUMN);
 
-        System.out.println("Enter the number of columns for the matrix : ");
-        int columns = READER.readInt();
-
-        Matrix<Double> matrix = Matrix.create(new FillingMatrixRandomDoubleNumbers().fill(rows, columns, BOUND));
+        Matrix<Double> matrix = new Matrix<>(new FillingMatrixRandomDouble().fill(matrixAttributes.getRows(),
+                                                                                  matrixAttributes.getColumns(),
+                                                                                  UPPER_BOUND));
 
         System.out.println("Original matrix : ");
         System.out.println(matrix);
